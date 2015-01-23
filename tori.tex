@@ -48,7 +48,7 @@
 \newcommand{\bF}{\mathbf{F}}
 \newcommand{\ri}{\mathcal{O}}
 \newcommand{\gl}{\mathfrak{gl}}
-\newcommand{\Gl}{\mathbf {GL}}
+\newcommand{\GL}{\mathbf {GL}}
 \newcommand{\fg}{\mathfrak{g}}
 \newcommand{\ft}{\mathfrak{t}}
 \newcommand{\fz}{\mathfrak{z}}
@@ -67,6 +67,7 @@
 
 \newcommand{\ep}{\operatorname{EP}}
 \newcommand{\cM}{\mathcal {M}}
+\newcommand{\cL}{\mathcal {L}}
 
 \newcommand{\ram}{\mathrm{Ram}}
 %\newcommand{\sem}{\mathrm{ss}}
@@ -101,8 +102,11 @@
 \newcommand\lef{\mathbb L}
 \newcommand\cP{{\mathcal P}}
 \newcommand\cC{{\mathcal C}}
+\newcommand\cE{{\mathcal E}}
 \newcommand\cX{{\mathcal X}}
+%\newcommand\bT{{\mathbf T}}
 \newcommand\mot{\mathrm{mot}}
+\newcommand\spl{\mathrm{spl}}
 \newcommand{\scD}{\mathscr{D}}
 
 
@@ -150,34 +154,86 @@ the representation theory of $p$-adic groups, that was started by T. Hales in 19
 Here  the word ``motivic'' refers to the use of the theory of motivic integration, as developed by R. Cluckers and F. Loeser in \cite{cluckers-loeser}; in this paper, no integration will be required, so ``definable'' would have been a better term to use. 
 
 Specifically, our goal is to prove that the canonical maximal parahoric subgroup of a connected reductive $p$-adic group, as defined by  B. Gross in \cite{gross:motive} using Bruhat-Tits theory, is definable using Denef-Pas language, which is the language used in Cluckers-Loeser theory of motivic integration and, consequently,  in all its applications to representation theory of $p$-adic groups. As a consequence, we  prove that for any connected reductive group the canonical Haar measure (in the sense of \cite{gross:motive}) is motivic.
+{\bf XX Can we think of the motive of a reductive group as its motivic volume?}
 
-In fact, for unramified groups this statement has been known for a while, cf. \cite{cluckers-hales-loeser}. However, for a ramified group $\bG$, there is a difficulty caused by the fact that the canonical smooth model of $\bG$, whose definition relies on the N\`eron model of a maximal torus in $\bG$, does not behave well with respect to Galois descent. Thus, the main technical difficulty we deal with in this paper is proving that the connected component of the N\`eron model of a tamely ramified torus is definable in the language of Denef-Pas. We note that this difficulty is largely caused by the fact that ``taking the connected component'' is not, naturally, an operation that can easily be described by first-order logic. 
+In fact, for unramified groups this statement has been known for a while, cf. \cite{cluckers-hales-loeser}. However, for a ramified group $\bG$, there is a difficulty caused by the fact that the canonical smooth model of $\bG$, whose definition relies on the N\'eron model of a maximal torus in $\bG$, does not behave well with respect to Galois descent. Thus, the main technical difficulty we deal with in this paper is proving that the connected component of the N\`eron model of a tamely ramified torus is definable in the language of Denef-Pas. We note that this difficulty is largely caused by the fact that ``taking the connected component'' is not, naturally, an operation that can easily be described by first-order logic. 
+
+{\bf XX Fill in: application to the formal degree ?}
 
 \section{Tori} 
+In this paper, we will use the notions of a definable set and  definable function. These refer to being definable in Denef-Pas language. 
+Formulas in Denef-Pas language can have variables of three \emph{sorts}: valued field (which will be denoted by $VF$), residue field (denoted by $RF$) and the value group. Even though we will be often be working with ramified extensions, we always start with a local field $F$ with normalized valuation, so the value group is $\Z$ (the $VF$-variables will range over $F$, and so their valuations will be in $\Z$).
+Formulas in Denef-Pas language can be interpreted given a choice of a valued field \emph{and a uniformizer of the valuation}. 
+We refer the reader to \cite{what's the best ref?} for the definitions of Denef-Pas language, definable sets, etc. 
+
+For us $F$ will always be a non-Archimedean local field, either a finite extension of $\Q_p$, or 
+$\F_q\llp t\rrp$, and due to the nature of the notion of a definable set,  all the statements in this paper will hold for all such $F$ of sufficiently large residue characteristic 
+(though there will be no effective bound on the characteristic). Since we have to assume that the characteristic is large (relative to some fixed parameters such as the degree of the extension over which our torus splits), we will, in particular, only work with tame tori.  
+
+For a local field $F$, we will denote its ring of integers by $\ri_F$,  its residue field by $k_F$, and let $q_F=\# k_F$. The symbol $\varpi_F$ will always stand for the uniformizer of the valuation on $F$; when there is no possibility of confusion, we might drop the subscript $F$. 
+A formula in Denef-Pas language  with $n$ free $VF$-variables, $m$ free $RF$-variables, and $r$ free 
+$\Z$-variables 
+defines a subset of $F^n\times k_F^m \times \Z^r$. 
+We will denote the definable set $F^n\times k_F^m \times \Z^r$ itself by $VF^n\times RF^m\times \Z^r$. In earlier works on motivic integration this set was denoted by $h[n,m,r]$. 
+
 \subsection{Field extensions}
 We start by setting up the framework for working with tori, and later, general reductive groups, in Denef-Pas language, following \cite{cluckers-hales-loeser}, \cite{CGH-2}, and \cite{hales:transfert}. 
+
+
 We encode field extensions in the same way as in \cite{CGH-2}. Namely, we fix a finite group $\Gamma$, and realize all tori over a given local field $F$ that split over a Galois extension $L$ with the Galois group 
 isomorphic to $\Gamma$ as members of a family of definable sets, for all $F$ of sufficiently large residue characteristic. 
 
-Thus, once and for all, we fix $\Gamma$, as an abstract finite group, with fixed enumeration of its elements, $\sigma_1, \dots, \sigma_m$, with $m=|\Gamma|$. We will also need to use the maximal unramified sub-extension of $L$.
+Thus, once and for all, we fix a pair $(\Gamma,I)$,  with $\Gamma$ an abstract finite group, with fixed enumeration of its elements, $\Gamma=\{\sigma_1, \dots, \sigma_m\}$, and 
+$I=\{\sigma_1, \dots, \sigma_e\}$
+a normal subgroup (which will play the role of the inertia subgroup). We will also need to use the maximal unramified sub-extension of $L$.
 There is an exact sequence of Galois groups, 
-$$ 1\to \gal(L/L^{ur})\to \gal(L/F)\to \gal(L^{ur}/F)\to 1.$$
-We fix the ramification index $e$, and make the convention that the elements
-$\sigma_1, \dots, \sigma_e$ of $\Gamma$ constitute the group $\gal(L/L^{\ur})$, and that $\sigma_m$ projects to the Frobenius automorphism of $L^{\ur}$ over $F$. 
-In order to encode the data of the extension tower $L/L^{\ur}/F$, we let $f=m/e$, and first introduce the parameters $b_0,\dots, b_{f-1}$ ranging over $F$, which serve as the coefficients of a polynomial whose root generates $L^{\ur}$. 
-We identify $L^{ur}$ with   $F[x]/(p(x))$, where $p(x)=\sum_{i=1}^f b_i x^i$. 
+$$ 1\to I \to \gal(L/F)\to \gal(L^{ur}/F)\to 1.$$
+We 
+%fix the ramification index $e$, and make the convention that the elements
+%$\sigma_1, \dots, \sigma_e$ of $\Gamma$ constitute the group $\gal(L/L^{\ur})$, and 
+make the convention that $\sigma_m$ projects to a generator of $L^{\ur}$ over $F$. 
+In order to encode the data of the extension tower $L/L^{\ur}/F$, we let $f=m/e$, and first introduce the parameters $b_0,\dots, b_{f-1}$ ranging over $\ri_F$, which serve as the coefficients of a polynomial whose root generates $L^{\ur}$. 
+We identify $L^{ur}$ with   $F[x]/(p(x))$, where $p(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$. 
 Further, we introduce the parameters $c_0, \dots, c_{e-1}$, which range over 
 $L^{\ur}$ (i.e., can be thought of as $f$-tuples of elements of $F$), and which play the role of the coefficients of a polynomial generating the extension $L/L^{\ur}$. 
-We impose the conditions that: 
-\begin{itemize}
-\item
+We impose the conditions (all of which are definable by Denef-Pas language formulas) that: 
+\begin{enumerate}
+\item the polynomial $p(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$ is irreducible over $F$ and its reduction 
+$\mod \varpi_F$ is irreducible over $k_F$ and generates a degree $f$ extension of $k_F$. 
+This ensures that $F[x]/(p(x))$ is a degree $f$ unramified extension. 
+We denote this extension by $L^\ur$, and once and for all fix an identification with $F^f$ as 
+an $F$-vector space. 
+\item  the elements $c_0, \dots, c_{e-1}$ define an irreducible polynomial over $L^\ur$ with splitting field of degree $e$; this is the field $L$, and we also fix its identification with 
+$(L^\ur)^e$ as an $L^\ur$-vector space, with allows us to think of its elements as $m$-tuples of elements of $F$. 
+\item $\sigma_1, \dots \sigma_m$ are distinct field automorphisms of $L$ over $F$, and 
+ $\sigma_1, \dots \sigma_e$ fix $L^\ur$.
+\item The restriction of $\sigma_m$ to $L^\ur$ is a generator of $\gal(L^\ur/F)$. 
+\item the group $\{\sigma_1, \dots, \sigma_n\}$ is isomorphic to $\Gamma$.
+\end{enumerate}
+We denote by $\cE_\Gamma$ the space of parameters $(b_0, \dots, b_{f-1}, c_0, \dots, c_{e-1}, \sigma_1, \dots, \sigma_n)$ with these properties, thought of as a definable subset of some large affine space over $F$. 
+Given a field $F$ of sufficiently large residue characteristic, every element of $\cE_\Gamma$ gives rise to a tower of field extensions $L/L^\ur/F$ with $\gal(L/F)$ isomorphic to $\Gamma$ and satisfying all the above conditions. Note, however, that we cannot quite distinguish between 
+isomorphism classes of extensions, but all extensions of a given field $F$ with Galois group 
+$\Gamma$ arise via this construction.   
+\begin{example}
+The two ramified quadratic extensions of $F$ appear as members of the same family, one for the 
+polynomial $x^2-\varpi$, another for the polynomial $x^2-\epsilon\varpi$, where $\epsilon$  is any non-square unit. We also recall that the interpretation of formulas in Denef-Pas language depends not just on the field, but also on the choice of the uniformizer of the valuation. Thus, in this case, a different choice of the uniformizer would cause these two extensions to switch places, but they would still both appear. 
+\end{example}
+\begin{rem} We observe that in this context we cannot use standard number-theoretic constructions involving objects such as the cyclotomic polynomial, since we need to be able to let $F$ with its residue characteristic vary, and thus polynomials whose degree depends on $p$ are not allowed. For the same reason, we cannot use the Frobenius automorphism.  
+\end{rem}
+Our goal is to construct all tori over $F$ that split over a Galois extension with Galois group 
+$\Gamma$ and inertia subgroup $I$, and the identity components of their N\'eron models, as 
+definable sets fibered over $\cE_\Gamma$.  
 
-\end{itemize}
+\subsection{Characters and cocharacters}
+We follow \cite{cluckers-hales-loeser} in the treatment of the character and cocharacter lattices.
+We will think of a split rank $n$ torus ${\bT}^\spl$ as the set of diagonal matrices in $\GL_n$, which is, clearly, definable. Its character lattice $X^\ast({\bT}^\spl)$ is viewed as a subset of the coordinate ring of $\bT^\spl$, whose elements are, explicitly, polynomials in $n^2$ variables. 
 
+For $\epsilon=(\bar b, \bar c, \sigma_1, \dots, \sigma_n)\in \cE_\Gamma$, we get an extension tower 
+$L_\epsilon/L_\epsilon^\ur/F$, and we can define the action of  
 
 
 \section{General reductive groups}
-
+{\bf XX Here want to prove that $G_{x, 0}$ is definable; canonical measure is motivic; formal degree is motivic. }
 
 
 
