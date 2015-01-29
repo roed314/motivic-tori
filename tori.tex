@@ -224,12 +224,25 @@ Our goal is to construct all tori over $F$ that split over a Galois extension wi
 $\Gamma$ and inertia subgroup $I$, and the identity components of their N\'eron models, as 
 definable sets fibered over $\cE_\Gamma$.  
 
-\subsection{Characters and cocharacters}
+\subsection{The set-up}
 We follow \cite{cluckers-hales-loeser} in the treatment of the character and cocharacter lattices.
 We will think of a split rank $n$ torus ${\bT}^\spl$ as the set of diagonal matrices in $\GL_n$, which is, clearly, definable. Its character lattice $X^\ast({\bT}^\spl)$ is viewed as a subset of the coordinate ring of $\bT^\spl$, whose elements are, explicitly, polynomials in $n^2$ variables. 
-
+We also fix, once and for all, an isomorphism between $X^\ast(\bT^\spl)$ and $\Z^n$. 
+\footnote{As pointed out in \cite{cluckers-hales-loeser}, this makes it tempting to represent 
+$X^\ast(\bT^\spl)$ by constants (or variables) of the $\Z$-sort in Denef-Pas language, but this, indeed, is a wrong way to proceed.}
+From now on, together with the groups $\Gamma$ and $I$, we shall fix a homomorphism
+$\theta:\Gamma \to \GL_n(\Z)$, as part of the initial completely field-independent `fixed data' built into all our constructions.
+Moreover, the set $H^1(\Gamma, \GL_n(\Z))$ is completely field-independent, and therefore can also be fixed from the start. We can, and will, fix a set of representatives of these cohomology classes, and denote them by $Z=\{z_1, \dots, z_m\}$. We will use the $z_i$ in Denef-Pas formulas, thinking of them as $n\times n$-matrices whose entries are \emph{constants of the valued  field sort}. 
+ 
 For $\epsilon=(\bar b, \bar c, \sigma_1, \dots, \sigma_n)\in \cE_\Gamma$, we get an extension tower 
-$L_\epsilon/L_\epsilon^\ur/F$, and we can define the action of  
+$L_\epsilon/L_\epsilon^\ur/F$. For $z\in Z$, define the action of $\gal(L/F)$ on $\bT^\spl(L)$ by
+$\sigma\cdot  t:=z(\sigma)\sigma^{-1}t$, where $t\in \bT^\spl(L)$, and for $\sigma\in \Gamma$, 
+$\sigma^{-1}t$ is the coordinate-wise action of $\sigma^{-1}$, which is thought explicitly as an $n\times n$-matrix with entries that are definable functions of the parameters $(\bar b, \bar c)$, on the coordinates of $t$, which are thought of as elements of $L$, i.e., as tuples of $F$-variables. 
+
+The $F$-tori that split over $L$ are in bijection with  the set $Z$; for $z\in Z$, we denote the corresponding algebraic $F$-torus by $\bT_z$. 
+By the above construction, the set of its $F$-points $\bT_z(F)$ is definable by a formula in Denef-Pas language (using parameters in $\cE_\Gamma)$, since it is the set of fixed points of the action defined in the above paragraph. 
+
+\subsection{The connected component of the N\'eron model: induced case}
 
 
 \section{General reductive groups}
