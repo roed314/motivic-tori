@@ -115,7 +115,8 @@
 \newcommand{\rde}{{\text{RDef}}}
 \newcommand{\K}{F}
 \newcommand{\mexp}{\mathbf{e}}
-
+\newcommand{\Ner}[1]{\mathcal{#1}}
+\newcommand{\NerC}[1]{\mathcal{#1}^\circ}
 
 \def\llp{\mathopen{(\!(}}
 \def\llb{\mathopen{[\![}}
@@ -245,9 +246,9 @@ for $z\in Z$, we denote the corresponding algebraic $F$-torus by $\bT_z$.
 By the above construction, the set of its $F$-points $\bT_z(F)$ is definable by a formula in Denef-Pas language (using parameters in $\cE_\Gamma)$, since it is the set of fixed points of the action defined in the above paragraph. 
 
 \subsection{The connected component of the N\'eron model: induced case}
-Let us first consider the case $\bT=\Res_{L/F} \bT^\spl$, where $L$ is a finite Galois extension with Galois group $\Gamma$ as above. This is equivalent to choosing a cocycle $z$ that gives action on $X^\ast(\bT^\spl)\simeq \Z^n$ that is induced from the trivial action. 
-Note that this condition on $z$ is definable. ({\bf XX Do we need this? If no, maybe remove, if yes, provide detail}).
-
+Let us first consider the case $\bT=\Res_{L/F} \bT^\spl$, where $L$ is a finite Galois extension with Galois group $\Gamma$ as above. This is equivalent to choosing a cocycle $z$ that gives the action on $X^\ast(\bT^\spl)\simeq \Z^n$ induced from the trivial action. 
+% Note that this condition on $z$ is definable. ({\bf XX Do we need this? If no, maybe remove, if yes, provide detail}).
+Write $\Ner{T}$ for the N\'eron model of $\bT$, and $\NerC{T}$ for its identity component.  Then $\Ner{T}(\ri_F) = \bT(F) = L^\times$ consists of tuples of $F$-variables that are not all zero, and $\NerC{T}(\ri_F) = \ri_F^\times$ tuples of $F$-variables all with non-negative valuation -- both are definable conditions.
 
 \section{General reductive groups}
 {\bf XX Here want to prove that $G_{x, 0}$ is definable; canonical measure is motivic; formal degree is motivic. }
