@@ -44,7 +44,6 @@
 \newcommand{\cO}{\mathcal{O}}
 
 
-
 \newcommand{\bF}{\mathbf{F}}
 \newcommand{\ri}{\mathcal{O}}
 \newcommand{\gl}{\mathfrak{gl}}
@@ -76,6 +75,8 @@
 %\newcommand{\bG}{\mathbf {G}}
 \newcommand{\bG}{\mathbf{G}}
 \newcommand{\bT}{\mathbf {T}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bR}{\mathbf{R}}
 \newcommand{\bM}{\mathbf {M}}
 \newcommand{\cV}{\mathcal{V}}
 \newcommand{\can}{\mathrm{can}}
@@ -123,7 +124,8 @@
 \def\rrp{\mathopen{)\!)}}
 \def\rrb{\mathopen{]\!]}}
 
-
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Ind}{Ind}
 
 
 %%%%%%%%%%%%% Theorem declarations %%%%%%%%%%%%%
@@ -249,6 +251,18 @@ By the above construction, the set of its $F$-points $\bT_z(F)$ is definable by 
 Let us first consider the case $\bT=\Res_{L/F} \bT^\spl$, where $L$ is a finite Galois extension with Galois group $\Gamma$ as above. This is equivalent to choosing a cocycle $z$ that gives the action on $X^\ast(\bT^\spl)\simeq \Z^n$ induced from the trivial action. 
 % Note that this condition on $z$ is definable. ({\bf XX Do we need this? If no, maybe remove, if yes, provide detail}).
 Write $\Ner{T}$ for the N\'eron model of $\bT$, and $\NerC{T}$ for its identity component.  Then $\Ner{T}(\ri_F) = \bT(F) = L^\times$ consists of tuples of $F$-variables that are not all zero, and $\NerC{T}(\ri_F) = \ri_F^\times$ tuples of $F$-variables all with non-negative valuation -- both are definable conditions.
+
+\subsection{The connected component of the N\'eron model}
+
+We want to show that the identity component of the N\'eron model is definable.  Consider the short exact sequence of $\Gal(L/F)$-modules
+\[
+0 \to X^*(\bT) \to \Ind_{G_F}^{G_L} X^*(\bT) \to X' \to 0
+\]
+defined in \cite{brahm}*{Satz 0.4.4} and the dual sequence of tori
+\[
+1 \to \Res_{L/F}^1(\bT_L) \to \Res_{L/F} (\bT_L) \to \bT \to 1.
+\]
+Write $\bS = \Res_{L/F} (\bT_L)$ and $\Ner{S}$ for the N\'eron model of $\bS$; $\bR = \Res_{L/F}^1 (\bT_L)$ and $\Ner{R}$ for its N\'eron model. We seek a formula that tests when a given element of $\bT(F)$ actually lies in $\NerC{T}(\ri_F) \subseteq \Ner{T}(\ri_F) = \bT(F)$. The set $\bS(F) \cong (L^\times)^n$ is definable, as is the valuation map to the component group of its N\'eron model, $v : \bS(F) \to \pi_0(\Ner{S}) \cong \Z^n$.  The image of $\pi_0(\Ner{R})$ in $\pi_0(\Ner{S})$ is independent of $F$, so we may fix generators $z_1, \ldots, z_n$ for use in our formulas.  The functor $\bT \mapsto \pi_0(\Ner{T})$ is right exact \cite{bertrapelle-gonzales:13b}*{Prop. 3.8}, so to determine whether a given element $t \in \bT(F)$ lies in $\NerC{T}(\ri_F)$, it suffices to check if there exists an element of $\bS(F)$ projecting to $t$ with valuation in the span of $z_1, \ldots, z_n$.  This is a definable condition.
 
 \section{General reductive groups}
 {\bf XX Here want to prove that $G_{x, 0}$ is definable; canonical measure is motivic; formal degree is motivic. }
