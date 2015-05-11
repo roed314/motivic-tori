@@ -158,7 +158,7 @@ the representation theory of $p$-adic groups, that was started by T. Hales in 19
 Here  the word ``motivic'' refers to the use of the theory of motivic integration, as developed by R. Cluckers and F. Loeser in \cite{cluckers-loeser}; in this paper, no integration will be required, so ``definable'' would have been a better term to use. 
 
 Specifically, our goal is to prove that the canonical maximal parahoric subgroup of a connected reductive $p$-adic group, as defined by  B. Gross in \cite{gross:motive} using Bruhat-Tits theory, is definable using Denef-Pas language, which is the language used in Cluckers-Loeser theory of motivic integration and, consequently,  in all its applications to representation theory of $p$-adic groups. As a consequence, we  prove that for any connected reductive group the canonical Haar measure (in the sense of \cite{gross:motive}) is motivic.
-{\bf XX Can we think of the motive of a reductive group as its motivic volume?}
+{\bf XX Can we think of the motive of a reductive group as its motivic volume? Careful though: Artin-Tate motives vs. Chow motives. think about it.}
 
 In fact, for unramified groups this statement has been known for a while, cf. \cite{cluckers-hales-loeser}. However, for a ramified group $\bG$, there is a difficulty caused by the fact that the canonical smooth model of $\bG$, whose definition relies on the N\'eron model of a maximal torus in $\bG$, does not behave well with respect to Galois descent. Thus, the main technical difficulty we deal with in this paper is proving that the connected component of the N\`eron model of a tamely ramified torus is definable in the language of Denef-Pas. We note that this difficulty is largely caused by the fact that ``taking the connected component'' is not, naturally, an operation that can easily be described by first-order logic. 
 
@@ -179,6 +179,7 @@ A formula in Denef-Pas language  with $n$ free $VF$-variables, $m$ free $RF$-var
 $\Z$-variables 
 defines a subset of $F^n\times k_F^m \times \Z^r$. 
 We will denote the definable set $F^n\times k_F^m \times \Z^r$ itself by $VF^n\times RF^m\times \Z^r$. In earlier works on motivic integration this set was denoted by $h[n,m,r]$. 
+
 
 \subsection{Field extensions}
 We start by setting up the framework for working with tori, and later, general reductive groups, in Denef-Pas language, following \cite{cluckers-hales-loeser}, \cite{CGH-2}, and \cite{hales:transfert}. 
@@ -250,9 +251,11 @@ By the above construction, the set of its $F$-points $\bT_z(F)$ is definable by 
 \subsection{The connected component of the N\'eron model: induced case}
 Let us first consider the case $\bT=\Res_{L/F} \bT^\spl$, where $L$ is a finite Galois extension with Galois group $\Gamma$ as above. This is equivalent to choosing a cocycle $z$ that gives the action on $X^\ast(\bT^\spl)\simeq \Z^n$ induced from the trivial action. 
 % Note that this condition on $z$ is definable. ({\bf XX Do we need this? If no, maybe remove, if yes, provide detail}).
-Write $\Ner{T}$ for the N\'eron model of $\bT$, and $\NerC{T}$ for its identity component.  Then $\Ner{T}(\ri_F) = \bT(F) = L^\times$ consists of tuples of $F$-variables that are not all zero, and $\NerC{T}(\ri_F) = \ri_F^\times$ tuples of $F$-variables all with non-negative valuation -- both are definable conditions.
+Write $\Ner{T}$ for the N\'eron model of $\bT$, and $\NerC{T}$ for its identity component.  Then $\Ner{T}(\ri_F) = \bT(F) = L^\times$ consists of tuples of $F$-variables that are not all zero, and $\NerC{T}(\ri_F) = \ri_F^\times$ consists of tuples of $F$-variables all with non-negative valuation -- both are definable conditions.
 
-\subsection{The connected component of the N\'eron model}
+We observe that in this case the component group of $\Ner{T}$ can be identified with $\Z^n$, and here we interpret $\Z^n$ as the value sort. The map $v:\Ner{T} \to \pi_0(\Ner{T})$ is the component-wise valuation: we treat an element of $L$ as an $n$-tuple of elements of $F$, and $v$ maps it to the  tuple of valuations of the components. 
+
+\subsection{The connected component of the N\'eron model: an outline}
 
 We want to show that the identity component of the N\'eron model is definable.  Consider the short exact sequence of $\Gal(L/F)$-modules
 \[
@@ -262,7 +265,20 @@ defined in \cite{brahm}*{Satz 0.4.4} and the dual sequence of tori
 \[
 1 \to \Res_{L/F}^1(\bT_L) \to \Res_{L/F} (\bT_L) \to \bT \to 1.
 \]
-Write $\bS = \Res_{L/F} (\bT_L)$ and $\Ner{S}$ for the N\'eron model of $\bS$; $\bR = \Res_{L/F}^1 (\bT_L)$ and $\Ner{R}$ for its N\'eron model. We seek a formula that tests when a given element of $\bT(F)$ actually lies in $\NerC{T}(\ri_F) \subseteq \Ner{T}(\ri_F) = \bT(F)$. The set $\bS(F) \cong (L^\times)^n$ is definable, as is the valuation map to the component group of its N\'eron model, $v : \bS(F) \to \pi_0(\Ner{S}) \cong \Z^n$.  The image of $\pi_0(\Ner{R})$ in $\pi_0(\Ner{S})$ is independent of $F$, so we may fix generators $z_1, \ldots, z_n$ for use in our formulas.  The functor $\bT \mapsto \pi_0(\Ner{T})$ is right exact \cite{bertrapelle-gonzales:13b}*{Prop. 3.8}, so to determine whether a given element $t \in \bT(F)$ lies in $\NerC{T}(\ri_F)$, it suffices to check if there exists an element of $\bS(F)$ projecting to $t$ with valuation in the span of $z_1, \ldots, z_n$.  This is a definable condition.
+Write $\bS = \Res_{L/F} (\bT_L)$ and $\Ner{S}$ for the N\'eron model of $\bS$; $\bR = \Res_{L/F}^1 (\bT_L)$ and $\Ner{R}$ for its N\'eron model. 
+%We have the exact sequence of N\'eron models 
+%\[
+%1 \to \Ner{R} \to \Ner{S} \to \Ner{T} \to 1, 
+%\]
+%and the resulting sequence of component groups 
+We seek a formula that tests when a given element of $\bT(F)$ actually lies in $\NerC{T}(\ri_F) \subseteq \Ner{T}(\ri_F) = \bT(F)$. The set $\bS(F) \cong (L^\times)^n$ is definable, as is the valuation map to the component group of its N\'eron model, $v : \bS(F) \to \pi_0(\Ner{S}) \cong \Z^n$.  The image of $\pi_0(\Ner{R})$ in $\pi_0(\Ner{S})$ is independent of $F$ (as can be seen from \cite{bertrapelle-gonzales:13b}*{Prop. 3.8}), so we may fix generators $r_1, \ldots, r_m$ for use in our formulas.  The functor $\bT \mapsto \pi_0(\Ner{T})$ is right exact \cite{bertrapelle-gonzales:13b}*{Prop. 3.8}, so to determine whether a given element $t \in \bT(F)$ lies in $\NerC{T}(\ri_F)$, it suffices to check if there exists an element of $\bS(F)$ projecting to $t$ with valuation in the span of $r_1, \ldots, r_m$.  This is a definable condition.
+Thus, to implement this construction precisely, we need to introduce the fixed choice 
+$r_1, \dots, r_m$ and the suitable compatibility conditions. 
+
+
+\subsection{}More precisely, we need to make fixed choices of $z_1, \dots z_n$. 
+There is a compatibility condition -- the quotient of $\Z^n$ by the lattice generated by this fixed choice should be $(X_\ast)_I$, which is already fixed at this point. 
+Rename the $z$'s -- $z$ is reserved for cocycle.  
 
 \section{General reductive groups}
 {\bf XX Here want to prove that $G_{x, 0}$ is definable; canonical measure is motivic; formal degree is motivic. }
