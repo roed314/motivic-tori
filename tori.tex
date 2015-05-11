@@ -98,7 +98,6 @@
 \newcommand\cA{{\mathcal A}}
 %\newcommand\co{{\mathcal O}}
 \newcommand\cB{{\mathcal B}}
-\newcommand\ord{\mathrm{ord}}
 \newcommand\ac{\overline{\mathrm{ac}}}
 \newcommand\lef{\mathbb L}
 \newcommand\cP{{\mathcal P}}
@@ -109,7 +108,6 @@
 \newcommand\mot{\mathrm{mot}}
 \newcommand\spl{\mathrm{spl}}
 \newcommand{\scD}{\mathscr{D}}
-\newcommand{\Res}{\mathrm{Res}}
 
 
 \newcommand{\de}{{\text{Def}}}
@@ -126,7 +124,8 @@
 
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\Ind}{Ind}
-
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Res}{Res}
 
 %%%%%%%%%%%%% Theorem declarations %%%%%%%%%%%%%
 \theoremstyle{plain}
@@ -180,9 +179,25 @@ $\Z$-variables
 defines a subset of $F^n\times k_F^m \times \Z^r$. 
 We will denote the definable set $F^n\times k_F^m \times \Z^r$ itself by $VF^n\times RF^m\times \Z^r$. In earlier works on motivic integration this set was denoted by $h[n,m,r]$. 
 
+We start by setting up the framework for working with tori in the Denef-Pas language, following \cite{cluckers-hales-loeser}, \cite{CGH-2} and \cite{hales:transfert}.
+
+\subsection{Fixed choices}
+
+As in \cite{hales:transfert}*{\S 2.1}, we begin by outlining our \emph{fixed choices}, which are made before writing any formulas in the Denef-Pas language.  
+In this way, we split the definition of the torus $\bT$ into choices made without reference to the base field $F$ and formulas determining the dependence on $F$.
+
+We fix a finite group $\Gamma$ and a normal subgroup $I \unlhd \Gamma$, as well as enumerations of their elements $\Gamma = \{\sigma_1, \dots, \sigma_m\}$ and $I = \{\sigma_1, \dots, \sigma_e\}$.  These groups will play the role of $\Gal(L/F)$ and its inertia subgroup, where $L$ is the splitting field of $\bT$.
+
+We now set up character and cocharacter lattices for $\bT$.  We begin by fixing a positive integer $n$, an abstract split torus ${\bT}^\spl$ and an isomorphism $X^\ast(\bT^\spl) \cong \Z^n$.
+\footnote{in contrast to \cite{cluckers-hales-loeser}, where they parameterize $X^\ast(\bT^\spl)$ using valued field variables, since they need characters as functions to $F^\times$.}
+
+In order to define $\bT$ from $\bT^\spl$, we fix a homomorphism
+\[
+\theta : \Gamma \to \GL_n(\Z).
+\]
 
 \subsection{Field extensions}
-We start by setting up the framework for working with tori in the Denef-Pas language, following \cite{cluckers-hales-loeser}, \cite{CGH-2} and \cite{hales:transfert}. 
+ 
 
 We encode field extensions in the same way as in \cite{CGH-2}. Namely, we fix a finite group $\Gamma$, and realize all tori over a given local field $F$ that split over a Galois extension $L$ with the Galois group 
 isomorphic to $\Gamma$ as members of a family of definable sets, for all $F$ of sufficiently large residue characteristic. 
@@ -196,19 +211,19 @@ We
 %fix the ramification index $e$, and make the convention that the elements
 %$\sigma_1, \dots, \sigma_e$ of $\Gamma$ constitute the group $\gal(L/L^{\ur})$, and 
 make the convention that $\sigma_m$ projects to a generator of $L^{\ur}$ over $F$. 
-In order to encode the data of the extension tower $L/L^{\ur}/F$, we let $f=m/e$, and first introduce the parameters $b_0,\dots, b_{f-1}$ ranging over $\ri_F$, which serve as the coefficients of a polynomial whose root generates $L^{\ur}$. 
-We identify $L^{ur}$ with   $F[x]/(p(x))$, where $p(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$. 
-Further, we introduce the parameters $c_0, \dots, c_{e-1}$, which range over 
-$L^{\ur}$ (i.e., can be thought of as $f$-tuples of elements of $F$), and which play the role of the coefficients of a polynomial generating the extension $L/L^{\ur}$. 
-We impose the conditions (all of which are definable by Denef-Pas language formulas) that: 
+In order to encode the data of the extension tower $L/L^{\ur}/F$, we let $f=m/e$ and introduce parameters $b_0,\dots, b_{f-1}$, ranging over $\ri_F$.
+We set $b(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$ and identify $L^{ur}$ with $F[x]/(b(x))$. 
+Similarly, we introduce parameters $c_0, \dots, c_{e-1}$, ranging over $L^{\ur}$
+(i.e., each is given by an $f$-tuple of elements of $F$), set $c(x) = x^e + c_{e-1}x^{e-1} + \dots + c_0$ and identify $L$ with $L^{\ur}[x]/(c(x))$. 
+We impose the conditions (all of which are definable by formulas in the Denef-Pas language) that: 
 \begin{enumerate}
-\item the polynomial $p(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$ is irreducible over $F$ and its reduction 
-$\mod \varpi_F$ is irreducible over $k_F$ and generates a degree $f$ extension of $k_F$. 
-This ensures that $F[x]/(p(x))$ is a degree $f$ unramified extension. 
+\item the reduction of $b(x)$ modulo $\varpi_F$ is irreducible over $k_F$. 
+This ensures that $F[x]/(b(x))$ is a degree $f$ unramified field extension of $F$. 
 We denote this extension by $L^\ur$, and once and for all fix an identification with $F^f$ as 
 an $F$-vector space. 
-\item  the elements $c_0, \dots, c_{e-1}$ define an irreducible polynomial over $L^\ur$ with splitting field of degree $e$; this is the field $L$, and we also fix its identification with 
-$(L^\ur)^e$ as an $L^\ur$-vector space, with allows us to think of its elements as $m$-tuples of elements of $F$. 
+\item the polynomial $c(x)$ is Eisenstein: $\ord_{L^{\ur}}(c_0) = 1$ and $\ord_{L^{\ur}}(c_i) \ge 1$ for all $i$.
+We further assume that the resulting extension $L/F$ is Galois.
+We fix an identification of $L$ with $(L^\ur)^e$ as $L^\ur$-vector spaces, and thus with $F^m$ as $F$-vector spaces. 
 \item $\sigma_1, \dots \sigma_m$ are distinct field automorphisms of $L$ over $F$, and 
  $\sigma_1, \dots \sigma_e$ fix $L^\ur$.
 \item The restriction of $\sigma_m$ to $L^\ur$ is a generator of $\gal(L^\ur/F)$. 
@@ -291,6 +306,11 @@ By definition, $G_x$ is generated by $T_x$ and $U_\psi$, where
 Now that we know that $T_x$ is definable, the proof of identical to that of Lemma 3.4 in \cite{CGH-2}.  
 \end{proof} 
 
+\begin{bibdiv}
+\begin{biblist}
+\bibselect{references}
+\end{biblist}
+\end{bibdiv}
 
 \end{document}
 
