@@ -10,6 +10,8 @@
 \usepackage{color}
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
+%\usetikzlibrary{shapes,arrows,calc,matrix}
+\usepackage{tikz-cd}
 \usepackage{mathrsfs}
 
 \definecolor{bettergreen}{rgb}{0,.7,0}
@@ -129,6 +131,7 @@
 \DeclareMathOperator{\Ind}{Ind}
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Hom}{Hom}
 
 %%%%%%%%%%%%% Theorem declarations %%%%%%%%%%%%%
 \theoremstyle{plain}
@@ -194,13 +197,13 @@ We start by setting up the framework for working with tori in the Denef-Pas lang
 As in \cite{hales:transfert}*{\S 2.1}, we begin by outlining our \emph{fixed choices}, which are made before writing any formulas in the Denef-Pas language.  
 In this way, we split the definition of the torus $\bT$ into choices made without reference to the base field $F$ and formulas determining the dependence on $F$.
 
-We fix a finite group $\Gamma$ and a normal subgroup $I \unlhd \Gamma$, as well as enumerations of their elements $\Gamma = \{\sigma_1, \dots, \sigma_m\}$ and $I = \{\sigma_1, \dots, \sigma_e\}$.  We make the convention that $\sigma_m$ generates $\Gamma / I$.  These groups will play the role of $\Gal(E/F)$ and its inertia subgroup, where $E$ is the splitting field of $\bT$.
+We fix a finite group $\Gamma$ and a normal subgroup $I \unlhd \Gamma$, as well as enumerations of their elements $\Gamma = \{\sigma_1, \dots, \sigma_m\}$ and $I = \{\sigma_1, \dots, \sigma_e\}$.  We make the convention that $\sigma_1 = 1$ and $\sigma_m$ generates $\Gamma / I$.  These groups will play the role of $\Gal(E/F)$ and its inertia subgroup, where $E$ is the splitting field of $\bT$.
 
-In order to define a torus $\bT$, we will use the equivalence of categories between $F$-tori and free $\Z$-modules with a Galois action.  To this end, we fix a positive integer $n$ and a homomorphism
+In order to define a torus $\bT$, we will use the equivalence of categories between $F$-tori and free $\Z$-modules with a Galois action.  To this end, we fix a positive integer $n$ and an injective homomorphism
 \[
-\theta : \Gamma \to \GL_n(\Z),
+\theta : \Gamma \hookrightarrow \GL_n(\Z),
 \]
-which gives $\Z^n$ an action of $\Gamma$.  The $\Gamma$-module $X$ defined by $\theta$ will play the role of $X^\ast(\bT)$.
+which gives $\Z^n$ an action of $\Gamma$.  The $\Gamma$-module $X$ defined by $\theta$ will play the role of $X_\ast(\bT)$.
 
 Finally, we fix a resolution of $X$ by an induced $\Gamma$-module $Y$, i.e. a surjective map $Y \to X$ where $Y$ has a basis permuted by $\Gamma$ (c.f. \cite{brahm}*{Satz 0.4.4}).  This resolution will allow us to definably cut out the connected component of the N\'eron model inside $\bT(F)$.
 
@@ -209,92 +212,83 @@ Finally, we fix a resolution of $X$ by an induced $\Gamma$-module $Y$, i.e. a su
 %In order to define $\bT$ as a twist of $\bT^\spl$, we fix a homomorphism
 
 
-\subsection{Field extensions}
+\subsection{Parameterizing field extensions and tori}
  
-We encode field extensions in the same way as in \cite{CGH-2}. Namely, we parameterize Galois extensions $E/F$ with $\Gal(E/F) \cong \Gamma$ and realize all tori over $F$ that split over $E$ with character lattice $X$.  This parameterizes such tori as members of a family of definable sets, for all $F$ of sufficiently large residue characteristic. 
+We encode field extensions in the same way as in \cite{CGH-2}.
+Namely, we parameterize Galois extensions $E/F$ with $\Gal(E/F) \cong \Gamma$
+and realize all tori over $F$ that split over $E$ with character lattice $X$.
+This parameterizes such tori as members of a family of definable sets,
+for all $F$ of sufficiently large residue characteristic. 
 
 We will write $L$ for the unramified subextension of $E/F$.  In order to encode the data of the extension tower $E/L/F$, we let $f=m/e$ and introduce parameters $b_0,\dots, b_{f-1}$, ranging over $\ri_F$.
-We set $b(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$ and identify $L$ with $F[x]/(b(x))$. 
+We set $b(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$. 
 Similarly, we introduce parameters $c_0, \dots, c_{e-1}$, ranging over $L$
-(i.e., each is given by an $f$-tuple of elements of $F$), set $c(x) = x^e + c_{e-1}x^{e-1} + \dots + c_0$ and identify $E$ with $L[x]/(c(x))$. 
-We impose the conditions (all of which are definable by formulas in the Denef-Pas language) that: 
+(i.e., each is given by an $f$-tuple of elements of $F$) and set $c(y) = y^e + c_{e-1}y^{e-1} + \dots + c_0$.
+
+We impose the following conditions on these parameters, all of which are definable by formulas in the Denef-Pas language. 
 \begin{enumerate}
-\item the reduction of $b(x)$ modulo $\varpi_F$ is irreducible over $k_F$. 
+\item The reduction of $b(x)$ modulo $\varpi_F$ is irreducible over $k_F$. 
 This ensures that $F[x]/(b(x))$ is a degree $f$ unramified field extension of $F$. 
 We denote this extension by $L$, and once and for all fix an identification with $F^f$ as 
 an $F$-vector space. 
-\item the polynomial $c(x)$ is Eisenstein: $\ord_L(c_0) = 1$ and $\ord_L(c_i) \ge 1$ for all $i$.
-We further assume that the resulting extension $E/F$ is Galois.
+\item The polynomial $c(x)$ is Eisenstein: $\ord_L(c_0) = 1$ and $\ord_L(c_i) \ge 1$ for all $i$.
+We further assume that the resulting extension $E = L[x]/(c(x))$ is Galois over $F$.
 We fix an identification of $E$ with $L^e$ as $L$-vector spaces, and thus with $F^m$ as $F$-vector spaces. 
-\item $\sigma_1, \dots \sigma_m$ are distinct field automorphisms of $E$ over $F$, and 
- $\sigma_1, \dots \sigma_e$ fix $L$.
-\item The restriction of $\sigma_m$ to $L$ is a generator of $\gal(L/F)$. 
-\item the group $\{\sigma_1, \dots, \sigma_n\}$ is isomorphic to $\Gamma$.
+\item The field automorphisms of $E$ over $F$, as specified by $m \times m$ matrices over $F$, form a group isomorphic to $\Gamma$.
+We will write $\sigma_i$ for the matrix as well as the corresponding element of $\Gamma$.
+\item The automorphisms $\sigma_1, \dots, \sigma_e$ fix $L$, and the restriction of $\sigma_m$ to $L$ has order $f$.
 \end{enumerate}
-We denote by $\cE_\Gamma$ the space of parameters $(b_0, \dots, b_{f-1}, c_0, \dots, c_{e-1}, \sigma_1, \dots, \sigma_n)$ with these properties, thought of as a definable subset of some large affine space over $F$. 
-Given a field $F$ of sufficiently large residue characteristic, every element of $\cE_\Gamma$ gives rise to a tower of field extensions $E/L/F$ with $\gal(E/F)$ isomorphic to $\Gamma$ and satisfying all the above conditions. Note, however, that we cannot quite distinguish between 
-isomorphism classes of extensions, but all extensions of a given field $F$ with Galois group 
-$\Gamma$ arise via this construction.   
+We denote by $\cE_\Gamma$ the space of parameters $(b_0, \dots, b_{f-1}, c_0, \dots, c_{e-1}, \sigma_1, \dots, \sigma_m)$ with these properties,
+thought of as a definable subset of some large affine space over $F$.
+For each local field $F$, every element of $\cE_\Gamma$ gives rise to a tower of field extensions $E/L/F$
+% Note that we don't actually need to require that F has large residue characteristic in this claim.
+with $\gal(E/F)$ isomorphic to $\Gamma$ and satisfying all the above conditions.
+The homomorphism $\theta$ then defines a torus $\bT$ over $F$ with cocharacter lattice $X$.
+This torus splits over $E$, with $\gal(E/F) \cong \Gamma$ acting on $\bT(E) = E^\times \otimes X$ diagonally.
+This action is definable, and therefore the set $\bT(F) = \bT(E)^\Gamma$ is as well.
+
+Note that different parameters in $\cE_\Gamma$ may yield isomorphic extensions, but that all isomorphism classes of $E/F$ with Galois group $\Gamma$
+arise from some element of $\cE_\Gamma$.  Moreover, as $\theta$ ranges over all homomorphisms $\Gamma \hookrightarrow \GL_n(\Z)$, all tori of dimension $n$ with splitting field $E$ will appear.
 \begin{example}
-The two ramified quadratic extensions of $F$ appear as members of the same family, one for the 
-polynomial $x^2-\varpi$, another for the polynomial $x^2-\epsilon\varpi$, where $\epsilon$  is any non-square unit. We also recall that the interpretation of formulas in Denef-Pas language depends not just on the field, but also on the choice of the uniformizer of the valuation. Thus, in this case, a different choice of the uniformizer would cause these two extensions to switch places, but they would still both appear. 
+Suppose $\Gamma = I = \Z / 2\Z$ and $n=1$; note that $\theta$ is uniquely determined in this case.
+For $p > 2$, the two ramified quadratic extensions of $F$ appear as members of the same family,
+one for the polynomial $c(x) = x^2-\varpi$, another for the polynomial $c(x) = x^2-\epsilon\varpi$,
+where $\epsilon \in \ri_F^\times$ is a non-square.
+Recall that the interpretation of formulas in Denef-Pas language depends not just on the field,
+but also on the choice of uniformizer. In this case, a different choice of the uniformizer
+would cause these two extensions to switch places, but they would still both appear.
+The torus $\bT$ is the the one-dimensional unitary group that splits over $E$.
 \end{example}
-\begin{rem} We observe that in this context we cannot use standard number-theoretic constructions involving objects such as the cyclotomic polynomial, since we need to be able to let $F$ with its residue characteristic vary, and thus polynomials whose degree depends on $p$ are not allowed. For the same reason, we cannot use the Frobenius automorphism.  
-\end{rem}
-Our goal is to construct all tori over $F$ that split over a Galois extension with Galois group 
-$\Gamma$ and inertia subgroup $I$, and the identity components of their N\'eron models, as 
-definable sets fibered over $\cE_\Gamma$.  
+%\begin{rem}
+%We observe that in this context we cannot use standard number-theoretic constructions involving objects such as the cyclotomic polynomial, since we need to be able to let $F$ with its residue characteristic vary, and thus polynomials whose degree depends on $p$ are not allowed. For the same reason, we cannot use the %Frobenius automorphism.  
+%\end{rem}
 
-\subsection{The set-up}
-We follow \cite{cluckers-hales-loeser} in the treatment of the character and cocharacter lattices.
-We will think of a split rank $n$ torus ${\bT}^\spl$ as the set of diagonal matrices in $\GL_n$, which is, clearly, definable. Its character lattice $X^\ast({\bT}^\spl)$ is viewed as a subset of the coordinate ring of $\bT^\spl$, whose elements are, explicitly, polynomials in $n^2$ variables. 
-We also fix, once and for all, an isomorphism between $X^\ast(\bT^\spl)$ and $\Z^n$. 
-\footnote{As pointed out in \cite{cluckers-hales-loeser}, this makes it tempting to represent 
-$X^\ast(\bT^\spl)$ by constants (or variables) of the $\Z$-sort in Denef-Pas language, but this, indeed, is a wrong way to proceed.}
-From now on, together with the groups $\Gamma$ and $I$, we shall fix a homomorphism
-$\theta:\Gamma \to \GL_n(\Z)$, as part of the initial completely field-independent `fixed data' built into all our constructions.
-Moreover, the set $H^1(\Gamma, \GL_n(\Z))$ is completely field-independent, and therefore can also be fixed from the start. The trivial class is represented by the map $\theta$.  We can, and will, fix a set of representatives of these cohomology classes, and denote them by $Z=\{z_1, \dots, z_m\}$. We will use the $z_i$ in Denef-Pas formulas, thinking of them as $|\Gamma|$-tuples of $n\times n$-matrices whose integer entries are \emph{constants of the valued  field sort}. 
- 
-For $\epsilon=(\bar b, \bar c, \sigma_1, \dots, \sigma_n)\in \cE_\Gamma$, we get an extension tower 
-$E_\epsilon/L_\epsilon^\ur/F$. For $z\in Z$, define the action of $\gal(E/F)$ on $\bT^\spl(E)$ by
-$\sigma\cdot  t:=z(\sigma)\sigma^{-1}t$, where $t\in \bT^\spl(E)$, and for $\sigma\in \Gamma$, 
-$\sigma^{-1}t$ is the coordinate-wise action of $\sigma^{-1}$, which is thought explicitly as an $n\times n$-matrix with entries that are definable functions of the parameters $(\bar b, \bar c)$, on the coordinates of $t$, which are thought of as elements of $E$, i.e., as tuples of $F$-variables. 
+\subsection{The identity component of the N\'eron model}
 
-The $F$-tori that split over $E$ are in bijection with  the set $Z$; 
-for $z\in Z$, we denote the corresponding algebraic $F$-torus by $\bT_z$. 
-By the above construction, the set of its $F$-points $\bT_z(F)$ is definable by a formula in Denef-Pas language (using parameters in $\cE_\Gamma)$, since it is the set of fixed points of the action defined in the above paragraph. 
+With $E/L/F$ and $\bT$ parameterized and $\bT(F)$ definable, we may now prove the main technical result of the paper.
+Write $\Ner{T}$ for the N\'eron model of $\bT$ (c.f. \cite{bosch-lutkebohmert-raynaud:neron}*{Ch. 10}); this is a model for $\bT$ over $\ri_F$ with the property that $\Ner{T}(\ri_F) = \bT(F)$.  Let $\NerC{T}$ be its identity component.
 
-\subsection{The connected component of the N\'eron model: induced case}
-Let us first consider the case $\bT=\Res_{E/F} \bT^\spl$, where $E$ is a finite Galois extension with Galois group $\Gamma$ as above. This is equivalent to choosing a cocycle $z$ that gives the action on $X^\ast(\bT^\spl)\simeq \Z^n$ induced from the trivial action. 
-% Note that this condition on $z$ is definable. ({\bf XX Do we need this? If no, maybe remove, if yes, provide detail}).
-Write $\Ner{T}$ for the N\'eron model of $\bT$, and $\NerC{T}$ for its identity component.  Then $\Ner{T}(\ri_F) = \bT(F) = L^\times$ consists of tuples of $F$-variables that are not all zero, and $\NerC{T}(\ri_F) = \ri_F^\times$ consists of tuples of $F$-variables all with non-negative valuation -- both are definable conditions.
+\begin{prop}
+The subset $\NerC{T}(\ri_F) \subseteq \bT(F)$ is definable.
+\end{prop}
+\begin{proof}
+We first consider the case that $L = F$.  Then the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(L) \to X_I$ from $\Ner{T}(\ri_L)$ to its component group (c.f. \citelist{\cite{bitan}*{3.1} \cite{kottwitz:isocrystals-2}*{\S 7}}).
 
-We observe that in this case the component group of $\Ner{T}$ can be identified with $\Z^n$, and here we interpret $\Z^n$ as the value sort. The map $v:\Ner{T} \to \pi_0(\Ner{T})$ is the component-wise valuation: we treat an element of $E$ as an $n$-tuple of elements of $F$, and $v$ maps it to the  tuple of valuations of the components. 
-
-\subsection{The connected component of the N\'eron model: an outline}
-
-We want to show that the identity component of the N\'eron model is definable.  Consider the short exact sequence of $\Gal(E/F)$-modules
+Our fixed choice of resolution $Y \to X$ yields an induced torus $\bR$ over $L$ with cocharacter lattice $Y$, together with a diagram
 \[
-0 \to X^*(\bT) \to \Ind_{G_F}^{G_E} X^*(\bT) \to X' \to 0
+\begin{tikzcd}
+\bR(L) \rar{\alpha} \dar{w_{\bR}} \drar{\beta} & \bT(L) \rar \dar{w_{\bT}} & 1 \\
+Y_I \rar & X_I \rar & 0
+\end{tikzcd}
 \]
-defined in \cite{brahm}*{Satz 0.4.4} and the dual sequence of tori
-\[
-1 \to \Res_{E/F}^1(\bT_E) \to \Res_{E/F} (\bT_E) \to \bT \to 1.
-\]
-Write $\bS = \Res_{E/F} (\bT_E)$ and $\Ner{S}$ for the N\'eron model of $\bS$; $\bR = \Res_{E/F}^1 (\bT_E)$ and $\Ner{R}$ for its N\'eron model. 
-%We have the exact sequence of N\'eron models 
-%\[
-%1 \to \Ner{R} \to \Ner{S} \to \Ner{T} \to 1, 
-%\]
-%and the resulting sequence of component groups 
-We seek a formula that tests when a given element of $\bT(F)$ actually lies in $\NerC{T}(\ri_F) \subseteq \Ner{T}(\ri_F) = \bT(F)$. The set $\bS(F) \cong (L^\times)^n$ is definable, as is the valuation map to the component group of its N\'eron model, $v : \bS(F) \to \pi_0(\Ner{S}) \cong \Z^n$.  The image of $\pi_0(\Ner{R})$ in $\pi_0(\Ner{S})$ is independent of $F$ (as can be seen from \cite{bertrapelle-gonzales:13b}*{Prop. 3.8}), so we may fix generators $r_1, \ldots, r_m$ for use in our formulas.  The functor $\bT \mapsto \pi_0(\Ner{T})$ is right exact \cite{bertrapelle-gonzales:13b}*{Prop. 3.8}, so to determine whether a given element $t \in \bT(F)$ lies in $\NerC{T}(\ri_F)$, it suffices to check if there exists an element of $\bS(F)$ projecting to $t$ with valuation in the span of $r_1, \ldots, r_m$.  This is a definable condition.
-Thus, to implement this construction precisely, we need to introduce the fixed choice 
-$r_1, \dots, r_m$ and the suitable compatibility conditions. 
+as in \cite{kottwitz:isocrystals-2}*{(7.2.6)}.  The map $\bR(L) = (E^\times \times Y)^I \to (E^\times \times X)^I = \bT(L)$
+is definable since it is induced by the fixed map $Y \to X$.  Since $\bR$ is induced,
+$Y_I$ is torsion free and $w_\bR : \bR(L) \to Y_I = \Hom(X^\ast(\bR)$ is given by
+$r \mapsto \left(\lambda \mapsto \ord_{L}(\lambda(r))\right)$ \cite{kottwitz:isocrystals-2}*{(7.2.3)}.
+Therefore $w_\bR$ is definable, and so is the composition $\beta : \bR(L) \to X_I$ with the fixed map $Y_I \to X_I$.
 
-
-\subsection{}More precisely, we need to make fixed choices of $z_1, \dots z_n$. 
-There is a compatibility condition -- the quotient of $\Z^n$ by the lattice generated by this fixed choice should be $(X_\ast)_I$, which is already fixed at this point. 
-Rename the $z$'s -- $z$ is reserved for cocycle.  
+We may now show that $\NerC{T}(\ri_L)$ is a definable subset of $\bT(L)$: we have $t \in \NerC{T}(\ri_L)$ if and only if $\exists r \in \bR(L)$ such that $\alpha(r) = t$ and $\beta(r) = 0$.  Finally, $\NerC{T}(\ri_F) = \NerC{T}(\ri_L)^\Gamma$ is definable since it consists of the points of $\NerC{T}(\ri_L)$ fixed under the action of $\Gamma$.
+\end{proof}
 
 \section{General reductive groups}
 %{\bf XX Here want to prove that $G_{x, 0}$ is definable; canonical measure is motivic; formal degree is motivic. }
