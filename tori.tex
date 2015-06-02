@@ -170,7 +170,7 @@ In fact, for unramified groups this statement has been known for a while, cf. \c
 {\bf XX Fill in: application to the formal degree ?}
 
 \section{Tori} 
-In this paper, we will use the notions of a definable set and  definable function. These refer to being definable in Denef-Pas language. 
+We will use the notions of a definable set and definable function, which will always refer to Denef-Pas language. 
 Formulas in Denef-Pas language can have variables of three \emph{sorts}: valued field (which will be denoted by $VF$), residue field (denoted by $RF$) and the value group. Even though we will be often be working with ramified extensions, we always start with a local field $F$ with normalized valuation, so the value group is $\Z$ (the $VF$-variables will range over $F$, and so their valuations will be in $\Z$).
 Formulas in Denef-Pas language can be interpreted given a choice of a valued field \emph{together with a uniformizer}. 
 We refer the reader to \cite{what's the best ref?} for the definitions of Denef-Pas language, definable sets, etc. 
@@ -200,12 +200,12 @@ In this way, we split the definition of the torus $\bT$ into choices made withou
 We fix a finite group $\Gamma$ and a normal subgroup $I \unlhd \Gamma$, as well as enumerations of their elements $\Gamma = \{\sigma_1, \dots, \sigma_m\}$ and $I = \{\sigma_1, \dots, \sigma_e\}$.  We make the convention that $\sigma_1 = 1$ and $\sigma_m$ generates $\Gamma / I$.  These groups will play the role of $\Gal(E/F)$ and its inertia subgroup, where $E$ is the splitting field of $\bT$.
 
 In order to define a torus $\bT$, we will use the equivalence of categories between $F$-tori and free $\Z$-modules with a Galois action.  To this end, we fix a positive integer $n$ and an injective homomorphism
-\[
+\begin{equation} \label{eq:theta}
 \theta : \Gamma \hookrightarrow \GL_n(\Z),
-\]
+\end{equation}
 which gives $\Z^n$ an action of $\Gamma$.  The $\Gamma$-module $X$ defined by $\theta$ will play the role of $X_\ast(\bT)$.
 
-Finally, we fix a resolution of $X$ by an induced $\Gamma$-module $Y$, i.e. a surjective map $Y \to X$ where $Y$ has a basis permuted by $\Gamma$ (c.f. \cite{brahm}*{Satz 0.4.4}).  This resolution will allow us to definably cut out the connected component of the N\'eron model inside $\bT(F)$.
+Finally, we fix a resolution of $X$ by an induced $\Gamma$-module $Y$, i.e. a surjective map $Y \to X$ where $Y$ has a basis permuted by $\Gamma$ (c.f. \cite{brahm}*{Satz 0.4.4}).  To specify $Y$, we just give the matrix for the map $Y \to X$ of free abelian groups, together with the matrices giving $\gamma : Y \to Y$ for $\gamma \in \Gamma$. This resolution will allow us to definably cut out the connected component of the N\'eron model inside $\bT(F)$.
 
 %an abstract split torus ${\bT}^\spl$ and an isomorphism $X^\ast(\bT^\spl) \cong \Z^n$.
 %\footnote{in contrast to \cite{cluckers-hales-loeser}, where they parameterize $X^\ast(\bT^\spl)$ using valued field variables, since they need characters as functions to $F^\times$.}
@@ -243,7 +243,7 @@ thought of as a definable subset of some large affine space over $F$.
 For each local field $F$, every element of $\cE_\Gamma$ gives rise to a tower of field extensions $E/L/F$
 % Note that we don't actually need to require that F has large residue characteristic in this claim.
 with $\gal(E/F)$ isomorphic to $\Gamma$ and satisfying all the above conditions.
-The homomorphism $\theta$ then defines a torus $\bT$ over $F$ with cocharacter lattice $X$.
+The homomorphism $\theta$ of \eqref{eq:theta} then defines a torus $\bT$ over $F$ with cocharacter lattice $X$.
 This torus splits over $E$, with $\gal(E/F) \cong \Gamma$ acting on $\bT(E) = E^\times \otimes X$ diagonally.
 This action is definable, and therefore the set $\bT(F) = \bT(E)^\Gamma$ is as well.
 
@@ -272,7 +272,9 @@ Write $\Ner{T}$ for the N\'eron model of $\bT$ (c.f. \cite{bosch-lutkebohmert-ra
 The subset $\NerC{T}(\ri_F) \subseteq \bT(F)$ is definable.
 \end{prop}
 \begin{proof}
-We first consider the case that $L = F$.  Then the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(L) \to X_I$ from $\Ner{T}(\ri_L)$ to its component group (c.f. \citelist{\cite{bitan}*{3.1} \cite{kottwitz:isocrystals-2}*{\S 7}}).
+We first reduce to the case that $L = F$: if $\NerC{T}(\ri_L)$ is definable then so is $\NerC{T}(\ri_F) = \NerC{T}(\ri_L)^\Gamma$, since N\'eron models commute with unramified base change.  So for the remainder of the proof we will assume that $E/F$ is totally ramified.
+
+Now, the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(L) \to X_I$ from $\Ner{T}(\ri_L)$ to its component group (c.f. \citelist{\cite{bitan}*{3.1} \cite{kottwitz:isocrystals-2}*{\S 7}}).
 
 Our fixed choice of resolution $Y \to X$ yields an induced torus $\bR$ over $L$ with cocharacter lattice $Y$, together with a diagram
 \[
@@ -283,11 +285,11 @@ Y_I \rar & X_I \rar & 0
 \]
 as in \cite{kottwitz:isocrystals-2}*{(7.2.6)}.  The map $\bR(L) = (E^\times \times Y)^I \to (E^\times \times X)^I = \bT(L)$
 is definable since it is induced by the fixed map $Y \to X$.  Since $\bR$ is induced,
-$Y_I$ is torsion free and $w_\bR : \bR(L) \to Y_I = \Hom(X^\ast(\bR)$ is given by
+$Y_I$ is torsion free and $w_\bR : \bR(L) \to Y_I = \Hom(X^\ast(\bR), \Z)$ is given by
 $r \mapsto \left(\lambda \mapsto \ord_{L}(\lambda(r))\right)$ \cite{kottwitz:isocrystals-2}*{(7.2.3)}.
 Therefore $w_\bR$ is definable, and so is the composition $\beta : \bR(L) \to X_I$ with the fixed map $Y_I \to X_I$.
 
-We may now show that $\NerC{T}(\ri_L)$ is a definable subset of $\bT(L)$: we have $t \in \NerC{T}(\ri_L)$ if and only if $\exists r \in \bR(L)$ such that $\alpha(r) = t$ and $\beta(r) = 0$.  Finally, $\NerC{T}(\ri_F) = \NerC{T}(\ri_L)^\Gamma$ is definable since it consists of the points of $\NerC{T}(\ri_L)$ fixed under the action of $\Gamma$.
+We may now show that $\NerC{T}(\ri_L)$ is a definable subset of $\bT(L)$: we have $t \in \NerC{T}(\ri_L)$ if and only if $\exists r \in \bR(L)$ such that $\alpha(r) = t$ and $\beta(r) = 0$.
 \end{proof}
 
 \section{General reductive groups}
