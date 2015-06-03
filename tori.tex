@@ -187,6 +187,10 @@ A formula in Denef-Pas language  with $n$ free $VF$-variables, $m$ free $RF$-var
 $\Z$-variables 
 defines a subset of $F^n\times k_F^m \times \Z^r$. 
 We will denote the definable set $F^n\times k_F^m \times \Z^r$ itself by $VF^n\times RF^m\times \Z^r$. In earlier works on motivic integration this set was denoted by $h[n,m,r]$. 
+We will talk about definable subsets of $VF^n\times RF^m\times \Z^r$, meaning the subsets defined by Denef-Pas formulas with the right number of free variables of each sort, as above. 
+For  a definable subset $X\subset VF^n\times RF^m\times \Z^r$, and given a local field $F$,  
+we will denote by $X(F)$ the \emph{specialization} of $X$ in $F$, i.e., a subset of $F^n\times k_F^m\Z^r$ obtained by interpreting in $F$ all the formulas defining the set $X$. 
+(This is the notation used in \cite{hales:transfert}; note that traditionally in the motivic integration literature, the {specialization} of a definable set $X$ was denoted by $X_F$). 
 
 We start by setting up the framework for working with tori in the Denef-Pas language, following \cite{cluckers-hales-loeser}, \cite{CGH-2} and \cite{hales:transfert}.
 
@@ -294,34 +298,51 @@ We may now show that $\NerC{T}(\ri_L)$ is a definable subset of $\bT(L)$: we hav
 
 \section{General reductive groups}
 %{\bf XX Here want to prove that $G_{x, 0}$ is definable; canonical measure is motivic; formal degree is motivic. } 
-Here we prove that $G_{\ff}:=G_{x, 0}$ (with $x$ in the interior of the facet $\ff$)   is definable for  all facets $\ff$.  
-It was previously shown in \cite{CGH-2} that for all \emph{positive} $r>0$ and all {optimal} points $x$ in the building, the Moy-Prasad filtration subgroups $G_{x, r}$ are definable; here we fill in the last missing case, namely, $r=0$ (note that when $r=0$, the group $G(F)_{x,0}$ depends only on the facet containing $x$; thus, we do not need to worry about optimal points).
+Here we prove that the parahoric ${G}_{\ff}:={\bG}(F)_{x, 0}$ (with $x$ in the interior of the facet $\ff$)   is definable for  all facets $\ff$.  
+It was previously shown in \cite{CGH-2} that for all \emph{positive} $r>0$ and all {optimal} points $x$ in the building, the Moy-Prasad filtration subgroups ${\bG}(F)_{x, r}$ are definable; here we fill in the last missing case, namely, $r=0$ (note that when $r=0$, the group ${\bG}(F)_{x,0}$ depends only on the facet containing $x$; thus, we do not need to worry about optimal points).
 
+\subsection{Reductive groups as a family of definable sets}
 We treat reductive groups in the definable setting as in \cite{hales:transfert} and \cite{CGH-2}.
 In fact, our construction of algebraic tori above in \S \ref{sub:def_tori} is a special case of this construction. 
-In particular, we have the \emph{fixed choices} that include the absolute root datum of $G$ and the root datum of $G$ over the maximal unramified extension; the Galois action on the absolute root datum, and, finally,  a finite set that encodes the set of faces of an alcove in the building of $G$ over the maximal unramified extension.
+In particular, we have the \emph{fixed choices} that include the absolute root datum $\Sigma$ of $\bG$ %and the root datum of $\bG$ over the maximal unramified extension, 
+and  the Galois action on the absolute root datum. Finally, given $\Sigma$, we can also fix  a finite set, which we shall here denote by 
+$\cF_\Sigma$, that encodes the set of faces of an alcove in the building of $\bG$ over the maximal unramified extension, as part of the \emph{fixed choices}.
 
-We recall that each  fixed choice determines  a split reductive group $G^{\ast\ast}$ and an embedding 
-$G^{\ast\ast}(F)\hookrightarrow GL_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
+We recall that each  fixed choice determines  a split reductive group $\bG^{\ast\ast}$ and an embedding 
+$\bG^{\ast\ast}(F)\hookrightarrow {\mathbf GL}_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
 Moreover, as in \cite{hales:transfert}*{\S 2.2}, we  have a parameter space $Z$ that encodes field extensions and Galois cocycles, so that a pair 
-$(\Sigma, z)$ determines a connected reductive group $G(F)$ for every local field $F$ of sufficiently large residue characteristic, and every reductive group (up to isomorphism)  arises via this construction. 
-(We recall that here $\Sigma$ is a fixed choice determining $G^{\ast\ast}$, and $z$ is a parameter that ranges over $F^m$ for some $m$ and determines a field extension over which $G$ splits, and the Galois cocycle that corresponds to $G$). 
+$(\Sigma, z)\in Z$ determines a connected reductive group $\bG(F)$ for every local field $F$ of sufficiently large residue characteristic, and every reductive group (up to isomorphism)  arises via this construction. 
+(We recall that here $\Sigma$ is a fixed choice determining $\bG^{\ast\ast}$, and $z$ is a parameter that ranges over $F^m$ for some $m$ and determines a field extension over which $\bG$ splits, and the Galois cocycle that corresponds to $\bG$). 
+In summary, we have the following 
+\begin{theorem}\label{thm:def_groups}(\cite{hales:transfert}, \cite{CGH-2}). 
+ For every fixed choice $\Sigma$ of a root datum there exists $M>0$ that depends only on 
+$\Sigma$, and a  definable set $\cG \to Z$, such that 
+for every $F\in \loc_M$, for every $z\in Z_F$, ${\cG_z}_F$ is a connected reductive group with absolute root datum $\Sigma$, and all $F$-groups with absolute root datum $\Sigma$ up to $F$-isomorphism arise as fibres of this form.  
+\end{theorem}
+%a family of  motivic measures $d\mu_z$ on $G_z$, and a motivic function $c:Z\to A$, such that 
 
+
+\subsection{Definability of maximal parahorics} 
 Our main result is that 
-the parahoric subgroup $G(F)_\ff$ associated with $\ff$ via Bruhat-Tits theory is definable.  
-
+the parahoric subgroup $\bG(F)_\ff$ associated with $\ff$ via Bruhat-Tits theory is definable.  
+More precisely, let $\bG$ be a tamely ramified quasi-split connected reductive group defined over a local field $F$. Let $\ff$ be a facet in the building of $\bG$.  The next proposition shows that
+then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of definable sets. 
+In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:motive} is definable. 
 %which a reductive group with a given definable family of definable sets $G(F)$ that
 
-\begin{prop} Let $G$ be a tamely ramified quasi-split connected reductive group defined over a local field $F$. Let $\ff$ be a facet in the building of $G$. 
-Then the parahoric $G(F)_\ff\subset G(F)$ arises in a definable family of definable sets. 
-In particular, the canonical parahoric of $G$ defined in \cite{gross:motive} is definable. 
+{\bf XX Not stable from here onwards.}
+
+\begin{prop} Let $\Sigma$, $\cF_\Sigma$, $Z$ and $\cG\to Z$ be as above in Theorem \ref{thm:def_groups}. 
+There exists $M>0$ that depends only on $\Sigma$ and for every $f\in \cF_\Sigma$, a family of definable subsets $\cG_{\ff} \to Z$ of $\cG$, such that for all $F\in \loc_M$, 
+$${\cG_{\ff}}_{z}(F)= \cG_z(F)_{\ff}.$$
 \end{prop}
 
 \begin{proof} Let $T$ be a maximal torus containing the maximal $F$-split torus in $G$; let $x$ be the baricentre of $\ff$.
-By definition, $G_x$ is generated by $T_x$ and $U_\psi$, where $U_\psi$ are the filtration subgroups of the unipotent one-parameter subgroups $U_{\alpha}$. 
-We have shown in Proposition \ref{prop:NerCdefinable} above that  $T(F)_x$ is definable. The rest of the proof is identical to that of Lemma 3.4 in \cite{CGH-2}.  
+By definition, $G(F)_{x,0}$ is generated by $T(F)_{x, 0}$ and $U_\psi$, where $U_\psi$ are the filtration subgroups of the unipotent one-parameter subgroups $U_{\alpha}$. 
+We have shown in Proposition \ref{prop:NerCdefinable} above that  $T(F)_{x, 0}$ is definable. The rest of the proof is identical to that of Lemma 3.4 in \cite{CGH-2}.  
 \end{proof} 
 
+\subsection{Applications} 
 As an immediate consequence, we obtain that the canonical measure is motivic, up to a motivic constant. 
 We recall that a \emph{motivic constant} is an element of the ring of constructible motivic functions on a point, i.e.,  of $A:=\Z[\lef, \lef^{-1}, \frac{1}{1-\lef^{-i}}, i>0]$. 
 This statement was previously known for unramified reductive groups, \cite{cluckers-hales-loeser}. 
