@@ -742,6 +742,18 @@ pages={605\ndash 630},
     review={MR771671 (86e:22028)},
 }
 
+
+
+\bib{bitan}{article}{
+author={Bitan, Rony A.},
+title={The discriminant of an algebraic torus},
+journal={J. Number Theor.},
+volume={131},
+pages={1657\ndash 1671},
+year={2011}, 
+}
+
+
 \bib{blasco-blondel:sp4}{article}{ % was blondel-blasco:sp4
     author={Blasco, Laure},
     author={Blondel, Corinne},
@@ -1383,8 +1395,11 @@ oscillatory functions on local fields: transfer principles},
   author={Halupczok, Immanuel},
   title={Local integrability results in harmonic analysis on reductive groups in large positive characterisitic},
   journal={Ann. Sci. Ec. Norm. Sup.},
-  status={to appear}, 
-  note={http://arxiv.org/abs/1111.7057}
+  volume={47},
+  number={6},
+  pages={1163-1195},
+  year={2014}, 
+  %note={http://arxiv.org/abs/1111.7057}
 }
 
 \bib{CGH-ad}{article}{
@@ -1394,9 +1409,10 @@ oscillatory functions on local fields: transfer principles},
   title={Motivic functions, integrability, and applications to harmonic analysis on 
   $p$-adic groups},
   journal={Elec. Res. Announc.},
-  status={to appear}, 
-  note={http://arxiv.org/abs/1111.7057},
-  year={2011},
+  volume={21},
+  pages={137-152},
+  %note={http://arxiv.org/abs/1111.7057},
+  year={2014},
 }
 
 
@@ -2335,6 +2351,18 @@ pages={88\ndash 108},
    pages={81\ndash 100 (electronic)},
 }
 
+\bib{hales:transfert}{article}{
+   author={Gordon, Julia},
+   author={Hales, Thomas C.},
+    title={Endoscopic transfer of orbital integrals in large residual characteristic},
+   %journal={},
+   %volume={},
+   %date={},
+   note={arXiv:1502.07368}, 
+   year={2015},
+   }
+
+
 \bib{gordon:depth0}{article}{
    author={Gordon, Julia},
     title={Motivic nature of character values of depth-zero representations},
@@ -2388,6 +2416,12 @@ pages={},
      journal={Invent. Math.},
       volume={130},
        pages={287\ndash 313},
+}
+
+\bib{gross:paregorics}{article}{
+author={Gross, B.},
+title={Parahorics}, 
+year={2012},
 }
 
 \bib{grothendieck:EGA-IV}{article}{
@@ -5093,7 +5127,9 @@ author={Serre, Jean-Pierre},
   author={Shin, Sug Woo},
   author={Templier, Nicolas},
   title={Sato-Tate theorem for families and low-lying zeroes of automorphic $L$-functions, with appendices by R. Kottwitz and J. Gordon, R. Cluckers and I. Halupczok},
-  status={preprint},
+  journal={Invent. Math.},
+  year={2015},
+ % status={preprint},
   note={http://arxiv.org/abs/1208.1945},
 }
 

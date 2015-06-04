@@ -157,36 +157,55 @@
 \maketitle
 
 \section{Introduction}
+\subsection{}
 The goal of this paper is to complete a technical step in the 
 ``motivic" formulation of 
 the representation theory of $p$-adic groups, that was started by T. Hales in 1999. 
 Here  the word ``motivic'' refers to the use of the theory of motivic integration, as developed by R. Cluckers and F. Loeser in \cite{cluckers-loeser}; in this paper, no integration will be required, so ``definable'' would have been a better term to use. 
 
 Specifically, our goal is to prove that the canonical maximal parahoric subgroup of a connected reductive $p$-adic group, as defined by Gross in \cite{gross:motive} using Bruhat-Tits theory, is definable using Denef-Pas language, which is the language used in Cluckers-Loeser theory of motivic integration and, consequently,  in all its applications to representation theory of $p$-adic groups. As a consequence, we  prove that for any connected reductive group the canonical Haar measure (in the sense of \cite{gross:motive}) is motivic.
-{\bf XX Can we think of the motive of a reductive group as its motivic volume? Careful though: Artin-Tate motives vs. Chow motives. think about it.}
 
-In fact, for unramified groups this statement has been known for a while, cf. \cite{cluckers-hales-loeser}. However, for a ramified group $\bG$, there is a difficulty caused by the fact that the canonical smooth model of $\bG$, whose definition relies on the N\'eron model of a maximal torus in $\bG$, does not behave well with respect to Galois descent. Thus, the main technical difficulty we deal with in this paper is proving that the connected component of the N\`eron model of a tamely ramified torus is definable in the language of Denef-Pas. We note that this difficulty is largely caused by the fact that ``taking the connected component'' is not, naturally, an operation that can easily be described by first-order logic. 
+In fact, for unramified groups this statement has been known for a while, cf. \cite{cluckers-hales-loeser}. However, for a ramified group $\bG$, there is a difficulty caused by the fact that the canonical smooth model of $\bG$, whose definition relies on the N\'eron model of a maximal torus in $\bG$, does not behave well with respect to Galois descent. Thus, the main technical difficulty we deal with in this paper is proving that the connected component of the N\'eron model of a tamely ramified torus is definable in the language of Denef-Pas. We note that this difficulty is largely caused by the fact that ``taking the connected component'' is not, naturally, an operation that can easily be described by first-order logic. 
 
 {\bf XX Fill in: application to the formal degree ?}
 
-This paper is split into two sections, the first leading up to Proposition \ref{prop:NerCdefinable},
+\subsection{}This paper is split into two sections, the first leading up to Proposition \ref{prop:NerCdefinable},
 which shows that the connected component of the N\'eron model of a torus is definable,
 and the second giving applications to canonical measures and formal degrees.
 
 We begin Section \ref{sec:tori} by setting up notation and briefly reviewing the Denef-Pas language.  In order
-to give formulas defining $\bT(F)$ and $\NerC(\ri_F)$ in this language, we need to parameterize the possible tori $\bT$.
+to give formulas defining $\bT(F)$ and $\NerC{T}(\ri_F)$ in this language, we need to parameterize the possible tori $\bT$.
 In Section \ref{sub:fixedchoices}, we describe the choices that can be made without reference to variables in $F$,
 such as fixing an abstract Galois group $\Gamma$ and a character lattice with action of $\Gamma$.
 Section \ref{sub:def_tori} then parameterizes field extensions with Galois group $\Gamma$, resulting in a parameterization
-of tori over $F$.  Finally, in Section \ref{sub:NerCdefinable} we show that $\NerC(\ri_F)$ is a definable subgroup of $\bT(F)$.
+of tori over $F$.  Finally, in Section \ref{sub:NerCdefinable} we show that $\NerC{T}(\ri_F)$ is a definable subgroup of $\bT(F)$.
 
 {\bf XX Summarize section 3}
+\subsection{A note about the title}
+The use of the word ``motivic'' in ``motivic integration'', though quite appropriate in a philosophical sense, is often misleading. In the original formulation of \cite{denef-loeser:p-adic}, the motivic measure takes values in a certain completion of the Grothendieck ring of the category of Chow motives. 
+In the later foundational work \cite{cluckers-loeser}, which is currently used in applications to representation theory, 
+this ring has been replaced with the Grothendieck ring of the category of certain  \emph{definable subassignments}, which, however, is still closely related to the Chow motives. 
+Thus, we can say that in this paper we associate a Chow motive with every reductive group $\bG$ defined over a local field, namely, the motivic volume of its canonical maximal parahoric (our whole purpose is to prove that such a motivic volume is defined). So naturally, one might want to ask what is the relationship between this motivic volume and the motive associated to $\bG$ by Gross, in the same paper \cite{gross:motive} where he defines the canonical parahoric subgroup that we are discussing here. 
+The  answer, however, seems to be rather unsatisfactory. 
+
+In \cite{gross:motive}, the group  $\bG$ is defined over a global field $F$; the motive associated with it is an Artin-Tate motive $M$, and its key property is that at each finite place $v$, the local factor of the Artin L-function  associated with it is precisely the volume of the canonical parahoric subgroup at 
+$\bG(F_v)_{x, 0}$  at $v$ with respect to a natural measure on $\bG(F_v)$. 
+By proving that the subgroup $\bG(F_v)_{x, 0}$  is definable and this natural measure is \emph{motivic} in the sense of motivic integration, we associate a Chow motive (over $\Q$) with $\bG$.
+A priori, we can say that this Chow motive has the property that its trace of Frobenius at $v$ coincides with the volume of $\bG(F_v)$ for almost all $v$; then in particular, it coincides with the Artin $L$-factor of $M$ at $v$. This looks like a nice relationship, except for the ``almost all $v$'' part. 
+The group $\bG$ is unramified at almost all places, and at unramified places both $M$ and the Chow motive we can associate with $\bG$ are not interesting (the Chow motive in question then is basically the image in the appropriate ring of motives of the smooth model of $\bG$ at a hyper-special point, associated with it by Bruhat-Tits theory), so we are not saying anything new compared to \cite{gross:motive}. 
+
+The new part of our result is about the places $v$ where $\bG$ is ramified, but in order to think of the ramified places we must depart from thinking of an algebraic group defined over a global field, and instead fix a root datum (including the information about the Galois group of the splitting field, and its action on the root datum) of a reductive group over a \emph{local} field. In the end, we can say that we associate an element of a suitable Grothendieck ring (in a first approximation, a Chow motive) with such a root datum, and for all but finitely many primes $p$, the trace of Frobenius on this Chow motive (with the definition appropriately extended to the suitable ring) returns the volume of the canonical maximal parahoric $\bG(F)_{x, 0}$ defined in \cite{gross:motive} for all local fields $F$ of residue characteristic greater than some fixed number $M$ that depends only on the root datum. 
+Thus, our approach is intrinsically local, even though the local field is allowed to vary, and we still need to exclude some primes (which depend only on the root datum fixed from the start). 
+
+For our results to be applicable to a group $\bG$ defined over a global field, 
+with a given  prescribed root data of ramified local components, 
+$\bG$ would be allowed to have the given type of ramification, just  it would need to happen at large enough primes. In short, one could say that our results are applicable to groups over global fields, provided they do not ramify at small primes (how ``small'' is, unfortunately, not effective, and depends on the ramification one wants to allow). 
 
 \section{Tori} \label{sec:tori}
 We will use the notions of a definable set and definable function, which will always refer to Denef-Pas language. 
 Formulas in Denef-Pas language can have variables of three \emph{sorts}: valued field (which will be denoted by $VF$), residue field (denoted by $RF$) and the value group. Even though we will be often be working with ramified extensions, we always start with a local field $F$ with normalized valuation, so the value group is $\Z$ (the $VF$-variables will range over $F$, and so their valuations will be in $\Z$).
 Formulas in Denef-Pas language can be interpreted given a choice of a valued field \emph{together with a uniformizer}. 
-We refer the reader to \cite{what's the best ref?} for the definitions of Denef-Pas language, definable sets, etc. 
+We refer the reader to \cite{CGH-ad}  and references therein for the definitions of Denef-Pas language, definable sets, etc. 
 
 For us, $F$ will always be a non-Archimedean local field: either $\F_q\llp t\rrp$ or a finite extension of $\Q_p$.
 As a consequence of the definition of a definable set, all statements in this paper will hold for any $F$ of sufficiently large residue characteristic $p$, 
@@ -202,8 +221,8 @@ defines a subset of $F^n\times k_F^m \times \Z^r$.
 We will denote the definable set $F^n\times k_F^m \times \Z^r$ itself by $VF^n\times RF^m\times \Z^r$. In earlier works on motivic integration this set was denoted by $h[n,m,r]$. 
 We will talk about definable subsets of $VF^n\times RF^m\times \Z^r$, meaning the subsets defined by Denef-Pas formulas with the right number of free variables of each sort, as above. 
 For  a definable subset $X\subset VF^n\times RF^m\times \Z^r$, and given a local field $F$,  
-we will denote by $X(F)$ the \emph{specialization} of $X$ in $F$, i.e., a subset of $F^n\times k_F^m\Z^r$ obtained by interpreting in $F$ all the formulas defining the set $X$. 
-(This is the notation used in \cite{hales:transfert}; note that traditionally in the motivic integration literature, the {specialization} of a definable set $X$ was denoted by $X_F$). 
+we will denote by $X(F)$ the \emph{specialization} of $X$ in $F$, i.e., a subset of $F^n\times k_F^m\times \Z^r$ obtained by interpreting in $F$ all the formulas defining the set $X$. 
+(This is the notation used in \cite{hales:transfert}; note that traditionally in the motivic integration literature, the {specialization} of a definable set $X$ was denoted by $X_F$, but this notation generates too many subscripts for us). 
 
 We start by setting up the framework for working with tori in the Denef-Pas language, following \cite{cluckers-hales-loeser}, \cite{CGH-2} and \cite{hales:transfert}.
 
@@ -318,8 +337,9 @@ It was previously shown in \cite{CGH-2} that for all \emph{positive} $r>0$ and a
 We treat reductive groups in the definable setting as in \cite{hales:transfert} and \cite{CGH-2}.
 In fact, our construction of algebraic tori above in \S \ref{sub:def_tori} is a special case of this construction. 
 In particular, we have the \emph{fixed choices} that include the absolute root datum $\Sigma$ of $\bG$ %and the root datum of $\bG$ over the maximal unramified extension, 
-and  the Galois action on the absolute root datum. Finally, given $\Sigma$, we can also fix  a finite set, which we shall here denote by 
-$\cF_\Sigma$, that encodes the set of faces of an alcove in the building of $\bG$ over the maximal unramified extension, as part of the \emph{fixed choices}.
+and  the Galois action on the absolute root datum  (which we suppress from the notation). Finally, given $\Sigma$, we can also fix, as part of the \emph{fixed choices},  a finite set, which we shall here denote by 
+$\cF_\Sigma$, that encodes the set of faces of an alcove in the building of $\bG$, as in \cite{hales:transfert}*{\S 2.1} (this follows from the description of parahoric subgroups in  \cite{gross:parahorics}).  
+%over the maximal unramified extension, .
 
 We recall that each  fixed choice determines  a split reductive group $\bG^{\ast\ast}$ and an embedding 
 $\bG^{\ast\ast}(F)\hookrightarrow {\mathbf GL}_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
@@ -327,10 +347,11 @@ Moreover, as in \cite{hales:transfert}*{\S 2.2}, we  have a parameter space $Z$ 
 $(\Sigma, z)\in Z$ determines a connected reductive group $\bG(F)$ for every local field $F$ of sufficiently large residue characteristic, and every reductive group (up to isomorphism)  arises via this construction. 
 (We recall that here $\Sigma$ is a fixed choice determining $\bG^{\ast\ast}$, and $z$ is a parameter that ranges over $F^m$ for some $m$ and determines a field extension over which $\bG$ splits, and the Galois cocycle that corresponds to $\bG$). 
 In summary, we have the following 
-\begin{theorem}\label{thm:def_groups}(\cite{hales:transfert}, \cite{CGH-2}). 
+\begin{theorem}\label{thm:def_groups}(\cite{hales:transfert}*{\S 2.2.2}, \cite{CGH-2}*{\S 3.1}). 
  For every fixed choice $\Sigma$ of a root datum there exists $M>0$ that depends only on 
 $\Sigma$, and a  definable set $\cG \to Z$, such that 
-for every $F\in \loc_M$, for every $z\in Z_F$, ${\cG_z}_F$ is a connected reductive group with absolute root datum $\Sigma$, and all $F$-groups with absolute root datum $\Sigma$ up to $F$-isomorphism arise as fibres of this form.  
+for every $F\in \loc_M$, for every $z\in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group $\bG_z$ with absolute root datum $\Sigma$, and all $F$-groups with absolute root datum 
+$\Sigma$ up to $F$-isomorphism arise as fibres $\cG_z$ for some $z\in Z(F)$.  
 \end{theorem}
 %a family of  motivic measures $d\mu_z$ on $G_z$, and a motivic function $c:Z\to A$, such that 
 
@@ -343,11 +364,10 @@ then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of de
 In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:motive} is definable. 
 %which a reductive group with a given definable family of definable sets $G(F)$ that
 
-{\bf XX Not stable from here onwards.}
-
-\begin{prop} Let $\Sigma$, $\cF_\Sigma$, $Z$ and $\cG\to Z$ be as above in Theorem \ref{thm:def_groups}. 
-There exists $M>0$ that depends only on $\Sigma$ and for every $f\in \cF_\Sigma$, a family of definable subsets $\cG_{\ff} \to Z$ of $\cG$, such that for all $F\in \loc_M$, 
-$${\cG_{\ff}}_{z}(F)= \cG_z(F)_{\ff}.$$
+\begin{prop} Let $\Sigma$, $Z$ and $\cG\to Z$ be as above in Theorem \ref{thm:def_groups}.
+Let $\cF_{\Sigma}$ be the fixed choice parametrizing the facets of an alcove in the building of $\bG$, as above.  
+There exists $M>0$ that depends only on $\Sigma$, and for every $\ff\in \cF_\Sigma$, a family of definable subsets $\cG_{\ff} \to Z$ of $\cG$, such that for all $F\in \loc_M$, for all $z\in Z(F)$, 
+$${\cG_{\ff}}_{z}(F)= \bG_z(F)_{\ff}.$$
 \end{prop}
 
 \begin{proof} Let $T$ be a maximal torus containing the maximal $F$-split torus in $G$; let $x$ be the baricentre of $\ff$.
@@ -361,15 +381,28 @@ We recall that a \emph{motivic constant} is an element of the ring of constructi
 This statement was previously known for unramified reductive groups, \cite{cluckers-hales-loeser}. 
 
 For a connected reductive group $G$ over a local field $F$, we denote the \emph{canonical Haar measure} on $G(F)$ in the sense of \cite{gross:motive} by $d\mu_G^\can$. 
-\begin{theorem} For every fixed choice $\Psi$ of a root datum there exists $M>0$ that depends only on 
-$\Psi$, a  definable set $\bG \to Z$, a family of  motivic measures $d\mu_z$ on $G_z$, and a motivic function $c:Z\to A$, such that for every $F\in \loc_M$: 
-\begin{itemize} 
-\item $G_z(F)$ is a connected reductive group over $F$ with root datum $\Psi$;
-\item $c_F(z) d\mu_{G_z}^\can = d\mu_{z, F}$.
- \end{itemize} 
+\begin{theorem}\label{thm:mot_meas}
+ Let $\Sigma$, $Z$  and $\cG \to Z$ be as in Theorem \ref{thm:def_groups} above. 
+Then there exists $M>0$ that depends only on 
+$\Sigma$, a family of  motivic measures $d\mu_z$ on $\cG_z$, and a motivic function $c:Z\to A$, such that for every $F\in \loc_M$,
+$$c_F(z) d\mu_{G_z}^\can = d\mu_{z, F}.$$ 
+Here $d\mu_{G_z}^\can$ on the left-hand side is the canonical measure, in the sense of Gross, on 
+$\bG_z(F)=\cG_z(F)$, and $d\mu_{z, F}$ on the right is the specialization to $F$ of the motivic measure $d\mu_z$ on the definable set $\cG_z$. 
 \end{theorem} 
 
+\begin{proof} {\bf XX. To be filled in.}
+\end{proof}
 
+\begin{rem} The above theorem allows a number of improvements in \cite{CGH-2} and 
+\cite{S-T}*{Appendix B}. 
+Namely,  parts (1) and (2) of \cite{CGH-2}*{Lemma 3.4} become unncessary, and the statement in Part (3) now includes $r=0$; instead of using the measures discussed in \S 3.5.2, one can use the canonical measure. 
+More importantly, in \cite{S-T}*{Appendix B, \S B.5.2}, Definition 14.13 and Lemma 14.14 become unnecessary, and in all calculations one can take $i_M=1$, which simplifies the rest of the proof.
+\end{rem}
+
+Finally, Theorem \ref{thm:mot_meas} implies that formal degree in definable families of supercuspidal representations is a motivic function of the parameters indexing the family. 
+\begin{cor}
+{\bf XX : Need to think of how to make a precise statement without opening the can of worms of parametrizing representations in Denef-Pas language.}
+\end{cor}
 
 
 \begin{bibdiv}
