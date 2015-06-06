@@ -972,6 +972,15 @@ publisher={Hermann},
 year={1967},
 }
 
+\bib{brahm:thesis}{book}{
+	address = {{M\"unster}},
+	author = {Bernhard Brahm},
+	booktitle = {{N\'eron-Modelle algebraischer Tori}},
+	publisher = {{Universit\"at M\"unster}},
+	series = {{Schriftenreihe des Mathematisches Instituts der Universit\"at M\"unster}},
+	title = {{N\'eron-Modelle algebraischer Tori}},
+	volume = {31},
+	year = {2004}}
 
 \bib{bruhat:thesis}{article}{
     author={Bruhat, Fran{\c{c}}ois},
