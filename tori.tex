@@ -61,6 +61,7 @@
 \newcommand{\res}{\operatorname{Res}}
 \newcommand{\vol}{\operatorname{vol}}
 \newcommand{\loc}{\operatorname{Loc}}
+\newcommand{\ind}{\operatorname{c-Ind}}
 
 \newcommand{\aut}{\mathbf{Aut}}
 \newcommand{\reg}{\mathrm{reg}}
@@ -163,11 +164,14 @@ The goal of this paper is to complete a technical step in the
 the representation theory of $p$-adic groups, that was started by T. Hales in 1999. 
 Here  the word ``motivic'' refers to the use of the theory of motivic integration, as developed by R. Cluckers and F. Loeser in \cite{cluckers-loeser}; in this paper, no integration will be required, so ``definable'' would have been a better term to use. 
 
-Specifically, our goal is to prove that the canonical maximal parahoric subgroup of a connected reductive $p$-adic group, as defined by Gross in \cite{gross:motive} using Bruhat-Tits theory, is definable using Denef-Pas language, which is the language used in Cluckers-Loeser theory of motivic integration and, consequently,  in all its applications to representation theory of $p$-adic groups. As a consequence, we  prove that for any connected reductive group the canonical Haar measure (in the sense of \cite{gross:motive}) is motivic.
+Specifically, our goal is to prove that the canonical maximal parahoric subgroup of a connected reductive $p$-adic group, as defined by Gross in \cite{gross:motive} using Bruhat-Tits theory, is definable using Denef-Pas language, which is the language used in Cluckers-Loeser theory of motivic integration and, consequently,  in all its applications to representation theory of $p$-adic groups. As a consequence, we  prove that for any connected reductive group the canonical Haar measure 
+%(in the sense of \cite{gross:motive}) 
+(which assigns the volume $1$ to the canonical parahoric subgroup) is motivic.
+Consequently, for any  definable family of supercuspidal representations, formal degree is a motivic function of the parameters indexing the family. 
 
 In fact, for unramified groups this statement has been known for a while, cf. \cite{cluckers-hales-loeser}. However, for a ramified group $\bG$, there is a difficulty caused by the fact that the canonical smooth model of $\bG$, whose definition relies on the N\'eron model of a maximal torus in $\bG$, does not behave well with respect to Galois descent. Thus, the main technical difficulty we deal with in this paper is proving that the connected component of the N\'eron model of a tamely ramified torus is definable in the language of Denef-Pas. We note that this difficulty is largely caused by the fact that ``taking the connected component'' is not, naturally, an operation that can easily be described by first-order logic. 
 
-{\bf XX Fill in: application to the formal degree ?}
+
 
 \subsection{}This paper is split into two sections, the first leading up to Proposition \ref{prop:NerCdefinable},
 which shows that the connected component of the N\'eron model of a torus is definable,
@@ -192,7 +196,7 @@ In \cite{gross:motive}, the group  $\bG$ is defined over a global field $F$; the
 $\bG(F_v)_{x, 0}$  at $v$ with respect to a natural measure on $\bG(F_v)$. 
 By proving that the subgroup $\bG(F_v)_{x, 0}$  is definable and this natural measure is \emph{motivic} in the sense of motivic integration, we associate a Chow motive (over $\Q$) with $\bG$.
 A priori, we can say that this Chow motive has the property that its trace of Frobenius at $v$ coincides with the volume of $\bG(F_v)$ for almost all $v$; then in particular, it coincides with the Artin $L$-factor of $M$ at $v$. This looks like a nice relationship, except for the ``almost all $v$'' part. 
-The group $\bG$ is unramified at almost all places, and at unramified places both $M$ and the Chow motive we can associate with $\bG$ are not interesting (the Chow motive in question then is basically the image in the appropriate ring of motives of the smooth model of $\bG$ at a hyper-special point, associated with it by Bruhat-Tits theory), so we are not saying anything new compared to \cite{gross:motive}. 
+The group $\bG$ is unramified at almost all places, and at unramified places both $M$ and the Chow motive we can associate with $\bG$ are not as interesting (the Chow motive in question then is basically the image in the appropriate ring of motives of the smooth model of $\bG$ at a hyper-special point, associated with it by Bruhat-Tits theory), so we are not saying anything new compared to \cite{gross:motive}. 
 
 The new part of our result is about the places $v$ where $\bG$ is ramified, but in order to think of the ramified places we must depart from thinking of an algebraic group defined over a global field, and instead fix a root datum (including the information about the Galois group of the splitting field, and its action on the root datum) of a reductive group over a \emph{local} field. In the end, we can say that we associate an element of a suitable Grothendieck ring (in a first approximation, a Chow motive) with such a root datum, and for all but finitely many primes $p$, the trace of Frobenius on this Chow motive (with the definition appropriately extended to the suitable ring) returns the volume of the canonical maximal parahoric $\bG(F)_{x, 0}$ defined in \cite{gross:motive} for all local fields $F$ of residue characteristic greater than some fixed number $M$ that depends only on the root datum. 
 Thus, our approach is intrinsically local, even though the local field is allowed to vary, and we still need to exclude some primes (which depend only on the root datum fixed from the start). 
@@ -370,9 +374,9 @@ There exists $M>0$ that depends only on $\Sigma$, and for every $\ff\in \cF_\Sig
 $${\cG_{\ff}}_{z}(F)= \bG_z(F)_{\ff}.$$
 \end{prop}
 
-\begin{proof} Let $T$ be a maximal torus containing the maximal $F$-split torus in $G$; let $x$ be the baricentre of $\ff$.
-By definition, $G(F)_{x,0}$ is generated by $T(F)_{x, 0}$ and $U_\psi$, where $U_\psi$ are the filtration subgroups of the unipotent one-parameter subgroups $U_{\alpha}$. 
-We have shown in Proposition \ref{prop:NerCdefinable} above that  $T(F)_{x, 0}$ is definable. The rest of the proof is identical to that of Lemma 3.4 in \cite{CGH-2}.  
+\begin{proof} Let $\bT$ be a maximal torus containing the maximal $F$-split torus in $\bG$; let $x$ be the baricentre of $\ff$.
+By definition, $\bG(F)_{x,0}$ is generated by $\bT(F)_{x, 0}$ and $U_\psi$, where $U_\psi$ are the filtration subgroups of the unipotent one-parameter subgroups $U_{\alpha}$. 
+We have shown in Proposition \ref{prop:NerCdefinable} above that  $\bT(F)_{x, 0}$ is definable. The rest of the proof is identical to that of Lemma 3.4 in \cite{CGH-2}.  
 \end{proof} 
 
 \subsection{Applications} 
@@ -380,7 +384,9 @@ As an immediate consequence, we obtain that the canonical measure is motivic, up
 We recall that a \emph{motivic constant} is an element of the ring of constructible motivic functions on a point, i.e.,  of $A:=\Z[\lef, \lef^{-1}, \frac{1}{1-\lef^{-i}}, i>0]$. 
 This statement was previously known for unramified reductive groups, \cite{cluckers-hales-loeser}. 
 
-For a connected reductive group $G$ over a local field $F$, we denote the \emph{canonical Haar measure} on $G(F)$ in the sense of \cite{gross:motive} by $d\mu_G^\can$. 
+For a connected reductive group $G$ over a local field $F$, we denote the \emph{canonical Haar measure} on $G(F)$, which assigns volume $1$ to the canonical parahoric, by $d\mu_G^\can$. 
+Note that this seems to be the standard definition of the canonical measure in the literature nowadays, but it differs from the measure called canonical in \cite{gross:motive} exactly by the $L$-factor of the motive associated with $\bG$. 
+
 \begin{theorem}\label{thm:mot_meas}
  Let $\Sigma$, $Z$  and $\cG \to Z$ be as in Theorem \ref{thm:def_groups} above. 
 Then there exists $M>0$ that depends only on 
@@ -390,20 +396,36 @@ Here $d\mu_{G_z}^\can$ on the left-hand side is the canonical measure, in the se
 $\bG_z(F)=\cG_z(F)$, and $d\mu_{z, F}$ on the right is the specialization to $F$ of the motivic measure $d\mu_z$ on the definable set $\cG_z$. 
 \end{theorem} 
 
-\begin{proof} {\bf XX. To be filled in.}
+\begin{proof} There is exists a motivic Haar measure on $G_z$ for every $z\in Z(F)$, constructed e.g. in \cite{hales:transfert}*{\S 2.3}. Let us denote this measure by $\mu_z^\mot$.  Then, since the canonical parahoric $\bG_z(F)_{x, 0}$ is definable, $c(z):=\vol_{\mu_z}(\bG_z(F)_{x, 0})$ is a motivic function of $z$. 
+By definition, we have 
+$$c_F(z) d\mu_{G_z}^\can = d\mu_{z, F}^\mot.$$ 
 \end{proof}
 
 \begin{rem} The above theorem allows a number of improvements in \cite{CGH-2} and 
 \cite{S-T}*{Appendix B}. 
-Namely,  parts (1) and (2) of \cite{CGH-2}*{Lemma 3.4} become unncessary, and the statement in Part (3) now includes $r=0$; instead of using the measures discussed in \S 3.5.2, one can use the canonical measure. 
+Namely,  parts (1) and (2) of \cite{CGH-2}*{Lemma 3.4} become unnecessary, and the statement in Part (3) now includes $r=0$; instead of using the measures discussed in \S 3.5.2, one can use the canonical measure. 
 More importantly, in \cite{S-T}*{Appendix B, \S B.5.2}, Definition 14.13 and Lemma 14.14 become unnecessary, and in all calculations one can take $i_M=1$, which simplifies the rest of the proof.
 \end{rem}
 
 Finally, Theorem \ref{thm:mot_meas} implies that formal degree in definable families of supercuspidal representations is a motivic function of the parameters indexing the family. 
-\begin{cor}
-{\bf XX : Need to think of how to make a precise statement without opening the can of worms of parametrizing representations in Denef-Pas language.}
+Recall that formal degree of a representation depends on the choice of Haar measure. 
+In the following corollary, we use the canonical measure. 
+ 
+\begin{cor} Let $\Sigma$, $Z$  and $\cG \to Z$ be as in Theorem \ref{thm:def_groups} above. 
+Suppose that for $F\in \loc_M$ for some $M>0$, we are given a family $\pi_{z, \lambda}$ of irreducible supercuspidal representations of $G_z$, for $z\in Z(F)$, of the form 
+$\pi_{z, \lambda,F} = \ind_{J_{z,\lambda}}^{G_z(F)} \sigma_{z, \lambda}$, 
+where $\lambda$ is some parameter ranging over a definable set, $J_{z,\lambda}\subset G_z$ 
+is a family of definable subgroups, and for each $z, \lambda$, $\sigma_{z,\lambda}$ is an irredcuible representation $J_{z, \lambda}$ of fixed degree $d$. 
+Then the formal degree (with respect to the canonical measure as above) of $\pi_{z, \lambda}$ is of the form 
+$$d_{\pi_{z, \lambda}}=\frac{c(z)d}{m(z, \lambda)},$$ where
+$c(z)$ is the motivic function of Theorem \ref{thm:mot_meas}, and $m(z, \lambda)$ is a  motivic function of $z, \lambda$. 
 \end{cor}
-
+\begin{proof}
+It is well-known ({\bf XX: Reference?})  that
+$$ d_{\pi_{z, \lambda}}=\frac{\deg(\sigma_{z, \lambda})}{\vol_{\mu^\can}(J_{z, \lambda})}.$$
+By Theorem \ref{thm:mot_meas}, we have 
+$\vol_{\mu^\can}(J_{z, \lambda}) = \frac{\vol_{\mu_z^\mot}(J_{z, \lambda})}{c(z)}$, and the statement follows, with $m(z, \lambda)=\vol_{\mu_z^\mot}(J_{z, \lambda})$.
+\end{proof}
 
 \begin{bibdiv}
 \begin{biblist}

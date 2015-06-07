@@ -2427,10 +2427,11 @@ pages={},
        pages={287\ndash 313},
 }
 
-\bib{gross:paregorics}{article}{
+\bib{gross:parahorics}{article}{
 author={Gross, B.},
 title={Parahorics}, 
 year={2012},
+status={preprint},
 }
 
 \bib{grothendieck:EGA-IV}{article}{
