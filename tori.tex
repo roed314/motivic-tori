@@ -71,8 +71,8 @@ first-order language of logic used in the theory of motivic integration develope
 The main technical result is the definability of the connected component of the N\'eron model
 of a tamely ramified algebraic torus.  As a corollary, we prove that the canonical Haar measure on $G$,
 which assigns volume $1$ to the particular \emph{canonical} maximal parahoric defined by
-Gross in \cite{gross:motive}, is motivic. This result resolves a technical difficulty that arose in
-\cite{CGH-2} and \cite{S-T}*{Appendix B} and permits a simplification of some of the proofs in those articles. 
+Gross in \cite{gross:97a}, is motivic. This result resolves a technical difficulty that arose in
+\cite{cluckers-gordon-halupczok:14b} and \cite{shin-templier:15a}*{Appendix B} and permits a simplification of some of the proofs in those articles. 
 It also allows us to show that formal degree of a compactly induced representation is a
 motivic function of the parameters defining the representation. 
 \end{abstract}
@@ -82,13 +82,13 @@ motivic function of the parameters defining the representation.
 The goal of this paper is to complete a technical step in the 
 definable formulation of 
 the representation theory of $p$-adic groups, a project started by T.C. Hales in 1999. 
-Here, the word ``definable'' is as in the theory of motivic integration developed by R. Cluckers and F. Loeser \cite{cluckers-loeser}.
+Here, the word ``definable'' is as in the theory of motivic integration developed by R. Cluckers and F. Loeser \cite{cluckers-loeser:08a}.
 
 Specifically, we will prove that the parahoric subgroups of a connected reductive $p$-adic group
 are definable using the Denef-Pas language, which is the language used in the Cluckers-Loeser
 theory of motivic integration and its applications to representation theory of $p$-adic groups.
 As a consequence, we prove that the canonical Haar measure on a connected reductive group 
-(which assigns the volume $1$ to the canonical parahoric subgroup constructed by B. Gross \cite{gross:motive}) is motivic.
+(which assigns the volume $1$ to the canonical parahoric subgroup constructed by B. Gross \cite{gross:97a}) is motivic.
 
 For unramified groups, this statement has been known for a while \cite{cluckers-hales-loeser}.
 For ramified groups, the definition of the canonical smooth model of a $\bG$ relies on the
@@ -119,7 +119,7 @@ residue field (denoted by \emph{RF}) and the value group. Even though we will of
 we always start with a local field $F$ with normalized valuation, so the value group is $\Z$
 (the \emph{VF}-variables will range over $F$, and so their valuations will be in $\Z$).
 Formulas in the Denef-Pas language can be interpreted given a choice of a valued field \emph{together with a uniformizer}. 
-We refer the reader to \cite{CGH-ad} and references therein for the definitions of the Denef-Pas language, definable sets, etc. 
+We refer the reader to \cite{cluckers-gordon-halupczok:14c} and references therein for the definitions of the Denef-Pas language, definable sets, etc. 
 
 For us, $F$ will always be a non-Archimedean local field: either $\F_q\llp t\rrp$ or a finite extension of $\Q_p$.
 As a consequence of the definition of a definable set, all statements in this paper will hold for any $F$ of sufficiently large residue characteristic $p$, 
@@ -140,17 +140,17 @@ meaning the subsets defined by Denef-Pas formulas with the right number of free 
 For a definable subset $X\subset \mbox{\emph{VF}}^n\times \mbox{\emph{RF}}^m\times \Z^r$, and given a local field $F$,  
 we will denote by $X(F)$ the \emph{specialization} of $X$ in $F$, i.e., the subset of
 $F^n\times k_F^m\times \Z^r$ obtained by interpreting in $F$ all the formulas defining the set $X$.\footnote{This
-is the notation used in \cite{hales:transfert}; note that traditionally in the motivic integration literature,
+is the notation used in \cite{gordon-hales:15a}; note that traditionally in the motivic integration literature,
 the {specialization} of a definable set $X$ was denoted by $X_F$, but this notation generates too many subscripts for us.} 
 
 We start by setting up the framework for working with tori in the Denef-Pas language,
-following \cite{cluckers-hales-loeser}, \cite{CGH-2} and \cite{hales:transfert}.
+following \cite{cluckers-hales-loeser}, \cite{cluckers-gordon-halupczok:14b} and \cite{gordon-hales:15a}.
 
 
 
 \subsection{Fixed choices}\label{sub:fixedchoices}
 
-As in \cite{hales:transfert}*{\S 2.1}, we begin by outlining our \emph{fixed choices},
+As in \cite{gordon-hales:15a}*{\S 2.1}, we begin by outlining our \emph{fixed choices},
 which are made before writing any formulas in the Denef-Pas language.  
 For each \emph{fixed choice} (which will be completely field-independent), we will further describe
 a definable set of parameters (which will then be allowed to range over a valued field $F$,
@@ -180,7 +180,7 @@ This resolution will allow us to definably cut out the connected component of th
 
 \subsection{Parameterizing field extensions and tori}\label{sub:def_tori}
  
-We encode field extensions in the same way as in \cite{CGH-2}.
+We encode field extensions in the same way as in \cite{cluckers-gordon-halupczok:14b}.
 Namely, we parameterize Galois extensions $E/F$ with $\gal(E/F) \cong \Gamma$
 and realize all tori over $F$ that split over $E$ with cocharacter lattice $X$.
 This parameterizes such tori as members of a family of definable sets,
@@ -243,7 +243,7 @@ of motivic integration, $\cE_\Gamma$ is indistinguishable from the empty set.
 \subsection{The identity component of the N\'eron model} \label{sub:NerCdefinable}
 
 Now that we have parameterized $E/L/F$ and $\bT$ and shown that $\bT(F)$ definable, we may prove the main technical result of the paper.
-Write $\Ner{T}$ for the N\'eron model of $\bT$ (cf. \cite{bosch-lutkebohmert-raynaud:neron}*{Ch. 10});
+Write $\Ner{T}$ for the N\'eron model of $\bT$ (cf. \cite{bosch-lutkebohmert-reynaud:NeronModels}*{Ch. 10});
 this is a model for $\bT$ over $\ri_F$ with the property that $\Ner{T}(\ri_F) = \bT(F)$.  Let $\NerC{T}$ be its identity component.
 
 \begin{prop} \label{prop:NerCdefinable}
@@ -255,7 +255,7 @@ $\NerC{T}(\ri_F) = \NerC{T}(\ri_L)^\Gamma$, where the equality holds since N\'er
 So for the remainder of the proof we will assume that $E/F$ is totally ramified.
 
 Now, the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(L) \to X_I$ from
-$\Ner{T}(\ri_L)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan}*{3.1}).
+$\Ner{T}(\ri_L)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan:11a}*{3.1}).
 
 Our fixed choice of resolution $Y \to X$ yields an induced torus $\bR$ over $L$ with cocharacter lattice $Y$, together with a diagram
 \[
@@ -278,30 +278,30 @@ if and only if $\exists r \in \bR(L)$ such that $\alpha(r) = t$ and $\beta(r) = 
 Let $\bG$ be a connected quasi-split reductive algebraic group defined over a local field $F$,
 let $\ff$ be a facet in the building of $\bG$ over $F$, and let $x$ be in the interior of $\ff$. 
 In this section we construct a family of definable sets that specialize to the parahoric subgroup ${G}_{\ff}:={\bG}(F)_{x, 0}$.
-It was previously shown in \cite{CGH-2} that for all \emph{positive} $r$ and all \emph{optimal} points $x$ in the building,
+It was previously shown in \cite{cluckers-gordon-halupczok:14b} that for all \emph{positive} $r$ and all \emph{optimal} points $x$ in the building,
 the Moy-Prasad filtration subgroups ${\bG}(F)_{x, r}$ are definable; here we fill in the missing case where
 $r=0$.\footnote{When $r=0$, the group ${\bG}(F)_{x,0}$ depends only on the facet containing $x$,
 so we do not restrict to the case that $x$ is optimal.}
 
 \subsection{Reductive groups as a family of definable sets}
-We treat reductive groups in the definable setting as in \cite{hales:transfert} and \cite{CGH-2}.
+We treat reductive groups in the definable setting as in \cite{gordon-hales:15a} and \cite{cluckers-gordon-halupczok:14b}.
 In fact, our construction of algebraic tori above in \S \ref{sub:def_tori} is a special case of this construction.
 In particular, we have the \emph{fixed choices} that include the absolute root datum $\Sigma$ of $\bG$
 and the Galois action on the absolute root datum (which we suppress from the notation).
 Finally, given $\Sigma$, we also fix a finite set $\cF_\Sigma$ that encodes
-the set of faces of an alcove in the building of $\bG$, as in \cite{hales:transfert}*{\S 2.1}.\footnote{The fact that
+the set of faces of an alcove in the building of $\bG$, as in \cite{gordon-hales:15a}*{\S 2.1}.\footnote{The fact that
 $\cF_\Sigma$ depends only on $\Sigma$ with its Galois action follows from the explicit description of parahoric subgroups in \cite{gross:parahorics}.}  
 
 We recall that each  fixed choice determines  a split reductive group $\bG^{\ast\ast}$ and an embedding 
 $\bG^{\ast\ast}(F)\hookrightarrow {\mathbf GL}_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
-Moreover, as in \cite{hales:transfert}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles.
+Moreover, as in \cite{gordon-hales:15a}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles.
 This parameter space has the property that, for every local field $F$ of sufficiently large residue characteristic, a pair 
 $(\Sigma, z)\in Z$ determines a connected reductive group $\bG(F)$, and every
 isomorphism class of connected reductive group arises via this construction.\footnote{Here
 $\Sigma$ denotes the fixed choices determining $\bG^{\ast\ast}$ and $z$ is a parameter ranging over an
 $F$-vector space that determines a field extension over which $\bG$ splits and the Galois cocycle corresponding to $\bG$.} 
 In summary, we have the following 
-\begin{theorem}\label{thm:def_groups}(\cite{hales:transfert}*{\S 2.2.2}, \cite{CGH-2}*{\S 3.1}). 
+\begin{theorem}\label{thm:def_groups}(\cite{gordon-hales:15a}*{\S 2.2.2}, \cite{cluckers-gordon-halupczok:14b}*{\S 3.1}). 
  For every fixed choice $\Sigma$ of root datum, there exists $M>0$ and a definable set $\cG \to Z$ with the following property:
 for every $F\in \loc_M$ and $z \in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
 $\bG_z$ with absolute root datum $\Sigma$.  Moreover, every isomorphism class of $F$-groups with absolute root datum 
@@ -313,11 +313,11 @@ Our main result is that the parahoric subgroups associated with facets in the bu
 More precisely, let $\bG$ be a tamely ramified, quasi-split, connected reductive group defined over a local field $F$.
 Let $\ff$ be a facet in the building of $\bG$.  The next proposition shows that
 then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of definable sets. 
-In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:motive} is definable. 
+In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:97a} is definable. 
 
 For the moment, we only consider quasi-split groups. 
 Note that there is a definable subset of our cocycle space $Z$, which we will denote here by $Z^\ast$,
-that parameterizes the \emph{quasi-split} groups with a given absolute root datum (cf. \cite{hales:transfert}*{\S 2.2.2}).  
+that parameterizes the \emph{quasi-split} groups with a given absolute root datum (cf. \cite{gordon-hales:15a}*{\S 2.2.2}).  
 
 \begin{prop}\label{prop:main}
  Let $\Sigma$, $Z$ and $\cG\to Z$ be as in Theorem \ref{thm:def_groups}, let 
@@ -334,7 +334,7 @@ Then there exists $M>0$ (depending only on $\Sigma$) and a family of definable s
 By definition, $\bG(F)_{x,0}$ is generated by $\bT(F)_{x, 0}$ and $U_\psi$, where the $U_\psi$ are
 the filtration subgroups of the unipotent one-parameter subgroups $U_{\alpha}$. 
 We have shown in Proposition \ref{prop:NerCdefinable} above that  $\bT(F)_{x, 0}$ is definable.
-The rest of the proof is identical to that of Lemma 3.4 in \cite{CGH-2}.  
+The rest of the proof is identical to that of Lemma 3.4 in \cite{cluckers-gordon-halupczok:14b}.  
 \end{proof} 
 
 \subsection{Applications} 
@@ -347,7 +347,7 @@ For a connected quasi-split reductive group $\bG$ over a local field $F$, we den
 on $\bG(F)$, which assigns volume $1$ to the canonical parahoric, by $d\mu_G^\can$. 
 Note that this seems to be the standard definition of the canonical measure in all settings
 where it is used to define global orbital integrals, but it differs from Gross' canonical measure
-exactly by the $L$-factor of the motive associated with $\bG$ \cite{gross:motive}.  For general $\bG$, using the same method as Gross, 
+exactly by the $L$-factor of the motive associated with $\bG$ \cite{gross:97a}.  For general $\bG$, using the same method as Gross, 
 we define $d\mu_{\bG(F)}^\can$ as the pull-back of the canonical (in our sense) measure from the quasi-split inner form $\bG^\ast$ of $\bG$.  
 
 \begin{theorem}\label{thm:mot_meas}
@@ -362,23 +362,23 @@ and $d\mu_{z, F}$ is the specialization to $F$ of the motivic measure $d\mu_z$ o
 \end{theorem} 
 
 \begin{proof} There exists a motivic Haar measure on $\bG_z$ for every $z\in Z(F)$,
-constructed e.g. in \cite{hales:transfert}*{\S 2.3}. Let us denote this measure by $\mu_z^\mot$. Now, suppose 
+constructed e.g. in \cite{gordon-hales:15a}*{\S 2.3}. Let us denote this measure by $\mu_z^\mot$. Now, suppose 
 $z\in Z^\ast(F)$, so that the associated group $\bG_z$ is quasi-split.  
-Then it has the canonical parahoric subgroup as in \cite{gross:motive}, associated with a special point $x$ in the building. 
+Then it has the canonical parahoric subgroup as in \cite{gross:97a}, associated with a special point $x$ in the building. 
 By Proposition \ref{prop:main}, the canonical parahoric $\bG_z(F)_{x, 0}$ is definable, so we can define  a motivic function $c(z):=\vol_{\mu_z^\mot}({\cG_{\ff}}_z)$. 
 By definition, we have 
 \[
 c_F(z) d\mu_{G_z(F)}^\can = d\mu_{z, F}^\mot.
 \]
 For general $z$, it follows that the canonical measure is motivic, since the inner twisting is a definable map
-(using $z$, $z^\ast$ as parameters; cf. \cite{CGH-2}*{\S 3.5.2}) and the pull-back of a motivic measure under a definable map is motivic.
+(using $z$, $z^\ast$ as parameters; cf. \cite{cluckers-gordon-halupczok:14b}*{\S 3.5.2}) and the pull-back of a motivic measure under a definable map is motivic.
 \end{proof}
 
-\begin{rem} The above theorem allows a number of improvements in \cite{CGH-2} and 
-\cite{S-T}*{Appendix B}. 
-Namely,  parts (1) and (2) of \cite{CGH-2}*{Lemma 3.4} become unnecessary, and the statement in Part (3)
+\begin{rem} The above theorem allows a number of improvements in \cite{cluckers-gordon-halupczok:14b} and 
+\cite{shin-templier:15a}*{Appendix B}. 
+Namely,  parts (1) and (2) of \cite{cluckers-gordon-halupczok:14b}*{Lemma 3.4} become unnecessary, and the statement in Part (3)
 now includes $r=0$; instead of using the measures discussed in \S 3.5.2, one can use the canonical measure. 
-More importantly, in \cite{S-T}*{Appendix B, \S B.5.2}, Definition 14.13 and Lemma 14.14
+More importantly, in \cite{shin-templier:15a}*{Appendix B, \S B.5.2}, Definition 14.13 and Lemma 14.14
 become unnecessary, and in all calculations one can take $i_M=1$, which simplifies the rest of the proof.
 \end{rem}
 
@@ -414,7 +414,7 @@ and the statement follows, with $m(z, \lambda)=\vol_{\mu_z^\mot}(J_{z, \lambda})
 
 \subsubsection{Gross' canonical volume form}
 We conclude with a remark about the canonical volume form and the motive of a reductive group. 
-Here assume that $\bG$ is quasi-split. In  \cite{gross:motive}*{\S 4}, Gross defined the canonical volume form
+Here assume that $\bG$ is quasi-split. In  \cite{gross:97a}*{\S 4}, Gross defined the canonical volume form
 $\omega_G$ on $G=\bG(F)$ associated with the canonical smooth model 
 $\underline{G}^0$ of $G$ whose set of $\ri_F$-points is the canonical maximal parahoric subgroup. 
 One can ask if this volume form itself gives rise to a motivic measure. 
@@ -422,17 +422,19 @@ A priori, the smooth group scheme $\underline{G}^0$ is defined over $\ri_F$, and
 associated volume form can be defined \emph{uniformly in $F$} using the Denef-Pas language.
 However, we observe that the motive $M$ associated with $\bG$ can be determined directly from the fixed choices defining $\bG$,
 since $\bG$ is quasi-split.
-Now by \cite{gross:motive}*{Proposition 4.7}, the volume of the canonical parahoric with respect to $|\omega_G|$
+Now by \cite{gross:97a}*{Proposition 4.7}, the volume of the canonical parahoric with respect to $|\omega_G|$
 is a motivic constant.\footnote{More precisely, the volume is a motivic function of the parameter $z$ defining the group.}  
 Thus, the measure $|\omega_G|$ is motivic as well, since it is a product of a motivic function
 and a motivic measure that we have denoted by $\mu_{\bG}^\can$ above. 
 
 
-\begin{bibdiv}
-\begin{biblist}
-\bibselect{references}
-\end{biblist}
-\end{bibdiv}
+\bibliography{roebib/Biblio}
+
+%\begin{bibdiv}
+%\begin{biblist}
+%\bibselect{references}
+%\end{biblist}
+%\end{bibdiv}
 
 \end{document}
 
