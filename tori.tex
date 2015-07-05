@@ -151,7 +151,6 @@
 
 \begin{document}
 
-\maketitle
 \begin{abstract}  Let $G$ be a connected reductive group over a non-Archimedean local field. 
 We prove that its parahoric subgroups are definable in the Denef-Pas language, which is a
 first-order language of logic used in the theory of motivic integration developed by Cluckers and Loeser.
@@ -163,13 +162,14 @@ Gross in \cite{gross:motive}, is motivic. This result resolves a technical diffi
 It also allows us to show that formal degree of a compactly induced representation is a
 motivic function of the parameters defining the representation. 
 \end{abstract}
+\maketitle
 
 \section{Introduction}
 %\subsection{}
 The goal of this paper is to complete a technical step in the 
-motivic formulation of 
+definable formulation of 
 the representation theory of $p$-adic groups, a project started by T.C. Hales in 1999. 
-Here, the word ``motivic'' refers to the theory of motivic integration, as developed by R. Cluckers and F. Loeser in \cite{cluckers-loeser}.  In this paper, no integration will be required, so we will mostly use the term ``definable" instead of ``motivic.'' 
+Here, the word ``definable'' is as in the theory of motivic integration developed by R. Cluckers and F. Loeser \cite{cluckers-loeser}.
 
 Specifically, we will prove that the parahoric subgroups of a connected reductive $p$-adic group
 are definable using the Denef-Pas language, which is the language used in the Cluckers-Loeser
@@ -421,14 +421,14 @@ on $\bG(F)$, which assigns volume $1$ to the canonical parahoric, by $d\mu_G^\ca
 Note that this seems to be the standard definition of the canonical measure in all settings
 where it is used to define global orbital integrals, but it differs from Gross' canonical measure
 exactly by the $L$-factor of the motive associated with $\bG$ \cite{gross:motive}.  For general $\bG$, using the same method as Gross, 
-we define $d\mu_{\bG}^\can$ as the pull-back of the canonical (in our sense) measure from the quasi-split inner form $\bG^\ast$ of $\bG$.  
+we define $d\mu_{\bG(F)}^\can$ as the pull-back of the canonical (in our sense) measure from the quasi-split inner form $\bG^\ast$ of $\bG$.  
 
 \begin{theorem}\label{thm:mot_meas}
  Let $\Sigma$, $Z$  and $\cG \to Z$ be as in Theorem \ref{thm:def_groups}. 
 Then there exists $M>0$ (depending only on $\Sigma$), a family of  motivic measures
 $d\mu_z$ on $\cG_z$, and a motivic function $c:Z\to A$ such that, for every $F\in \loc_M$,
 \[
-c_F(z) d\mu_{\bG_z}^\can = d\mu_{z, F}.
+c_F(z) d\mu_{\bG_z(F)}^\can = d\mu_{z, F}.
 \]
 Here $d\mu_{\bG_z}^\can$ is the canonical measure on $\bG_z(F)=\cG_z(F)$,
 and $d\mu_{z, F}$ is the specialization to $F$ of the motivic measure $d\mu_z$ on the definable set $\cG_z$. 
@@ -441,7 +441,7 @@ Then it has the canonical parahoric subgroup as in \cite{gross:motive}, associat
 By Proposition \ref{prop:main}, the canonical parahoric $\bG_z(F)_{x, 0}$ is definable, so we can define  a motivic function $c(z):=\vol_{\mu_z^\mot}({\cG_{\ff}}_z)$. 
 By definition, we have 
 \[
-c_F(z) d\mu_{G_z}^\can = d\mu_{z, F}^\mot.
+c_F(z) d\mu_{G_z(F)}^\can = d\mu_{z, F}^\mot.
 \]
 For general $z$, it follows that the canonical measure is motivic, since the inner twisting is a definable map
 (using $z$, $z^\ast$ as parameters; cf. \cite{CGH-2}*{\S 3.5.2}) and the pull-back of a motivic measure under a definable map is motivic.
