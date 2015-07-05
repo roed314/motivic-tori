@@ -3,112 +3,48 @@
 \usepackage{amscd}
 \usepackage{amssymb, amsfonts}
 \usepackage{amsrefs}
-\usepackage{color}
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\usepackage{mathrsfs}
-\usepackage{todonotes}
-
-\definecolor{bettergreen}{rgb}{0,.7,0}
-\newcommand\blue[1]{{\color{blue}{#1}}}
-\newcommand\green[1]{{\color{bettergreen}{#1}}}
-\newcommand\red[1]{{\color{red}{#1}}}
 
 
 %%%% Definitions of things you already have %%%%%%%%%%
 \newcommand{\Q}{{\mathbb Q}}
-\newcommand{\C}{{\mathbb C}}
-\newcommand{\R}{{\mathbb R}}
 \newcommand{\F}{{\mathbb F}}
 \newcommand{\Z}{{\mathbb Z}}
-\newcommand{\N}{{\mathbb N}}
-\newcommand{\LL}{{\mathbb L}}
 
-\def\CC{{\mathbb C}}
-\def\ZZ{{\mathbb Z}}
 \newcommand{\cF}{\mathcal{F}}
-\newcommand{\cO}{\mathcal{O}}
-
-
-\newcommand{\bF}{\mathbf{F}}
+\newcommand{\cG}{\mathcal{G}}
 \newcommand{\ri}{\mathcal{O}}
-\newcommand{\gl}{\mathfrak{gl}}
+
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\loc}{Loc}
+\DeclareMathOperator{\ind}{c-Ind}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Hom}{Hom}
+
 \newcommand{\GL}{\mathbf {GL}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\ft}{\mathfrak{t}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\fsp}{\mathfrak{sp}}
-\newcommand{\fsl}{\mathfrak{sl}}
-\newcommand{\Ad}{\operatorname{Ad}}
-\newcommand{\jac}{\operatorname{Jac}}
-\newcommand{\gal}{\operatorname{Gal}}
-\newcommand{\res}{\operatorname{Res}}
-\newcommand{\vol}{\operatorname{vol}}
-\newcommand{\loc}{\operatorname{Loc}}
-\newcommand{\ind}{\operatorname{c-Ind}}
-
-\newcommand{\aut}{\mathbf{Aut}}
-\newcommand{\reg}{\mathrm{reg}}
-\newcommand{\ur}{\mathrm{ur}}
-
-
-\newcommand{\ep}{\operatorname{EP}}
-\newcommand{\cM}{\mathcal {M}}
-\newcommand{\cL}{\mathcal {L}}
-
-\newcommand{\ram}{\mathrm{Ram}}
-\newcommand{\A}{\mathbb{A}}
-
 \newcommand{\bG}{\mathbf{G}}
 \newcommand{\bT}{\mathbf {T}}
 \newcommand{\bS}{\mathbf{S}}
 \newcommand{\bR}{\mathbf{R}}
-\newcommand{\bM}{\mathbf {M}}
-\newcommand{\cV}{\mathcal{V}}
+
 \newcommand{\can}{\mathrm{can}}
-\newcommand{\cG}{\mathcal{G}}
 \newcommand{\ff}{{\mathfrak f}}
-\newcommand{\oi}{{\bf \mathrm{O}}}
-
-
-\newcommand{\rf}{k}
 
 %%%% Motivic  definitions %%%%%%%
 
-\newcommand{\ldp}{{\mathcal L}_{\mathrm {DP}}}
-\newcommand\ldpo[1][\ri]{{\mathcal L}_{#1}}
-\newcommand\cmf[1]{{\mathcal C}(#1)}
-\newcommand\cA{{\mathcal A}}
-\newcommand\cB{{\mathcal B}}
-\newcommand\ac{\overline{\mathrm{ac}}}
 \newcommand\lef{\mathbb L}
-\newcommand\cP{{\mathcal P}}
-\newcommand\cC{{\mathcal C}}
 \newcommand\cE{{\mathcal E}}
-\newcommand\cX{{\mathcal X}}
 \newcommand\mot{\mathrm{mot}}
-\newcommand\spl{\mathrm{spl}}
-\newcommand{\scD}{\mathscr{D}}
-
-
-\newcommand{\de}{{\text{Def}}}
-\newcommand{\rde}{{\text{RDef}}}
-\newcommand{\K}{F}
-\newcommand{\mexp}{\mathbf{e}}
 \newcommand{\Ner}[1]{\mathcal{#1}}
 \newcommand{\NerC}[1]{\mathcal{#1}^\circ}
 
 \def\llp{\mathopen{(\!(}}
-\def\llb{\mathopen{[\![}}
 \def\rrp{\mathopen{)\!)}}
-\def\rrb{\mathopen{]\!]}}
 
-\DeclareMathOperator{\Gal}{Gal}
-\DeclareMathOperator{\Ind}{Ind}
-\DeclareMathOperator{\ord}{ord}
-\DeclareMathOperator{\Res}{Res}
-\DeclareMathOperator{\Hom}{Hom}
 
 %%%%%%%%%%%%% Theorem declarations %%%%%%%%%%%%%
 \theoremstyle{plain}
@@ -226,7 +162,7 @@ as well as enumerations of their elements $\Gamma = \{\sigma_1, \dots, \sigma_m\
 $I = \{\sigma_1, \dots, \sigma_e\}$.  We make the convention that $\sigma_1 = 1$ and $\sigma_m$
 generates $\Gamma / I$.\footnote{Note that we do not assume that $\sigma_m$ is the Frobenius element, since $p$ is not fixed.}
 When we eventually construct a torus $\bT$ from the fixed choices
-and corresponding parameters, these groups will play the roles of $\Gal(E/F)$
+and corresponding parameters, these groups will play the roles of $\gal(E/F)$
 and its inertia subgroup, where $E$ is the splitting field of $\bT$.
 
 In order to define a torus $\bT$, we will use the equivalence of categories between $F$-tori and
@@ -245,7 +181,7 @@ This resolution will allow us to definably cut out the connected component of th
 \subsection{Parameterizing field extensions and tori}\label{sub:def_tori}
  
 We encode field extensions in the same way as in \cite{CGH-2}.
-Namely, we parameterize Galois extensions $E/F$ with $\Gal(E/F) \cong \Gamma$
+Namely, we parameterize Galois extensions $E/F$ with $\gal(E/F) \cong \Gamma$
 and realize all tori over $F$ that split over $E$ with cocharacter lattice $X$.
 This parameterizes such tori as members of a family of definable sets,
 for all $F$ of sufficiently large residue characteristic. 
@@ -349,7 +285,7 @@ so we do not restrict to the case that $x$ is optimal.}
 
 \subsection{Reductive groups as a family of definable sets}
 We treat reductive groups in the definable setting as in \cite{hales:transfert} and \cite{CGH-2}.
-In fact, our construction of algebraic tori above in \S \ref{sub:def_tori} is a special case of this construction. \todo{Tameness?} 
+In fact, our construction of algebraic tori above in \S \ref{sub:def_tori} is a special case of this construction.
 In particular, we have the \emph{fixed choices} that include the absolute root datum $\Sigma$ of $\bG$
 and the Galois action on the absolute root datum (which we suppress from the notation).
 Finally, given $\Sigma$, we also fix a finite set $\cF_\Sigma$ that encodes
@@ -371,18 +307,13 @@ for every $F\in \loc_M$ and $z \in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points 
 $\bG_z$ with absolute root datum $\Sigma$.  Moreover, every isomorphism class of $F$-groups with absolute root datum 
 $\Sigma$ arises as a fiber $\cG_z$ for some $z\in Z(F)$.  
 \end{theorem}
-%a family of  motivic measures $d\mu_z$ on $G_z$, and a motivic function $c:Z\to A$, such that 
-
 
 \subsection{Definability of maximal parahorics} 
-%With the fixed choices as above, let $\ff\in \cF_{\Sigma}$ be a facet. 
-Our main result is that 
-the parahoric subgroups associated with facets in the building of $\bG$ via Bruhat-Tits theory are definable.  
-%$\bG(F)_\ff$ associated with $\ff$ 
-More precisely, let $\bG$ be a tamely ramified, quasi-split, connected reductive group defined over a local field $F$. Let $\ff$ be a facet in the building of $\bG$.  The next proposition shows that
+Our main result is that the parahoric subgroups associated with facets in the building of $\bG$ via Bruhat-Tits theory are definable.
+More precisely, let $\bG$ be a tamely ramified, quasi-split, connected reductive group defined over a local field $F$.
+Let $\ff$ be a facet in the building of $\bG$.  The next proposition shows that
 then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of definable sets. 
 In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:motive} is definable. 
-%which a reductive group with a given definable family of definable sets $G(F)$ that
 
 For the moment, we only consider quasi-split groups. 
 Note that there is a definable subset of our cocycle space $Z$, which we will denote here by $Z^\ast$,
@@ -496,10 +427,6 @@ is a motivic constant.\footnote{More precisely, the volume is a motivic function
 Thus, the measure $|\omega_G|$ is motivic as well, since it is a product of a motivic function
 and a motivic measure that we have denoted by $\mu_{\bG}^\can$ above. 
 
-%We also note that $\bG$ is split, the form $\omega_G$ is in fact defined over $\Z$. 
-%In general, by examining the definition of the N\'eron model, one can show that $\omega_G$  
-%can be obtained from a form defined over the polynomial ring $\Z[t, a_1, \dots, a_m]$ by specialization, where given a local field $F$ with a uniformizer of the valuation $\varpi$, $t$  maps to $\varpi$, and $a_i$ map to the elements of $f$ that serve as the coefficients $c_0, \dots, c_{e-1}$, and $b_0, \dots, b_{f-1}$ of the polynomials defining the extension over which $\bG$ splits.
-
 
 \begin{bibdiv}
 \begin{biblist}
@@ -508,51 +435,5 @@ and a motivic measure that we have denoted by $\mu_{\bG}^\can$ above.
 \end{bibdiv}
 
 \end{document}
-
-%\subsection{A note about the title}
-The use of the word ``motivic'' in ``motivic integration'', though quite appropriate in a philosophical sense, is often misleading. In the original formulation of \cite{denef-loeser:p-adic}, the motivic measure takes values in a certain completion of the Grothendieck ring of the category of Chow motives. 
-In the later foundational work \cite{cluckers-loeser}, which is currently used in applications to representation theory, 
-this ring has been replaced with the Grothendieck ring of the category of certain  \emph{definable subassignments}, which, however, is still closely related to the Chow motives. 
-Thus, we can say that in this paper we associate a Chow motive with every reductive group $\bG$ defined over a local field, namely, the motivic volume of its canonical maximal parahoric (our whole purpose is to prove that such a motivic volume is defined). So naturally, one might want to ask what is the relationship between this motivic volume and the motive associated to $\bG$ by Gross, in the same paper \cite{gross:motive} where he defines the canonical parahoric subgroup that we are discussing here. 
-The  answer, however, seems to be rather unsatisfactory. 
-
-In \cite{gross:motive}, the group  $\bG$ is defined over a global field $F$; the motive associated with it is an Artin-Tate motive $M$, and its key property is that at each finite place $v$, the local factor of the Artin L-function  associated with it is precisely the volume of the canonical parahoric subgroup at 
-$\bG(F_v)_{x, 0}$  at $v$ with respect to a natural measure on $\bG(F_v)$. 
-By proving that the subgroup $\bG(F_v)_{x, 0}$  is definable and this natural measure is \emph{motivic} in the sense of motivic integration, we associate a Chow motive (over $\Q$) with $\bG$.
-A priori, we can say that this Chow motive has the property that its trace of Frobenius at $v$ coincides with the volume of $\bG(F_v)$ for almost all $v$; then in particular, it coincides with the Artin $L$-factor of $M$ at $v$. This looks like a nice relationship, except for the ``almost all $v$'' part. 
-The group $\bG$ is unramified at almost all places, and at unramified places both $M$ and the Chow motive we can associate with $\bG$ are not as interesting (the Chow motive in question then is basically the image in the appropriate ring of motives of the smooth model of $\bG$ at a hyper-special point, associated with it by Bruhat-Tits theory), so we are not saying anything new compared to \cite{gross:motive}. 
-
-The new part of our result is about the places $v$ where $\bG$ is ramified, but in order to think of the ramified places we must depart from thinking of an algebraic group defined over a global field, and instead fix a root datum (including the information about the Galois group of the splitting field, and its action on the root datum) of a reductive group over a \emph{local} field. In the end, we can say that we associate an element of a suitable Grothendieck ring (in a first approximation, a Chow motive) with such a root datum, and for all but finitely many primes $p$, the trace of Frobenius on this Chow motive (with the definition appropriately extended to the suitable ring) returns the volume of the canonical maximal parahoric $\bG(F)_{x, 0}$ defined in \cite{gross:motive} for all local fields $F$ of residue characteristic greater than some fixed number $M$ that depends only on the root datum. 
-Thus, our approach is intrinsically local, even though the local field is allowed to vary, and we still need to exclude some primes (which depend only on the root datum fixed from the start). 
-
-For our results to be applicable to a group $\bG$ defined over a global field, 
-with a given  prescribed root data of ramified local components, 
-$\bG$ would be allowed to have the given type of ramification, just  it would need to happen at large enough primes. In short, one could say that our results are applicable to groups over global fields, provided they do not ramify at small primes (how ``small'' is, unfortunately, not effective, and depends on the ramification one wants to allow). 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
