@@ -361,18 +361,23 @@ It was previously shown in \cite{CGH-2} that for all \emph{positive} $r$ and all
 We treat reductive groups in the definable setting as in \cite{hales:transfert} and \cite{CGH-2}.
 In fact, our construction of algebraic tori above in \S \ref{sub:def_tori} is a special case of this construction. 
 In particular, we have the \emph{fixed choices} that include the absolute root datum $\Sigma$ of $\bG$
-and  the Galois action on the absolute root datum  (which we suppress from the notation). Finally, given $\Sigma$ with its Galois action, we also fix a finite set $\cF_\Sigma$ that encodes the set of faces of an alcove in the building of $\bG$, as in \cite{hales:transfert}*{\S 2.1}. %(this follows from the description of parahoric subgroups in \cite{gross:parahorics}).  
+and  the Galois action on the absolute root datum  (which we suppress from the notation).
+Finally, given $\Sigma$ with its Galois action, we also fix a finite set $\cF_\Sigma$ that encodes
+the set of faces of an alcove in the building of $\bG$, as in \cite{hales:transfert}*{\S 2.1}. %(this follows from the description of parahoric subgroups in \cite{gross:parahorics}).  
 
 We recall that each  fixed choice determines  a split reductive group $\bG^{\ast\ast}$ and an embedding 
 $\bG^{\ast\ast}(F)\hookrightarrow {\mathbf GL}_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
-Moreover, as in \cite{hales:transfert}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles, so that a pair 
-$(\Sigma, z)\in Z$ determines a connected reductive group $\bG(F)$ for every local field $F$ of sufficiently
-large residue characteristic, and every connected reductive group arises via this construction, up to isomorphism.\footnote{Here
-$\Sigma$ denotes the fixed choices determining $\bG^{\ast\ast}$ and $z$ is a parameter ranging over an $F$-vector space that determines a field extension over which $\bG$ splits and the Galois cocycle corresponding to $\bG$.} 
+Moreover, as in \cite{hales:transfert}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles.
+This parameter space has the property that, for every local field $F$ of sufficiently large residue characteristic, a pair 
+$(\Sigma, z)\in Z$ determines a connected reductive group $\bG(F)$, and every
+isomorphism class of connected reductive group arises via this construction.\footnote{Here
+$\Sigma$ denotes the fixed choices determining $\bG^{\ast\ast}$ and $z$ is a parameter ranging over an
+$F$-vector space that determines a field extension over which $\bG$ splits and the Galois cocycle corresponding to $\bG$.} 
 In summary, we have the following 
 \begin{theorem}\label{thm:def_groups}(\cite{hales:transfert}*{\S 2.2.2}, \cite{CGH-2}*{\S 3.1}). 
  For every fixed choice $\Sigma$ of root datum, there exists $M>0$ and a definable set $\cG \to Z$ with the following property:
-for every $F\in \loc_M$ and $z \in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group $\bG_z$ with absolute root datum $\Sigma$.  Moreover, every isomorphism class of $F$-groups with absolute root datum 
+for every $F\in \loc_M$ and $z \in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
+$\bG_z$ with absolute root datum $\Sigma$.  Moreover, every isomorphism class of $F$-groups with absolute root datum 
 $\Sigma$ arises as a fiber $\cG_z$ for some $z\in Z(F)$.  
 \end{theorem}
 %a family of  motivic measures $d\mu_z$ on $G_z$, and a motivic function $c:Z\to A$, such that 
@@ -412,21 +417,29 @@ The rest of the proof is identical to that of Lemma 3.4 in \cite{CGH-2}.
 
 \subsection{Applications} 
 As an immediate consequence, we obtain that the canonical measure is motivic, up to a motivic constant. This statement was previously known for unramified reductive groups \cite{cluckers-hales-loeser}.
-We recall that a \emph{motivic constant} is an element of the ring of constructible motivic functions on a point, i.e., of $A:=\Z[\lef, \lef^{-1}, \frac{1}{1-\lef^{-i}}, i>0]$, where $\lef$ is a formal symbol which specializes to $q$.
+We recall that a \emph{motivic constant} is an element of the ring of constructible motivic functions on a point,
+i.e., of $A:=\Z[\lef, \lef^{-1}, \frac{1}{1-\lef^{-i}}, i>0]$, where $\lef$ is a formal symbol which specializes to $q$.
  
-For a connected quasi-split reductive group $\bG$ over a local field $F$, we denote the \emph{canonical Haar measure} on $\bG(F)$, which assigns volume $1$ to the canonical parahoric, by $d\mu_G^\can$. 
-Note that this seems to be the standard definition of the canonical measure in all settings where it is used to define global orbital integrals, but it differs from Gross' canonical measure exactly by the $L$-factor of the motive associated with $\bG$ \cite{gross:motive}.  For general $\bG$, using the same method as Gross, 
+For a connected quasi-split reductive group $\bG$ over a local field $F$, we denote the \emph{canonical Haar measure}
+on $\bG(F)$, which assigns volume $1$ to the canonical parahoric, by $d\mu_G^\can$. 
+Note that this seems to be the standard definition of the canonical measure in all settings
+where it is used to define global orbital integrals, but it differs from Gross' canonical measure
+exactly by the $L$-factor of the motive associated with $\bG$ \cite{gross:motive}.  For general $\bG$, using the same method as Gross, 
 we define $d\mu_{\bG}^\can$ as the pull-back of the canonical (in our sense) measure from the quasi-split inner form $\bG^\ast$ of $\bG$.  
 
 \begin{theorem}\label{thm:mot_meas}
  Let $\Sigma$, $Z$  and $\cG \to Z$ be as in Theorem \ref{thm:def_groups}. 
-Then there exists $M>0$ (depending only on $\Sigma$), a family of  motivic measures $d\mu_z$ on $\cG_z$, and a motivic function $c:Z\to A$ such that, for every $F\in \loc_M$,
-$$c_F(z) d\mu_{\bG_z}^\can = d\mu_{z, F}.$$ 
+Then there exists $M>0$ (depending only on $\Sigma$), a family of  motivic measures
+$d\mu_z$ on $\cG_z$, and a motivic function $c:Z\to A$ such that, for every $F\in \loc_M$,
+\[
+c_F(z) d\mu_{\bG_z}^\can = d\mu_{z, F}.
+\]
 Here $d\mu_{\bG_z}^\can$ is the canonical measure on $\bG_z(F)=\cG_z(F)$,
 and $d\mu_{z, F}$ is the specialization to $F$ of the motivic measure $d\mu_z$ on the definable set $\cG_z$. 
 \end{theorem} 
 
-\begin{proof} There exists a motivic Haar measure on $\bG_z$ for every $z\in Z(F)$, constructed e.g. in \cite{hales:transfert}*{\S 2.3}. Let us denote this measure by $\mu_z^\mot$. Now, suppose 
+\begin{proof} There exists a motivic Haar measure on $\bG_z$ for every $z\in Z(F)$,
+constructed e.g. in \cite{hales:transfert}*{\S 2.3}. Let us denote this measure by $\mu_z^\mot$. Now, suppose 
 $z\in Z^\ast(F)$, so that the associated group $\bG_z$ is quasi-split.  
 Then it has the canonical parahoric subgroup as in \cite{gross:motive}, associated with a special point $x$ in the building. 
 By Proposition \ref{prop:main}, the canonical parahoric $\bG_z(F)_{x, 0}$ is definable, so we can define  a motivic function $c(z):=\vol_{\mu_z^\mot}({\cG_{\ff}}_z)$. 
@@ -440,8 +453,10 @@ For general $z$, it follows that the canonical measure is motivic, since the inn
 
 \begin{rem} The above theorem allows a number of improvements in \cite{CGH-2} and 
 \cite{S-T}*{Appendix B}. 
-Namely,  parts (1) and (2) of \cite{CGH-2}*{Lemma 3.4} become unnecessary, and the statement in Part (3) now includes $r=0$; instead of using the measures discussed in \S 3.5.2, one can use the canonical measure. 
-More importantly, in \cite{S-T}*{Appendix B, \S B.5.2}, Definition 14.13 and Lemma 14.14 become unnecessary, and in all calculations one can take $i_M=1$, which simplifies the rest of the proof.
+Namely,  parts (1) and (2) of \cite{CGH-2}*{Lemma 3.4} become unnecessary, and the statement in Part (3)
+now includes $r=0$; instead of using the measures discussed in \S 3.5.2, one can use the canonical measure. 
+More importantly, in \cite{S-T}*{Appendix B, \S B.5.2}, Definition 14.13 and Lemma 14.14
+become unnecessary, and in all calculations one can take $i_M=1$, which simplifies the rest of the proof.
 \end{rem}
 
 
@@ -457,7 +472,7 @@ Suppose that we are given a definable family of compact subgroups $J_{z, \lambda
 parameterized by $z \in Z(F)$ and $\lambda$ in some definable set.
 In addition, let $\sigma_{z, \lambda}(F)$ be an irreducible representation of $J_{z, \lambda}(F)$ of fixed dimension $d$.
 Assume that $\pi_{z,\lambda}(F) := \ind_{J_{z,\lambda}(F)}^{\bG_z(F)} \sigma_{z,\lambda}(F)$
-is irreducible and compact modulo center for $z \in Z(F)$ and $F \in \loc_M$.
+is irreducible for $z \in Z(F)$ and $F \in \loc_M$.
 Then the formal degree (with respect to the canonical measure as above) of $\pi_{z, \lambda}$ is of the form 
 \[
 d_{\pi_{z, \lambda}}=\frac{c(z)d}{m(z, \lambda)},
