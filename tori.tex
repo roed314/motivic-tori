@@ -294,11 +294,13 @@ $\cF_\Sigma$ depends only on $\Sigma$ with its Galois action follows from the ex
 
 We recall that each  fixed choice determines  a split reductive group $\bG^{\ast\ast}$ and an embedding 
 $\bG^{\ast\ast}(F)\hookrightarrow {\mathbf GL}_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
-Moreover, as in \cite{hales:transfert}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles.
-This parameter space has the property that, for every local field $F$ of sufficiently large residue characteristic, a pair 
+Moreover, as in \cite{hales:transfert}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles. We note that to determine a quasi-split group $\bG$, one only needs to know the absolute root datum, the Galois action on it (which is part of our \emph{fixed choices}), and the field extension that splits $\bG$. Thus, for quasi-split groups, the only information the parameter $z$ carries is the information about the field extension (cf. \cite{hales:transfert}*{\S 2.2.2}). 
+We denote the space of cocycles encoding the quasi-split groups by $Z^\ast$. 
+
+The parameter space  $Z$ has the property that, for every local field $F$ of sufficiently large residue characteristic, a pair 
 $(\Sigma, z)\in Z$ determines a connected reductive group $\bG(F)$, and every
 isomorphism class of connected reductive group arises via this construction.\footnote{Here
-$\Sigma$ denotes the fixed choices determining $\bG^{\ast\ast}$ and $z$ is a parameter ranging over an
+$\Sigma$ denotes the fixed choices determining $\bG^{\ast\ast}$ and the outer automorphism that determines the quasi-split form $\bG^\ast$ of $\bG$;  $z$ is a parameter ranging over an
 $F$-vector space that determines a field extension over which $\bG$ splits and the Galois cocycle corresponding to $\bG$.} 
 In summary, we have the following 
 \begin{theorem}\label{thm:def_groups}(\cite{hales:transfert}*{\S 2.2.2}, \cite{CGH-2}*{\S 3.1}). 
@@ -306,6 +308,7 @@ In summary, we have the following
 for every $F\in \loc_M$ and $z \in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
 $\bG_z$ with absolute root datum $\Sigma$.  Moreover, every isomorphism class of $F$-groups with absolute root datum 
 $\Sigma$ arises as a fiber $\cG_z$ for some $z\in Z(F)$.  
+The group $\bG$ is quasi-split over $F$ if and only if $z\in Z^\ast$. 
 \end{theorem}
 
 \subsection{Definability of maximal parahorics} 
@@ -316,8 +319,8 @@ then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of de
 In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:motive} is definable. 
 
 For the moment, we only consider quasi-split groups. 
-Note that there is a definable subset of our cocycle space $Z$, which we will denote here by $Z^\ast$,
-that parameterizes the \emph{quasi-split} groups with a given absolute root datum (cf. \cite{hales:transfert}*{\S 2.2.2}).  
+%Note that there is a definable subset of our cocycle space $Z$, which we will denote here by $Z^\ast$,
+%that parameterizes the \emph{quasi-split} groups with a given absolute root datum (cf. \cite{hales:transfert}*{\S 2.2.2}).  
 
 \begin{prop}\label{prop:main}
  Let $\Sigma$, $Z$ and $\cG\to Z$ be as in Theorem \ref{thm:def_groups}, let 
