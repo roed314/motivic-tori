@@ -2,15 +2,10 @@
 
 \usepackage{amscd}
 \usepackage{amssymb, amsfonts}
-\usepackage[notcite, notref]{showkeys}
 \usepackage{amsrefs}
-\input xy
-\xyoption{all}
-%\input{Gdefinitions3.tex}
 \usepackage{color}
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
-%\usetikzlibrary{shapes,arrows,calc,matrix}
 \usepackage{tikz-cd}
 \usepackage{mathrsfs}
 \usepackage{todonotes}
@@ -416,10 +411,11 @@ The rest of the proof is identical to that of Lemma 3.4 in \cite{CGH-2}.
 \end{proof} 
 
 \subsection{Applications} 
-As an immediate consequence, we obtain that the canonical measure is motivic, up to a motivic constant. This statement was previously known for unramified reductive groups \cite{cluckers-hales-loeser}.
+As an immediate consequence, we obtain that the canonical measure is motivic, up to a motivic constant.
+This statement was previously known for unramified reductive groups \cite{cluckers-hales-loeser}.
 We recall that a \emph{motivic constant} is an element of the ring of constructible motivic functions on a point,
-i.e., of $A:=\Z[\lef, \lef^{-1}, \frac{1}{1-\lef^{-i}}, i>0]$, where $\lef$ is a formal symbol which specializes to $q$.
- 
+i.e., of $A:=\Z[\lef, \lef^{-1}, \frac{1}{1-\lef^{-i}}, i>0]$ where $\lef$ is a formal symbol which specializes to $q$.
+
 For a connected quasi-split reductive group $\bG$ over a local field $F$, we denote the \emph{canonical Haar measure}
 on $\bG(F)$, which assigns volume $1$ to the canonical parahoric, by $d\mu_G^\can$. 
 Note that this seems to be the standard definition of the canonical measure in all settings
@@ -480,7 +476,7 @@ d_{\pi_{z, \lambda}}=\frac{c(z)d}{m(z, \lambda)},
 where $c(z)$ is the motivic function of Theorem \ref{thm:mot_meas}, and $m(z, \lambda)$ is a motivic function of $z, \lambda$. 
 \end{cor}
 \begin{proof}
-It is well-known \todo{XX: Reference?} that
+It is well-known\footnote{Sufficiently well known that we could not find a reference.} that
 \[
 d_{\pi_{z, \lambda}}=\frac{\deg(\sigma_{z, \lambda})}{\vol_{\mu_{\bG_z}^\can}(J_{z, \lambda})}.
 \]
