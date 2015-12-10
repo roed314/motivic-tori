@@ -8,7 +8,6 @@
 \usepackage{tikz-cd}
 \usepackage{hyperref}
 
-
 %%%% Definitions of things you already have %%%%%%%%%%
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\F}{{\mathbb F}}
@@ -29,6 +28,7 @@
 \newcommand{\GL}{\mathbf {GL}}
 \newcommand{\bG}{\mathbf{G}}
 \newcommand{\bT}{\mathbf {T}}
+\newcommand{\bB}{\mathbf {B}}
 \newcommand{\bS}{\mathbf{S}}
 \newcommand{\bR}{\mathbf{R}}
 
@@ -61,7 +61,7 @@
 \newtheorem{example}[thm]{Example}
 
 
-\title[]{The canonical measure on a reductive $p$-adic group is motivic}
+\title[]{Canonical measure on a reductive $p$-adic group is motivic}
 \author{Julia Gordon and David Roe}
 \subjclass[2010]{22E50 (primary); 20G25, 14E18, 03C60 (secondary)}
 \keywords{N\'eron models, Denef-Pas language, algebraic tori, canonical measure}
@@ -91,10 +91,10 @@ Specifically, we will prove that the parahoric subgroups of a connected reductiv
 are definable using the Denef-Pas language, which is the language used in the Cluckers-Loeser
 theory of motivic integration and its applications to representation theory of $p$-adic groups.
 As a consequence, we prove that the canonical Haar measure on a connected reductive group 
-(which assigns the volume $1$ to the canonical parahoric subgroup constructed by B. Gross \cite{gross:97a} ) is motivic.
+(which assigns the volume $1$ to the canonical parahoric subgroup constructed by B. Gross \cite{gross:97a}) is motivic.
 
 For unramified groups, this statement has been known for a while \cite{cluckers-hales-loeser}.
-For ramified groups, the definition of the canonical smooth model of a $\bG$ relies on the
+For ramified groups, the definition of the canonical smooth model of $\bG$ relies on the
 N\'eron model of a maximal torus in $\bG$, which does not behave well with respect to Galois descent.
 The main technical result of this paper is that the connected component of the N\'eron model
 of a tamely ramified torus is definable in the language of Denef-Pas. The difficulty in proving this result
@@ -176,7 +176,7 @@ free $\Z$-modules with a Galois action.  To this end, we fix a positive integer 
 which gives $\Z^n$ an action of $\Gamma$.  The $\Gamma$-module $X$ defined by $\theta$ will play the role of $X_\ast(\bT)$.
 
 Finally, we fix a resolution of $X$ by an induced $\Gamma$-module $Y$, i.e. a surjective map
-$Y \to X$ where $Y$ has a basis permuted by $\Gamma$ (cf. \cite{brahm:thesis}*{Satz 0.4.4} ).
+$Y \to X$ where $Y$ has a basis permuted by $\Gamma$ (cf. \cite{brahm:thesis}*{Satz 0.4.4}).
 To specify $Y$, we just give the matrix for the map $Y \to X$ of free abelian groups,
 together with the matrices giving $\gamma : Y \to Y$ for $\gamma \in \Gamma$.
 This resolution will allow us to definably cut out the connected component of the N\'eron model inside $\bT(F)$.
@@ -189,7 +189,7 @@ and realize all tori over $F$ that split over $E$ with cocharacter lattice $X$.
 This parameterizes such tori as members of a family of definable sets,
 for all $F$ of sufficiently large residue characteristic. 
 
-We will write $L$ for the unramified subextension of $E/F$.  In order to encode the data of the extension tower $E/L/F$,
+We will write $L$ for the maximal unramified subextension of $E/F$.  In order to encode the data of the extension tower $E/L/F$,
 we let $f=m/e$ and introduce parameters $b_0,\dots, b_{f-1}$, ranging over $\ri_F$.
 We set $b(x)=x^f+b_{f-1}x^{f-1}+ \dots + b_0$. 
 Similarly, we introduce parameters $c_0, \dots, c_{e-1}$, ranging over $L$
@@ -217,7 +217,8 @@ More precisely, the set $E^\times \otimes X$ can be encoded as an open and defin
 of an affine space over $F$ depending only on the fixed choices $X$ and $m$.
 The group $\Gamma$ acts on $E^\times$ by means of the matrices $\sigma_i$ and on $X$
 via the fixed choice $\theta$, and thus it acts on $E^\times \otimes X$ as well. 
-This action is definable, and therefore the set $\bT(F) = \bT(E)^\Gamma$ is as well.
+This action is definable, in the sense that every element of $\Gamma$ acts by a definable map, and therefore the set
+$\bT(F) = \bT(E)^\Gamma$ is definable as well.
 
 Note that different parameters in $\cE_\Gamma$ may yield isomorphic extensions,
 but that every isomorphism class of $E/F$ with Galois group $\Gamma$
@@ -246,7 +247,7 @@ of motivic integration, $\cE_\Gamma$ is indistinguishable from the empty set.
 \subsection{The identity component of the N\'eron model} \label{sub:NerCdefinable}
 
 Now that we have parameterized $E/L/F$ and $\bT$ and shown that $\bT(F)$ definable, we may prove the main technical result of the paper.
-Write $\Ner{T}$ for the N\'eron model of $\bT$ (cf. \cite{bosch-lutkebohmert-reynaud:NeronModels}*{Ch. 10} );
+Write $\Ner{T}$ for the N\'eron model of $\bT$ (cf. \cite{bosch-lutkebohmert-reynaud:NeronModels}*{Ch. 10});
 this is a model for $\bT$ over $\ri_F$ with the property that $\Ner{T}(\ri_F) = \bT(F)$.  Let $\NerC{T}$ be its identity component.
 
 \begin{prop} \label{prop:NerCdefinable}
@@ -258,7 +259,7 @@ $\NerC{T}(\ri_F) = \NerC{T}(\ri_L)^\Gamma$, where the equality holds since N\'er
 So for the remainder of the proof we will assume that $E/F$ is totally ramified.
 
 Now, the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(L) \to X_I$ from
-$\Ner{T}(\ri_L)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan:11a}*{3.1} ).
+$\Ner{T}(\ri_L)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan:11a}*{3.1}).
 
 Our fixed choice of resolution $Y \to X$ yields an induced torus $\bR$ over $L$ with cocharacter lattice $Y$, together with a diagram
 \[
@@ -278,54 +279,89 @@ if and only if $\exists r \in \bR(L)$ such that $\alpha(r) = t$ and $\beta(r) = 
 \end{proof}
 
 \section{General reductive groups}
-Let $\bG$ be a connected quasi-split reductive algebraic group defined over a local field $F$,
+Let $\bG$ be a connected reductive algebraic group defined over a local field $F$,
 let $\ff$ be a facet in the building of $\bG$ over $F$, and let $x$ be in the interior of $\ff$. 
-In this section we construct a family of definable sets that specialize to the parahoric subgroup ${G}_{\ff}:={\bG}(F)_{x, 0}$.
+We denote by $G_\ff$ the maximal parahoric subgroup $\bG(F)_{x, 0}$ associated with this data
+by Moy and Prasad.
+In this section we construct a family of definable sets that specialize to the parahoric subgroup ${G}_{\ff}$
+%:={\bG}(F)_{x, 0}$.
+for all fields $F$ of sufficiently large residue characteristic. By this we mean that first one constructs a family of definable sets that specialize to the groups $\bG(F)$ as $\bG$ runs over a family of reductive groups with a given absolute root datum; and in this family one constructs a family of definable subsets that specialize to the maximal parahorics in the corresponding groups $\bG(F)$.
 It was previously shown in \cite{cluckers-gordon-halupczok:14b} that for all \emph{positive} $r$ and all \emph{optimal} points $x$ in the building,
-the Moy-Prasad filtration subgroups ${\bG}(F)_{x, r}$ are definable; here we fill in the missing case where
+the Moy-Prasad filtration subgroups ${\bG}(F)_{x, r}$ are definable in this sense; here we fill in the missing case where
 $r=0$.\footnote{When $r=0$, the group ${\bG}(F)_{x,0}$ depends only on the facet containing $x$,
-so we do not restrict to the case that $x$ is optimal.}
+so we no longer need to consider optimal points $x$.}
 
 \subsection{Reductive groups as a family of definable sets}
-We treat reductive groups in the definable setting as in \cite{gordon-hales:15a} and \cite{cluckers-gordon-halupczok:14b}.
+We treat reductive groups in the definable setting as in \cite{gordon-hales:15a}.
+%and \cite{cluckers-gordon-halupczok:14b}.
 In fact, our construction of algebraic tori above in \S \ref{sub:def_tori} is a special case of this construction.
-In particular, we have the \emph{fixed choices} that include the absolute root datum $\Sigma$ of $\bG$
-and the Galois action on the absolute root datum (which we suppress from the notation).
-Finally, given $\Sigma$, we also fix a finite set $\cF_\Sigma$ that encodes
-the set of faces of an alcove in the building of $\bG$, as in \cite{gordon-hales:15a}*{\S 2.1}.\footnote{The fact that
-$\cF_\Sigma$ depends only on $\Sigma$ with its Galois action follows from the explicit description of parahoric subgroups in \cite{gross:parahorics}.}  
+In particular, we have the \emph{fixed choices} that include the absolute root datum $\Xi$ of $\bG$, the Galois action on the absolute root datum (which we suppress from the notation), and a finite set $\cF$ that encodes
+the set of facets of an alcove in the building of $\bG$, as in \cite{gordon-hales:15a}*{\S 2.1}.
+%\footnote{The fact that
+%$\cF_\Sigma$ depends only on $\Sigma$ with its Galois action follows from the explicit description of parahoric subgroups in \cite{gross:parahorics}.}
 
-We recall that each  fixed choice determines  a split reductive group $\bG^{\ast\ast}$ and an embedding 
-$\bG^{\ast\ast}(F)\hookrightarrow \GL_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
-Moreover, as in \cite{gordon-hales:15a}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles. We note that to determine a quasi-split group $\bG$, one only needs to know the absolute root datum, the Galois action on it (which is part of our \emph{fixed choices}), and the field extension that splits $\bG$. Thus, for quasi-split groups, the only information the parameter $z$ carries is the information about the field extension (cf. \cite{gordon-hales:15a}*{\S 2.2.2} ). 
-We denote the space of cocycles encoding the quasi-split groups by $Z^\ast$. 
+More specifically, we start with a fixed choice  of a finite group $\Gamma$ as above, and an absolute root datum
+$\Xi$ (which includes the action of $\Gamma$). This fixed choice determines  a split connected reductive group $\bG^{\ast\ast}$ defined over $\Q$,
+with $\bT^{\ast\ast}\subset \bB^{\ast\ast}$ a split maximal torus and a Borel subgroup, and an action of $\Gamma$  on the root datum of $\bG^{\ast\ast}$
+with respect to $(\bB^{\ast\ast}, \bT^{\ast\ast})$.  This determines a definable set $Z_{\Xi}^\ast$ that specializes,
+for each local field $F$ of sufficiently large residue characteristic (with the bound depending only on $\Xi$)
+to the set of pairs $(K, z^\ast)$, where $K$ is a field extension of $F$ with Galois group isomorphic to $\Gamma$
+(via an enumerated isomorphism), and $z^\ast$ is an enumerated cocycle  with values in the group of outer automorphisms of $\bG^{\ast\ast}(F)$
+defining a quasi-split $F$-form
+$\bG^\ast$ of $\bG^{\ast\ast}$. Further, there is a definable set $Z_{\Xi}\to Z_{\Xi}^\ast$ encoding the inner $F$-forms of $\bG^\ast$ that become isomorphic to $\bG^{\ast}$ over $K$, (see\cite{gordon-hales:15a}*{\S 2.2.2} for details).
 
-The parameter space  $Z$ has the property that, for every local field $F$ of sufficiently large residue characteristic, a pair
-$(\Sigma, z)\in Z$ determines a connected reductive group $\bG(F)$, and every
-isomorphism class of connected reductive group arises via this construction.\footnote{Here
-$\Sigma$ denotes the fixed choices determining $\bG^{\ast\ast}$ and the outer automorphism that determines the quasi-split form $\bG^\ast$ of $\bG$;  $z$ is a parameter ranging over an
-$F$-vector space that determines a field extension over which $\bG$ splits and the Galois cocycle corresponding to $\bG$.} 
-In summary, we have the following 
-\begin{theorem}\label{thm:def_groups}(\cite{gordon-hales:15a}*{\S 2.2.2}, \cite{cluckers-gordon-halupczok:14b}*{\S 3.1} ). 
- For every fixed choice $\Sigma$ of root datum, there exists $M>0$ and a definable set $\cG \to Z$ with the following property:
-for every $F\in \loc_M$ and $z \in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
-$\bG_z$ with absolute root datum $\Sigma$.  Moreover, every isomorphism class of $F$-groups with absolute root datum 
-$\Sigma$ arises as a fiber $\cG_z$ for some $z\in Z(F)$.  
-The group $\bG$ is quasi-split over $F$ if and only if $z\in Z^\ast$. 
+%We quote
+% and an embedding
+%$\bG^{\ast\ast}(F)\hookrightarrow {\GL}_N(F)$ for every local field $F$ of sufficiently large residue characteristic.
+%Moreover, as in
+%\cite{gordon-hales:15a}*{\S 2.2.2} but with slightly different notation.  We have a parameter space $Z$ encoding field extensions and Galois cocycles.
+
+We also make a \emph{fixed choice} of a set $\cF$, the so-called `parahoric indexing set', defined precisely as in \cite{gordon-hales:15a}*{\S 2.1}
+(We shall not need the details of its definition here, apart from the fact that it can be made a fixed choice).
+For each $\Xi$, there are finitely many possible sets $\cF$ that could arise as the parahoric indexing set of a
+reductive group with absolute root datum $\Xi$.
+Our \emph{set of fixed choices} is now the set of pairs $(\Xi, \cF)$, with $\Xi$ as in the previous paragraph.
+The correspondence between the cohomological data defining a group $\bG$ over $F$ and the indexing set for its
+parahoric subgroups is described in \cite{gross:parahorics}*{\S 7}. From this explicit description, one can see that
+there is a definable condition on an element $z\in Z_\Xi(F)$ that ensures that
+the reductive group $\bG$ over $F$ determined by the cocycle $z$ has the parahoric indexing set $\cF$, i.e.,
+that $\cF$ can be identified with the set of baricentres of facets in an alcove in the building of $\bG$ over $F$.
+Let us denote the subset of $Z_\Xi$ defined by this condition by $Z_{\Xi, \cF}$.
+
+In summary, we have the following
+\begin{theorem}\label{thm:def_groups}(\cite{gordon-hales:15a}*{\S 2.2.2})
+ %\cite{cluckers-gordon-halupczok:14b}*{\S 3.1}).
+ For every fixed choice $(\Xi, \cF)$ there exists $M>0$, definable sets $Z_{\Xi}^\ast$,
+ % $Z_{\Xi}\to Z^\ast$,
+ $Z_{\Xi, \cF}\subset Z_{\Xi}$,
+ %respectively, $Z_{\Xi,\cF}^\ast\subset Z_{\Xi, \cF}$,
+ and a definable family
+ $\cG \to Z_{\Xi}$ such that for every $F\in \loc_M$ %and $z \in Z_{\Xi}(F)$,
+ the following holds:
+ \begin{enumerate}
+ \item  ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
+$\bG_z$ with absolute root datum determined by $\Xi$;
+\item For each $z^\ast\in Z_{\Xi}^\ast$ there exists an element which we will denote by $(z^\ast, 1)$ in $Z_{\Xi}(F)$, such that $\bG_{(z^\ast, 1)}$ is quasi-split over $F$;
+\item If $z\in Z_{\Xi, \cF}$, then the facets in the alcove in the building for $\bG_z$ over $F$ are in bijection with the set $\cF$.
+%\item $Z_{\Xi}^\ast$ parametrizes quasi-split groups $\bG^\ast$ that split over a tamely ramified extension with Galois group $\Gamma$, and similarly if $z^\ast \in Z_{\Xi, \cF}
+\end{enumerate}
+Moreover, every isomorphism class of $F$-groups with absolute root datum given by $\Xi$ that split over a tamely ramified extension with Galois group $\Gamma$
+arises as a fiber $\cG_z$ for some $z\in Z_\Xi(F)$.
+%The group $\bG$ is quasi-split over $F$ if and only if $z\in Z^\ast$.
 \end{theorem}
 
-\subsection{Definability of maximal parahorics} 
+\subsection{Definability of maximal parahorics}
 Our main result is that the parahoric subgroups associated with facets in the building of $\bG$ via Bruhat-Tits theory are definable.
 More precisely, let $\bG$ be a tamely ramified, quasi-split, connected reductive group defined over a local field $F$.
 Let $\ff$ be a facet in the building of $\bG$.  The next proposition shows that
-then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of definable sets. 
-In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:97a} is definable. 
+then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of definable sets.
+In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:97a} is definable.
 
 For the moment, we only consider quasi-split groups.
 \begin{prop}\label{prop:main}
- Let $\Sigma$, $Z$ and $\cG\to Z$ be as in Theorem \ref{thm:def_groups}, let 
+ Let $\Sigma$, $Z$ and $\cG\to Z$ be as in Theorem \ref{thm:def_groups}, let
  $\cF_{\Sigma}$ parameterize the facets of an alcove in the building of $\bG_z$ as above,
- and suppose that $\ff \in \cF_\Sigma$.  
+ and suppose that $\ff \in \cF_\Sigma$.
 Then there exists $M>0$ (depending only on $\Sigma$) and a family of definable subsets $\cG_{\ff} \to Z^\ast$ of $\cG$
  such that, for all $F\in \loc_M$ and $z\in Z^\ast(F)$, 
 \[
@@ -374,7 +410,7 @@ By definition, we have
 c_F(z) d\mu_{\bG_z(F)}^\can = d\mu_{z, F}^\mot.
 \]
 For general $z$, it follows that the canonical measure is motivic, since the inner twisting is a definable map
-(using $z$, $z^\ast$ as parameters; cf. \cite{cluckers-gordon-halupczok:14b}*{\S 3.5.2} ) and the pull-back of a motivic measure under a definable map is motivic.
+(using $z$, $z^\ast$ as parameters; cf. \cite{cluckers-gordon-halupczok:14b}*{\S 3.5.2}) and the pull-back of a motivic measure under a definable map is motivic.
 \end{proof}
 
 \begin{rem} The above theorem allows a number of improvements in \cite{cluckers-gordon-halupczok:14b} and 
