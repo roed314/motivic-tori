@@ -6,6 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usepackage{hyperref}
 
 
 %%%% Definitions of things you already have %%%%%%%%%%
@@ -60,8 +61,10 @@
 \newtheorem{example}[thm]{Example}
 
 
-\title[]{Canonical measure on a reductive $p$-adic group is motivic}
+\title[]{The canonical measure on a reductive $p$-adic group is motivic}
 \author{Julia Gordon and David Roe}
+\subjclass[2010]{22E50 (primary); 20G25, 14E18, 03C60 (secondary)}
+\keywords{N\'eron models, Denef-Pas language, algebraic tori, canonical measure}
 
 \begin{document}
 
@@ -88,7 +91,7 @@ Specifically, we will prove that the parahoric subgroups of a connected reductiv
 are definable using the Denef-Pas language, which is the language used in the Cluckers-Loeser
 theory of motivic integration and its applications to representation theory of $p$-adic groups.
 As a consequence, we prove that the canonical Haar measure on a connected reductive group 
-(which assigns the volume $1$ to the canonical parahoric subgroup constructed by B. Gross \cite{gross:97a}) is motivic.
+(which assigns the volume $1$ to the canonical parahoric subgroup constructed by B. Gross \cite{gross:97a} ) is motivic.
 
 For unramified groups, this statement has been known for a while \cite{cluckers-hales-loeser}.
 For ramified groups, the definition of the canonical smooth model of a $\bG$ relies on the
@@ -173,7 +176,7 @@ free $\Z$-modules with a Galois action.  To this end, we fix a positive integer 
 which gives $\Z^n$ an action of $\Gamma$.  The $\Gamma$-module $X$ defined by $\theta$ will play the role of $X_\ast(\bT)$.
 
 Finally, we fix a resolution of $X$ by an induced $\Gamma$-module $Y$, i.e. a surjective map
-$Y \to X$ where $Y$ has a basis permuted by $\Gamma$ (cf. \cite{brahm:thesis}*{Satz 0.4.4}).
+$Y \to X$ where $Y$ has a basis permuted by $\Gamma$ (cf. \cite{brahm:thesis}*{Satz 0.4.4} ).
 To specify $Y$, we just give the matrix for the map $Y \to X$ of free abelian groups,
 together with the matrices giving $\gamma : Y \to Y$ for $\gamma \in \Gamma$.
 This resolution will allow us to definably cut out the connected component of the N\'eron model inside $\bT(F)$.
@@ -243,7 +246,7 @@ of motivic integration, $\cE_\Gamma$ is indistinguishable from the empty set.
 \subsection{The identity component of the N\'eron model} \label{sub:NerCdefinable}
 
 Now that we have parameterized $E/L/F$ and $\bT$ and shown that $\bT(F)$ definable, we may prove the main technical result of the paper.
-Write $\Ner{T}$ for the N\'eron model of $\bT$ (cf. \cite{bosch-lutkebohmert-reynaud:NeronModels}*{Ch. 10});
+Write $\Ner{T}$ for the N\'eron model of $\bT$ (cf. \cite{bosch-lutkebohmert-reynaud:NeronModels}*{Ch. 10} );
 this is a model for $\bT$ over $\ri_F$ with the property that $\Ner{T}(\ri_F) = \bT(F)$.  Let $\NerC{T}$ be its identity component.
 
 \begin{prop} \label{prop:NerCdefinable}
@@ -255,7 +258,7 @@ $\NerC{T}(\ri_F) = \NerC{T}(\ri_L)^\Gamma$, where the equality holds since N\'er
 So for the remainder of the proof we will assume that $E/F$ is totally ramified.
 
 Now, the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(L) \to X_I$ from
-$\Ner{T}(\ri_L)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan:11a}*{3.1}).
+$\Ner{T}(\ri_L)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan:11a}*{3.1} ).
 
 Our fixed choice of resolution $Y \to X$ yields an induced torus $\bR$ over $L$ with cocharacter lattice $Y$, together with a diagram
 \[
@@ -293,8 +296,8 @@ the set of faces of an alcove in the building of $\bG$, as in \cite{gordon-hales
 $\cF_\Sigma$ depends only on $\Sigma$ with its Galois action follows from the explicit description of parahoric subgroups in \cite{gross:parahorics}.}  
 
 We recall that each  fixed choice determines  a split reductive group $\bG^{\ast\ast}$ and an embedding 
-$\bG^{\ast\ast}(F)\hookrightarrow {\mathbf GL}_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
-Moreover, as in \cite{gordon-hales:15a}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles. We note that to determine a quasi-split group $\bG$, one only needs to know the absolute root datum, the Galois action on it (which is part of our \emph{fixed choices}), and the field extension that splits $\bG$. Thus, for quasi-split groups, the only information the parameter $z$ carries is the information about the field extension (cf. \cite{gordon-hales:15a}*{\S 2.2.2}). 
+$\bG^{\ast\ast}(F)\hookrightarrow \GL_N(F)$ for every local field $F$ of sufficiently large residue characteristic.  
+Moreover, as in \cite{gordon-hales:15a}*{\S 2.2}, we have a parameter space $Z$ encoding field extensions and Galois cocycles. We note that to determine a quasi-split group $\bG$, one only needs to know the absolute root datum, the Galois action on it (which is part of our \emph{fixed choices}), and the field extension that splits $\bG$. Thus, for quasi-split groups, the only information the parameter $z$ carries is the information about the field extension (cf. \cite{gordon-hales:15a}*{\S 2.2.2} ). 
 We denote the space of cocycles encoding the quasi-split groups by $Z^\ast$. 
 
 The parameter space  $Z$ has the property that, for every local field $F$ of sufficiently large residue characteristic, a pair
@@ -303,7 +306,7 @@ isomorphism class of connected reductive group arises via this construction.\foo
 $\Sigma$ denotes the fixed choices determining $\bG^{\ast\ast}$ and the outer automorphism that determines the quasi-split form $\bG^\ast$ of $\bG$;  $z$ is a parameter ranging over an
 $F$-vector space that determines a field extension over which $\bG$ splits and the Galois cocycle corresponding to $\bG$.} 
 In summary, we have the following 
-\begin{theorem}\label{thm:def_groups}(\cite{gordon-hales:15a}*{\S 2.2.2}, \cite{cluckers-gordon-halupczok:14b}*{\S 3.1}). 
+\begin{theorem}\label{thm:def_groups}(\cite{gordon-hales:15a}*{\S 2.2.2}, \cite{cluckers-gordon-halupczok:14b}*{\S 3.1} ). 
  For every fixed choice $\Sigma$ of root datum, there exists $M>0$ and a definable set $\cG \to Z$ with the following property:
 for every $F\in \loc_M$ and $z \in Z(F)$, ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
 $\bG_z$ with absolute root datum $\Sigma$.  Moreover, every isomorphism class of $F$-groups with absolute root datum 
@@ -371,7 +374,7 @@ By definition, we have
 c_F(z) d\mu_{\bG_z(F)}^\can = d\mu_{z, F}^\mot.
 \]
 For general $z$, it follows that the canonical measure is motivic, since the inner twisting is a definable map
-(using $z$, $z^\ast$ as parameters; cf. \cite{cluckers-gordon-halupczok:14b}*{\S 3.5.2}) and the pull-back of a motivic measure under a definable map is motivic.
+(using $z$, $z^\ast$ as parameters; cf. \cite{cluckers-gordon-halupczok:14b}*{\S 3.5.2} ) and the pull-back of a motivic measure under a definable map is motivic.
 \end{proof}
 
 \begin{rem} The above theorem allows a number of improvements in \cite{cluckers-gordon-halupczok:14b} and 
