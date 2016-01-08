@@ -115,6 +115,8 @@ of tori over $F$.  Finally, in Section \ref{sub:NerCdefinable} we show that $\Ne
 In Section 3 we prove two easy corollaries mentioned above, namely, that the canonical measure is motivic,
 and in a definable family of compactly-induced irreducible representations, formal degree is motivic. 
 
+{\bf Acknowledgment.} We thank Loren Spice for the discussion of formal degree, and the referee for multiple helpful suggestions and corrections.
+
 \section{Tori} \label{sec:tori}
 We will use the notions of definable sets and definable functions, which will always refer to the Denef-Pas language. 
 Formulas in the Denef-Pas language can have variables of three \emph{sorts}: valued field (which will be denoted by \emph{VF}),
@@ -278,7 +280,7 @@ We can now show that $\NerC{T}(\ri_L)$ is a definable subset of $\bT(L)$: we hav
 if and only if $\exists r \in \bR(L)$ such that $\alpha(r) = t$ and $\beta(r) = 0$.
 \end{proof}
 
-\section{General reductive groups}
+\section{General reductive groups}\label{sec:groups}
 Let $\bG$ be a connected reductive algebraic group defined over a local field $F$,
 let $\ff$ be a facet in the building of $\bG$ over $F$, and let $x$ be in the interior of $\ff$. 
 We denote by $G_\ff$ the maximal parahoric subgroup $\bG(F)_{x, 0}$ associated with this data
@@ -305,10 +307,10 @@ $\Xi$ (which includes the action of $\Gamma$). This fixed choice determines  a s
 with $\bT^{\ast\ast}\subset \bB^{\ast\ast}$ a split maximal torus and a Borel subgroup, and an action of $\Gamma$  on the root datum of $\bG^{\ast\ast}$
 with respect to $(\bB^{\ast\ast}, \bT^{\ast\ast})$.  This determines a definable set $Z_{\Xi}^\ast$ that specializes,
 for each local field $F$ of sufficiently large residue characteristic (with the bound depending only on $\Xi$)
-to the set of pairs $(K, z^\ast)$, where $K$ is a field extension of $F$ with Galois group isomorphic to $\Gamma$
-(via an enumerated isomorphism), and $z^\ast$ is an enumerated cocycle  with values in the group of outer automorphisms of $\bG^{\ast\ast}(F)$
+to the set of pairs $z^\ast=(E, \zeta^\ast)$, where $E$ is a field extension of $F$ with Galois group isomorphic to 
+$\Gamma$ (via an enumerated isomorphism), and $\zeta^\ast$ is an enumerated cocycle  with values in the group of outer automorphisms of $\bG^{\ast\ast}(F)$
 defining a quasi-split $F$-form
-$\bG^\ast$ of $\bG^{\ast\ast}$. Further, there is a definable set $Z_{\Xi}\to Z_{\Xi}^\ast$ encoding the inner $F$-forms of $\bG^\ast$ that become isomorphic to $\bG^{\ast}$ over $K$, (see\cite{gordon-hales:15a}*{\S 2.2.2} for details).
+$\bG_{z^\ast}$ of $\bG^{\ast\ast}$. Further, there is a definable set $Z_{\Xi}\to Z_{\Xi}^\ast$ encoding the inner $F$-forms of $\bG_{z^\ast}$ that become isomorphic to $\bG_{z^\ast}$ over $E$, (see\cite{gordon-hales:15a}*{\S 2.2.2} for details).
 
 %We quote
 % and an embedding
@@ -339,13 +341,13 @@ In summary, we have the following
  $\cG \to Z_{\Xi}$ such that for every $F\in \loc_M$ %and $z \in Z_{\Xi}(F)$,
  the following holds:
  \begin{enumerate}
- \item  ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
-$\bG_z$ with absolute root datum determined by $\Xi$;
+ \item  for $z\in Z(F)$, the set ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
+$\bG_z$ with absolute root datum determined by $\Xi$, or empty;
 \item For each $z^\ast\in Z_{\Xi}^\ast$ there exists an element which we will denote by $(z^\ast, 1)$ in $Z_{\Xi}(F)$, such that $\bG_{(z^\ast, 1)}$ is quasi-split over $F$;
 \item If $z\in Z_{\Xi, \cF}$, then the facets in the alcove in the building for $\bG_z$ over $F$ are in bijection with the set $\cF$.
 %\item $Z_{\Xi}^\ast$ parametrizes quasi-split groups $\bG^\ast$ that split over a tamely ramified extension with Galois group $\Gamma$, and similarly if $z^\ast \in Z_{\Xi, \cF}
 \end{enumerate}
-Moreover, every isomorphism class of $F$-groups with absolute root datum given by $\Xi$ that split over a tamely ramified extension with Galois group $\Gamma$
+Moreover, for $F\in \loc_M$, every isomorphism class of $F$-groups with absolute root datum given by $\Xi$ that split over a tamely ramified extension with Galois group $\Gamma$
 arises as a fiber $\cG_z$ for some $z\in Z_\Xi(F)$.
 %The group $\bG$ is quasi-split over $F$ if and only if $z\in Z^\ast$.
 \end{theorem}
@@ -357,23 +359,46 @@ Let $\ff$ be a facet in the building of $\bG$.  The next proposition shows that
 then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of definable sets.
 In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:97a} is definable.
 
-For the moment, we only consider quasi-split groups.
+In order to prove the proposition, we need to start with  more fixed choices: namely, we have to include both the fixed choices needed to define the group and its parahoric indexing set as above, and also the fixed choice of a resolution of the co-character lattice of a maximally split maximal torus in that group, as in \S \ref{sub:fixedchoices}. 
+More precisely, suppose the root datum $\Xi$ with an action of a fixed group $\Gamma$ as above is given; and  
+let $Y$ and $X$ be two lattices with an action of $\Gamma$, with a fixed surjective map of $\Gamma$-modules $Y\to X$, and where $Y$ has a basis permuted by $\Gamma$. Then there is a natural compatibility condition stating that there exists a quasi-split group $\bG^\ast$ over $F$ with the root datum $\Xi$, and a maximal maximally split torus $\bT^\ast\subset \bG^\ast$,  such that $X$ is isomorphic to $X_\ast(\bT^\ast)$. For each fixed choice of of $\Xi$ and $Y\to X$, there
+is a definable subset $Z_{\Xi, Y\to X}^\ast$ of the set $Z_\Xi^\ast$ characterized by the condition that for the local fields $F$ with sufficiently large residue characteristic, for  $z^\ast \in Z_{\Xi, Y\to X}^\ast$,  
+the quasi-split algebraic  group $\bG_{z^\ast}$ contains a maximal maximally split torus $\bT^\ast$ with co-character lattice isomorphic to $X$.  The sets $Z_{\Xi, Y\to X}^\ast$ partition the set $Z_\Xi^\ast$ as $X$ runs through all the choices of a lattice compatible with $\Xi$.
+ 
+%For the moment, we only consider quasi-split groups.
 \begin{prop}\label{prop:main}
- Let $\Sigma$, $Z$ and $\cG\to Z$ be as in Theorem \ref{thm:def_groups}, let
- $\cF_{\Sigma}$ parameterize the facets of an alcove in the building of $\bG_z$ as above,
- and suppose that $\ff \in \cF_\Sigma$.
-Then there exists $M>0$ (depending only on $\Sigma$) and a family of definable subsets $\cG_{\ff} \to Z^\ast$ of $\cG$
- such that, for all $F\in \loc_M$ and $z\in Z^\ast(F)$, 
+ Let $(\Xi, \cF)$, $Z_\Xi\to Z_\Xi^\ast$ and $\cG\to Z_\Xi$ be as in Theorem \ref{thm:def_groups}, and let $Y\to X$ be a surjective map of $\Gamma$-modules satisfying the compatibility condition with $\Xi$ as in the preceding paragraph. 
+ % and let $\ff\in \cF$. 
+ %let $\cF_{\Sigma}$ parameterize the facets of an alcove in the building of $\bG_z$ as above,
+ %and suppose that $\ff \in \cF_\Sigma$.
+Then there exists $M>0$ (depending only on the fixed choices ($\Xi, \cF$) and $Y\to X$) and a family of definable 
+subsets $\cG_{\ff} \to Z_\Xi$ of $\cG$, with $\ff\in \cF$,
+ such that, for all $F\in \loc_M$ and $z\in Z_\Xi(F)$, 
 \[
-{\cG_{\ff}}_{z}(F)= \bG_z(F)_{\ff}.
+(\cG_{\ff})_{z}(F)= \bG_z(F)_{\ff}.
 \]
 \end{prop}
 
-\begin{proof} Let $\bT$ be a maximal torus containing the maximal $F$-split torus in $\bG$; let $x$ be the baricenter of $\ff$.
+\begin{proof} Even though as above, one should start from the fixed choices, 
+%and then build the family $\cG_z$, 
+and then build a family of definable sets that specialize to the parahorics ${\cG_z(F)}_\ff$ for all fields $F$ of sufficiently large residue characteristic, we will just show how to construct the subgroups 
+${\cG_z(F)}_\ff$ in a definable way pretending that $F$ and $z$ are fixed, in order not to clutter the discussion. It will be clear from the construction that this way we get a definable family of definable subsets as usual. 
+
+First, consider the family of quasi-split groups $\bG_{z^\ast}$ parameterized by 
+$z^\ast\in Z_{\Xi, Y\to X}^\ast$. 
+Let $\bT$ be a maximal torus containing the maximal $F$-split torus in 
+$\bG_{z^\ast}$ with co-character lattice isomorphic to $X$ (which is part of the fixed choices).  
+Let $x$ be the baricentre of $\ff$.
 By definition, $\bG(F)_{x,0}$ is generated by $\bT(F)_{x, 0}$ and $U_\psi$, where the $U_\psi$ are
 the filtration subgroups of the unipotent one-parameter subgroups $U_{\alpha}$. 
 We have shown in Proposition \ref{prop:NerCdefinable} above that  $\bT(F)_{x, 0}$ is definable.
-The rest of the proof is identical to that of Lemma 3.4 in \cite{cluckers-gordon-halupczok:14b}.  
+The rest of the proof in this case is identical to that of Lemma 3.4 in \cite{cluckers-gordon-halupczok:14b}. 
+This proves the statement for quasi-split groups. 
+
+Now suppose $z\in Z_\Xi$. The element $z$ in particular defines a tower of field extensions $E/L/F$ with $L/F$ unramified, as in \S \ref{sub:def_tori}, a quasi-split group $\bG_{z^\ast}$, and a cocycle $\zeta$ that defines an inner twisting (over $F$) between the quasi-split form $\bG_{z^\ast}$ and $\bG_z$, which is an $L$-isomorphism.   
+Then  
+
+ 
 \end{proof} 
 
 \subsection{Applications} 
