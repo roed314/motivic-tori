@@ -325,7 +325,7 @@ reductive group with absolute root datum $\Xi$.
 Our \emph{set of fixed choices} is now the set of pairs $(\Xi, \cF)$, with $\Xi$ as in the previous paragraph.
 The correspondence between the cohomological data defining a group $\bG$ over $F$ and the indexing set for its
 parahoric subgroups is described in \cite{gross:parahorics}*{\S 7}. From this explicit description, one can see that
-there is a definable condition on an element $z\in Z_\Xi(F)$ that ensures that
+there is a definable condition on an element $z=(z^\ast, \zeta)\in Z_\Xi(F)$ that ensures that
 the reductive group $\bG$ over $F$ determined by the cocycle $z$ has the parahoric indexing set $\cF$, i.e.,
 that $\cF$ can be identified with the set of baricentres of facets in an alcove in the building of $\bG$ over $F$.
 Let us denote the subset of $Z_\Xi$ defined by this condition by $Z_{\Xi, \cF}$.
@@ -341,9 +341,9 @@ In summary, we have the following
  $\cG \to Z_{\Xi}$ such that for every $F\in \loc_M$ %and $z \in Z_{\Xi}(F)$,
  the following holds:
  \begin{enumerate}
- \item  for $z\in Z(F)$, the set ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
+ \item  for $z\in Z_\Xi(F)$, the set ${\cG_z}(F)$ is the set of $F$-points of a connected reductive group
 $\bG_z$ with absolute root datum determined by $\Xi$, or empty;
-\item For each $z^\ast\in Z_{\Xi}^\ast$ there exists an element which we will denote by $(z^\ast, 1)$ in $Z_{\Xi}(F)$, such that $\bG_{(z^\ast, 1)}$ is quasi-split over $F$;
+\item For each $z^\ast\in Z_{\Xi}^\ast(F)$ there exists an element which we will denote by $(z^\ast, 1)$ in $Z_{\Xi}(F)$, such that $\bG_{(z^\ast, 1)}$ is quasi-split over $F$;
 \item If $z\in Z_{\Xi, \cF}$, then the facets in the alcove in the building for $\bG_z$ over $F$ are in bijection with the set $\cF$.
 %\item $Z_{\Xi}^\ast$ parametrizes quasi-split groups $\bG^\ast$ that split over a tamely ramified extension with Galois group $\Gamma$, and similarly if $z^\ast \in Z_{\Xi, \cF}
 \end{enumerate}
@@ -354,23 +354,23 @@ arises as a fiber $\cG_z$ for some $z\in Z_\Xi(F)$.
 
 \subsection{Definability of maximal parahorics}
 Our main result is that the parahoric subgroups associated with facets in the building of $\bG$ via Bruhat-Tits theory are definable.
-More precisely, let $\bG$ be a tamely ramified, quasi-split, connected reductive group defined over a local field $F$.
+More precisely, let $\bG$ be a tamely ramified, connected reductive group defined over a local field $F$.
 Let $\ff$ be a facet in the building of $\bG$.  The next proposition shows that
 then the parahoric $\bG(F)_\ff\subset \bG(F)$ arises in a definable family of definable sets.
 In particular, the canonical parahoric of $\bG(F)$ defined in \cite{gross:97a} is definable.
 
-In order to prove the proposition, we need to start with  more fixed choices: namely, we have to include both the fixed choices needed to define the group and its parahoric indexing set as above, and also the fixed choice of a resolution of the co-character lattice of a maximally split maximal torus in that group, as in \S \ref{sub:fixedchoices}. 
-More precisely, suppose the root datum $\Xi$ with an action of a fixed group $\Gamma$ as above is given; and  
-let $Y$ and $X$ be two lattices with an action of $\Gamma$, with a fixed surjective map of $\Gamma$-modules $Y\to X$, and where $Y$ has a basis permuted by $\Gamma$. Then there is a natural compatibility condition stating that there exists a quasi-split group $\bG^\ast$ over $F$ with the root datum $\Xi$, and a maximal maximally split torus $\bT^\ast\subset \bG^\ast$,  such that $X$ is isomorphic to $X_\ast(\bT^\ast)$. For each fixed choice of of $\Xi$ and $Y\to X$, there
-is a definable subset $Z_{\Xi, Y\to X}^\ast$ of the set $Z_\Xi^\ast$ characterized by the condition that for the local fields $F$ with sufficiently large residue characteristic, for  $z^\ast \in Z_{\Xi, Y\to X}^\ast$,  
-the quasi-split algebraic  group $\bG_{z^\ast}$ contains a maximal maximally split torus $\bT^\ast$ with co-character lattice isomorphic to $X$.  The sets $Z_{\Xi, Y\to X}^\ast$ partition the set $Z_\Xi^\ast$ as $X$ runs through all the choices of a lattice compatible with $\Xi$.
+In order to prove the proposition, we need to start with  more fixed choices: namely, we have to include both the fixed choices needed to define the group and its parahoric indexing set as above, and also the fixed choice of a resolution $Y$ of the co-character lattice $X$ of a maximally split maximal torus in that group (which is part of $\Xi$), as in 
+\S \ref{sub:fixedchoices}. 
+
  
 %For the moment, we only consider quasi-split groups.
 \begin{prop}\label{prop:main}
- Let $(\Xi, \cF)$, $Z_\Xi\to Z_\Xi^\ast$ and $\cG\to Z_\Xi$ be as in Theorem \ref{thm:def_groups}, and let $Y\to X$ be a surjective map of $\Gamma$-modules satisfying the compatibility condition with $\Xi$ as in the preceding paragraph. 
+ Let $\Xi=(X,\Phi, X^\vee, \Phi^\vee, \Gamma)$,  $\cF$, $Z_\Xi\to Z_\Xi^\ast$ and $\cG\to Z_\Xi$ be, respectively, an absolute root datum with Galois action, a parahoric indexing set, the space encoding the forms of the split group with the given absolute root datum, and the definable family of all groups with this absolute root datum, as in Theorem \ref{thm:def_groups}, and let $Y\to X$ be a surjective map of $\Gamma$-modules. 
+ %satisfying the compatibility condition with $\Xi$ as in the preceding paragraph. 
  % and let $\ff\in \cF$. 
  %let $\cF_{\Sigma}$ parameterize the facets of an alcove in the building of $\bG_z$ as above,
  %and suppose that $\ff \in \cF_\Sigma$.
+
 Then there exists $M>0$ (depending only on the fixed choices ($\Xi, \cF$) and $Y\to X$) and a family of definable 
 subsets $\cG_{\ff} \to Z_\Xi$ of $\cG$, with $\ff\in \cF$,
  such that, for all $F\in \loc_M$ and $z\in Z_\Xi(F)$, 
@@ -385,7 +385,7 @@ and then build a family of definable sets that specialize to the parahorics ${\c
 ${\cG_z(F)}_\ff$ in a definable way pretending that $F$ and $z$ are fixed, in order not to clutter the discussion. It will be clear from the construction that this way we get a definable family of definable subsets as usual. 
 
 First, consider the family of quasi-split groups $\bG_{z^\ast}$ parameterized by 
-$z^\ast\in Z_{\Xi, Y\to X}^\ast$. 
+$z^\ast\in Z_{\Xi}^\ast$. 
 Let $\bT$ be a maximal torus containing the maximal $F$-split torus in 
 $\bG_{z^\ast}$ with co-character lattice isomorphic to $X$ (which is part of the fixed choices).  
 Let $x$ be the baricentre of $\ff$.
@@ -510,4 +510,8 @@ and a motivic measure that we have denoted by $\mu_{\bG(F)}^\can$ above.
 
 \end{document}
 
+%More precisely, suppose the root datum $\Xi$ with an action of a fixed group $\Gamma$ as above is given; and  
+let $Y$ and $X$ be two lattices with an action of $\Gamma$, with a fixed surjective map of $\Gamma$-modules $Y\to X$, and where $Y$ has a basis permuted by $\Gamma$. Then there is a natural compatibility condition stating that there exists a quasi-split group $\bG^\ast$ over $F$ with the root datum $\Xi$, and a maximal maximally split torus $\bT^\ast\subset \bG^\ast$,  such that $X$ is isomorphic to $X_\ast(\bT^\ast)$. For each fixed choice of of $\Xi$ and $Y\to X$, there
+is a definable subset $Z_{\Xi, Y\to X}^\ast$ of the set $Z_\Xi^\ast$ characterized by the condition that for the local fields $F$ with sufficiently large residue characteristic, for  $z^\ast \in Z_{\Xi, Y\to X}^\ast$,  
+the quasi-split algebraic  group $\bG_{z^\ast}$ contains a maximal maximally split torus $\bT^\ast$ with co-character lattice isomorphic to $X$.  The sets $Z_{\Xi, Y\to X}^\ast$ partition the set $Z_\Xi^\ast$ as $X$ runs through all the choices of a lattice compatible with $\Xi$.
 
