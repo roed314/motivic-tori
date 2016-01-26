@@ -40,6 +40,7 @@
 \newcommand\lef{\mathbb L}
 \newcommand\cE{{\mathcal E}}
 \newcommand\mot{\mathrm{mot}}
+\newcommand\ad{\mathrm{ad}}
 \newcommand{\Ner}[1]{\mathcal{#1}}
 \newcommand{\NerC}[1]{\mathcal{#1}^\circ}
 
@@ -422,9 +423,9 @@ exactly by the $L$-factor of the motive associated with $\bG$ \cite{gross:97a}. 
 we define $d\mu_{\bG(F)}^\can$ as the pull-back of the canonical (in our sense) measure from the quasi-split inner form $\bG^\ast$ of $\bG$.  
 
 \begin{theorem}\label{thm:mot_meas}
- Let $\Sigma$, $Z$  and $\cG \to Z$ be as in Theorem \ref{thm:def_groups}. 
-Then there exists $M>0$ (depending only on $\Sigma$), a family of  motivic measures
-$d\mu_z$ on $\cG_z$, and a motivic function $c:Z\to A$ such that, for every $F\in \loc_M$,
+ Let $\Xi$, $\cF$, $Z_\Xi$, $Z_{\Xi,\cF}$, $Z^\ast_\Xi$  and $\cG \to Z_\Xi$ be as in Theorem \ref{thm:def_groups}. 
+Then there exists $M>0$ (depending only on the fixed choices), a family of  motivic measures
+$d\mu_z$ on $\cG_z$, and a motivic function $c$ on $Z$ such that, for every $F\in \loc_M$,
 \[
 c_F(z) d\mu_{\bG_z(F)}^\can = d\mu_{z, F}.
 \]
@@ -432,17 +433,32 @@ Here $d\mu_{\bG_z(F)}^\can$ is the canonical measure on $\bG_z(F)=\cG_z(F)$,
 and $d\mu_{z, F}$ is the specialization to $F$ of the motivic measure $d\mu_z$ on the definable set $\cG_z$. 
 \end{theorem} 
 
-\begin{proof} There exists a motivic Haar measure on $\bG_z$ for every $z\in Z(F)$,
-constructed e.g. in \cite{gordon-hales:15a}*{\S 2.3}. Let us denote this measure by $\mu_z^\mot$. Now, suppose 
-$z\in Z^\ast(F)$, so that the associated group $\bG_z$ is quasi-split.  
-Then it has the canonical parahoric subgroup as in \cite{gross:97a}, associated with a special point $x$ in the building. 
-By Proposition \ref{prop:main}, the canonical parahoric $\bG_z(F)_{x, 0}$ is definable, so we can define  a motivic function $c(z):=\vol_{\mu_z^\mot}({\cG_{\ff}}_z)$. 
+\begin{proof} 
+We first define the motivic function $c^\ast$ on $Z^\ast$ that is responsible for scaling of the measure on quasi-split groups, and then define the motivic function $c$ on $Z$ by pull-back. 
+There exists a motivic Haar measure on $\bG_{z^\ast}$ for every $z^\ast\in Z^\ast(F)$,
+constructed e.g. in \cite{gordon-hales:15a}*{\S 2.3}. Let us denote this measure by $\mu_{z^\ast}^\mot$. 
+%Consider
+%$z^\ast\in Z^\ast(F)$, so that the associated 
+Since the group $\bG_{z^\ast}$ is quasi-split,   
+it has the canonical parahoric subgroup as in \cite{gross:97a}, associated with a special point $x$ in the building. 
+By Proposition \ref{prop:main},  the equivalence class of $x$ has a representative $\ff\in \cF$, and the canonical parahoric 
+$\bG_{z^\ast}(F)_{x, 0}=\bG_{z^\ast}(F)_\ff$ is definable.  Thus, we can define  a motivic function $c^\ast(z^\ast):=
+\vol_{\mu_{z^\ast}^\mot}({\cG_{\ff}}_{z^\ast})$. 
 By definition, we have 
 \[
-c_F(z) d\mu_{\bG_z(F)}^\can = d\mu_{z, F}^\mot.
+c^\ast_F(z^\ast) d\mu_{\bG_{z^\ast}(F)}^\can = d\mu_{z^\ast, F}^\mot.
 \]
-For general $z$, it follows that the canonical measure is motivic, since the inner twisting is a definable map
-(using $z$, $z^\ast$ as parameters; cf. \cite{cluckers-gordon-halupczok:14b}*{\S 3.5.2}) and the pull-back of a motivic measure under a definable map is motivic.
+
+Now if $z=(z^\ast, \zeta)\in Z(F)$, the canonical measure on $\bG_z(F)$ is by definition the pull-back of the canonical measure on $\bG_{z^\ast}(F)$ under the inner twisting $\psi_{\zeta}$ determined by $\zeta$. 
+The inner twisting is a definable map
+(using $\zeta$ and $z^\ast$ as parameters; cf. \cite{cluckers-gordon-halupczok:14b}*{\S 3.5.2}) 
+The pull-back of a motivic measure under a definable map is motivic.
+Thus we have, by definition, 
+% the canonical measure on $\bG_z(F)$ has the form 
+$$ c^\ast_F(z^\ast)d\mu_{\bG_{z}(F)}^\can  =  c^\ast_F(z^\ast) \psi_{\zeta}^\ast \left(d\mu_{\bG_{z^\ast}(F)}^\can \right).$$ 
+The measure $\psi_{\zeta}^\ast \left(d\mu_{\bG_{z^\ast}(F)}^\can \right)$ is motivic, as a pull-back of a motiivc measure under a definable map. 
+Thus, for $z=(z^\ast, \zeta)\in Z$, we can define $c(z):= c^\ast(z^\ast)$, i.e., 
+the function $c$ is simply the pull-back of the function $z^\ast$ on $Z^\ast$ under the projection map $Z\to Z^\ast$. 
 \end{proof}
 
 \begin{rem} The above theorem allows a number of improvements in \cite{cluckers-gordon-halupczok:14b} and 
@@ -460,28 +476,53 @@ Finally, Theorem \ref{thm:mot_meas} implies that formal degree in definable fami
 supercuspidal representations is a motivic function of the parameters indexing the family. 
 Recall that formal degree of a representation depends on the choice of Haar measure on 
 $\bG(F)/C$, where $C$ is the center of $\bG(F)$. 
-In the following corollary, we use the canonical measure. 
+We use the canonical measure on $\bG^\ad$ in order to keep the statement simple and easy to use. 
+%However, it is also convenient to consider the measure that comes from the canonical measure on the group $\bG^\ad$.
+More precisely, note that the difference between $\bG$ and $\bG^\ad$ lies in the fixed choices; let $\Xi$ be the fixed choices for 
+$\bG$ and  $\Xi^\ad$ for $\bG^{\ad}$,  respectively. 
+Then there is a map of the corresponding cocycle spaces $Z\to Z_{\Xi^\ad}$ (identity on the part of the parameter $z$ that determines the splitting field, and with the map on  cocycles induced by
+% for $\bG$ to the cocycle for $\bG^\ad$ determined by 
+the map $\bG^{\ast\ast} \to (\bG^{\ad})^{\ast\ast}$). By abuse of notation, we will denote the image of $z\in Z_\Xi(F)$ in 
+$Z_{\Xi^\ad}(F)$ also by $z$.  
+By Theorem \ref{thm:mot_meas} applied to the adjoint group $\bG_z^{\ad}$, we have the function $c^\ad$ on $Z_{\Xi^\ad}$ such that the measure 
+$c^\ad(z) \mu_z^{\can}$ on the adjoint group with the parameter $z$ is motivic. 
+%Let us pull this measure back to the group $\bG_z(F)$ and denote it by $c^\ad(z)d\mu_z^\ad$.
+%This is the measure used in the corollary below. 
+%Note that it differs from the canonical measure on $\bG_z(F)$ by the ratio of motivic fund 
  
-\begin{cor} Let $\Sigma$, $Z$  and $\cG \to Z$ be as in Theorem \ref{thm:def_groups}, and let $M>0$ be the constant from Theorem \ref{thm:mot_meas}.
+\begin{cor}  Let $\Xi$ 
+%$\cF$, $Z_\Xi$, $Z_{\Xi,\cF}$, $Z^\ast_\Xi$  
+and $\cG \to Z_\Xi$ be as in Theorem \ref{thm:def_groups}, and let $M>0$ be the constant from Theorem \ref{thm:mot_meas}.
 Suppose that we are given a definable family of compact subgroups $J_{z, \lambda} \subset \cG_z$,
-parameterized by $z \in Z$ and $\lambda$ in some definable set.
-In addition, let $\sigma_{z, \lambda}(F)$ be an irreducible representation of $J_{z, \lambda}(F)$ of fixed dimension $d$.
-Assume that $\pi_{z,\lambda}(F) := \ind_{J_{z,\lambda}(F)}^{\bG_z(F)} \sigma_{z,\lambda}(F)$
-is irreducible for $z \in Z(F)$ and $F \in \loc_M$.
+parameterized by $z \in Z_\Xi$ and $\lambda$ in some definable set.
+In addition, suppose we are given an irreducible representation  
+$\sigma_{z, \lambda}(F)$ of $J_{z, \lambda}(F)$ of fixed dimension $d$, for every $F\in \loc_M$, such 
+that $\pi_{z,\lambda}(F) := \ind_{J_{z,\lambda}(F)}^{\bG_z(F)} \sigma_{z,\lambda}(F)$
+is irreducible for all $z \in Z_\Xi(F)$ and $F \in \loc_M$.
 Then the formal degree (with respect to the canonical measure as above) of $\pi_{z, \lambda}$ is of the form 
 \[
-d_{\pi_{z, \lambda}}=\frac{c(z)d}{m(z, \lambda)},
+d_{\pi_{z, \lambda}}=\frac{c^\ad(z)d}{m(z, \lambda)},
 \]
-where $c(z)$ is the motivic function of Theorem \ref{thm:mot_meas}, and $m(z, \lambda)$ is a motivic function of $z, \lambda$. 
+where $c^\ad(z)$ is defined in the above paragraph, and 
+$m(z, \lambda)$ is a motivic function of $z, \lambda$. 
 \end{cor}
 \begin{proof}
-It is well-known\footnote{Sufficiently well known that we could not find a reference.} that
-\[
-d_{\pi_{z, \lambda}}=\frac{\deg(\sigma_{z, \lambda})}{\vol_{\mu_{\bG_z(F)}^\can}(J_{z, \lambda})}.
-\]
-By Theorem \ref{thm:mot_meas}, we have 
-$\vol_{\mu_{\bG_z(F)}^\can}(J_{z, \lambda}) = \frac{\vol_{\mu_z}(J_{z, \lambda})}{c(z)}$,
-and the statement follows, with $m(z, \lambda)=\vol_{\mu_z}(J_{z, \lambda})$.
+It is well-known\footnote{In fact, so well known that we could not find a reference, so we include a sketch of the proof provided to us by Loren Spice.} that
+\begin{equation}\label{eq:well-known}
+d_{\pi_{z, \lambda}}=\frac{\deg(\sigma_{z, \lambda})}{\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C)}.
+\end{equation}
+Indeed, to prove (\ref{eq:well-known}), 
+consider $\int_{\bG_z(F)/C} |f(g)|^2\, dg$, where $f$ is the
+following element of the induced representation:  choose a unit-length
+vector $v$ of the representation space of $\sigma_{z,\lambda}$, and let $f$ be the function supported on $J_{z, \lambda}$ 
+and defined there by
+$f(j) = (\sigma_{z, \lambda}(j)v, v)$, (where (,) is a $\sigma_{z, \lambda}$-invariant inner product, which exists since 
+$J_{z, \lambda}$ is compact).  Then the
+fact that $\int_{J_{z, \lambda}/C} |f(j)|^2 dj = \frac{(v, v)}{\deg(\sigma_{z, \lambda})} = \frac1d$, where $dj$
+is the normalized Haar measure, gives that 
+$$\frac{f(1)}{\deg(\pi)} = \int_{\bG_z(F)/C}|f(g)|^2 dg = \frac{\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C)}{d}.$$ 
+By Theorem \ref{thm:mot_meas} applied to the adjoint group $\cG\to Z_{\Xi^\ad}$, we have $\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C) = \frac{\vol_{\mu_z}(J_{z, \lambda})}{c^\ad(z)}$, where $\mu_z$ is a motivic measure, 
+and the statement follows, with $m(z, \lambda)=\vol_{\mu_z}(J_{z, \lambda}/C)$.
 \end{proof}
 
 \subsubsection{Gross' canonical volume form}
