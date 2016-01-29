@@ -497,7 +497,7 @@ $c^\ad(z) \mu_z^{\can}$ on the adjoint group with the parameter $z$ is motivic.
 %This is the measure used in the corollary below. 
 %Note that it differs from the canonical measure on $\bG_z(F)$ by the ratio of motivic fund 
  
-\begin{cor}  Let $\Xi$ 
+\begin{cor} \label{cor:form_deg} Let $\Xi$ 
 %$\cF$, $Z_\Xi$, $Z_{\Xi,\cF}$, $Z^\ast_\Xi$  
 and $\cG \to Z_\Xi$ be as in Theorem \ref{thm:def_groups}, and let $M>0$ be the constant from Theorem \ref{thm:mot_meas}.
 Suppose that we are given a definable family of compact subgroups $J_{z, \lambda} \subset \cG_z$,
@@ -514,22 +514,37 @@ where $c^\ad(z)$ is defined in the above paragraph, and
 $m(z, \lambda)$ is a motivic function of $z, \lambda$. 
 \end{cor}
 \begin{proof}
-It is well-known\footnote{In fact, so well known that we could not find a reference, so we include a sketch of the proof provided to us by Loren Spice.} that
+It is well-known (see Lemma \ref{lem:well-known}) that
 \begin{equation}\label{eq:well-known}
 d_{\pi_{z, \lambda}}=\frac{\deg(\sigma_{z, \lambda})}{\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C)}.
 \end{equation}
-Indeed, to prove (\ref{eq:well-known}), 
-consider $\int_{\bG_z(F)/C} |f(g)|^2\, dg$, where $f$ is the
-following element of the induced representation:  choose a unit-length
-vector $v$ of the representation space of $\sigma_{z,\lambda}$, and let $f$ be the function supported on $J_{z, \lambda}$ 
-and defined there by
-$f(j) = (\sigma_{z, \lambda}(j)v, v)$, (where (,) is a $\sigma_{z, \lambda}$-invariant inner product, which exists since 
-$J_{z, \lambda}$ is compact).  Then the
-fact that $\int_{J_{z, \lambda}/C} |f(j)|^2 dj = \frac{(v, v)}{\deg(\sigma_{z, \lambda})} = \frac1d$, where $dj$
-is the normalized Haar measure, gives that 
-$$\frac{f(1)}{\deg(\pi)} = \int_{\bG_z(F)/C}|f(g)|^2 dg = \frac{\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C)}{d}.$$ 
+
 By Theorem \ref{thm:mot_meas} applied to the adjoint group $\cG\to Z_{\Xi^\ad}$, we have $\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C) = \frac{\vol_{\mu_z}(J_{z, \lambda})}{c^\ad(z)}$, where $\mu_z$ is a motivic measure, 
 and the statement follows, with $m(z, \lambda)=\vol_{\mu_z}(J_{z, \lambda}/C)$.
+\end{proof}
+
+In the proof of Corollary \ref{cor:form_deg}, we used the following property of the formal degree.
+This statement is well-known, but we could not find a reference, so we give a proof provided to us by Loren Spice.
+
+\begin{lem} \label{lem:well-known}
+If $G$ is a reductive $p$-adic group with center $C$, $\mu$ is a measure on $G/C$, $J \subseteq G$ is open, $J/C$ is compact,
+$\sigma$ is an irreducible representation of $J$ and $\pi = \ind_J^G \sigma$ then the formal degree is given by
+\[
+d_{\pi,\mu} = \frac{\deg(\sigma)}{\vol_\mu(J/C)}.
+\]
+\end{lem}
+\begin{proof}
+Let $V$ be the representation space of $\sigma$ and $(,)$ be a $\sigma$-invariant
+inner product on $V$, which exists since $J$ is compact.
+Choose a unit-length vector $v \in V$ and let $f$ be the function supported on $J$
+defined there by $f(j) = (\sigma(j)v,v)$.  For the normalize Haar measure $dj$ on $J/C$,
+\[
+\int_{J/C} \lvert f(j)\rvert^2 dj = \frac{(v,v)}{\deg(\sigma)} = \frac{1}{d},
+\]
+and thus
+\[
+\frac{f(1)}{d_\pi} = \int_{G/C} \lvert f(g) \rvert d\mu(g) = \frac{\vol_\mu(J/C)}{d}.
+\]
 \end{proof}
 
 \subsubsection{Gross' canonical volume form}
