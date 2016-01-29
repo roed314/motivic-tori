@@ -62,7 +62,7 @@
 \newtheorem{example}[thm]{Example}
 
 
-\title[]{Canonical measure on a reductive $p$-adic group is motivic}
+\title[]{The canonical measure on a reductive $p$-adic group is motivic}
 \author{Julia Gordon and David Roe}
 \subjclass[2010]{22E50 (primary); 20G25, 14E18, 03C60 (secondary)}
 \keywords{N\'eron models, Denef-Pas language, algebraic tori, canonical measure}
@@ -519,8 +519,8 @@ It is well-known (see Lemma \ref{lem:well-known}) that
 d_{\pi_{z, \lambda}}=\frac{\deg(\sigma_{z, \lambda})}{\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C)}.
 \end{equation}
 
-By Theorem \ref{thm:mot_meas} applied to the adjoint group $\cG\to Z_{\Xi^\ad}$, we have $\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C) = \frac{\vol_{\mu_z}(J_{z, \lambda})}{c^\ad(z)}$, where $\mu_z$ is a motivic measure, 
-and the statement follows, with $m(z, \lambda)=\vol_{\mu_z}(J_{z, \lambda}/C)$.
+By Theorem \ref{thm:mot_meas} applied to the adjoint group $\cG\to Z_{\Xi^\ad}$, we have $\vol_{\mu_{\bG_z^\ad(F)}^\can}(J_{z, \lambda}/C) = \frac{\vol_{\mu^\mot_z}(J_{z, \lambda})}{c^\ad(z)}$, where $\mu^\mot_z$ is the motivic measure, 
+and the statement follows, with $m(z, \lambda)=\vol_{\mu^\mot_z}(J_{z, \lambda}/C)$.
 \end{proof}
 
 In the proof of Corollary \ref{cor:form_deg}, we used the following property of the formal degree.
@@ -537,7 +537,7 @@ d_{\pi,\mu} = \frac{\deg(\sigma)}{\vol_\mu(J/C)}.
 Let $V$ be the representation space of $\sigma$ and $(,)$ be a $\sigma$-invariant
 inner product on $V$, which exists since $J$ is compact.
 Choose a unit-length vector $v \in V$ and let $f$ be the function supported on $J$
-defined there by $f(j) = (\sigma(j)v,v)$.  For the normalize Haar measure $dj$ on $J/C$,
+defined there by $f(j) = (\sigma(j)v,v)$.  For the normalized Haar measure $dj$ on $J/C$,
 \[
 \int_{J/C} \lvert f(j)\rvert^2 dj = \frac{(v,v)}{\deg(\sigma)} = \frac{1}{d},
 \]
