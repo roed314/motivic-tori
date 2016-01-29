@@ -428,12 +428,12 @@ from the quasi-split inner form $\bG^\ast$ of $\bG$.
 \begin{theorem}\label{thm:mot_meas}
  Let $\Xi$, $\cF$, $Z_\Xi$, $Z_{\Xi,\cF}$, $Z^\ast_\Xi$  and $\cG \to Z_\Xi$ be as in Theorem \ref{thm:def_groups}. 
 Then there exists $M>0$ (depending only on the fixed choices), a family of  motivic measures
-$d\mu_z$ on $\cG_z$, and a motivic function $c$ on $Z$ such that, for every $F\in \loc_M$,
+$d\mu_z^\mot$ on $\cG_z$, and a motivic function $c$ on $Z$ such that, for every $F\in \loc_M$,
 \[
-c_F(z) d\mu_{\bG_z(F)}^\can = d\mu_{z, F}.
+c_F(z) d\mu_{\bG_z(F)}^\can = d\mu_{z, F}^\mot.
 \]
 Here $d\mu_{\bG_z(F)}^\can$ is the canonical measure on $\bG_z(F)=\cG_z(F)$,
-and $d\mu_{z, F}$ is the specialization to $F$ of the motivic measure $d\mu_z$ on the definable set $\cG_z$. 
+and $d\mu_{z, F}^\mot$ is the specialization to $F$ of the motivic measure $d\mu_z^\mot$ on the definable set $\cG_z$. 
 \end{theorem} 
 
 \begin{proof} 
@@ -443,8 +443,7 @@ constructed e.g. in \cite{gordon-hales:15a}*{\S 2.3}. Let us denote this measure
 %Consider
 %$z^\ast\in Z^\ast(F)$, so that the associated 
 Since the group $\bG_{z^\ast}$ is quasi-split,   
-it has the canonical parahoric subgroup as in \cite{gross:97a}, associated with a special point $x$ in the building. 
-By Proposition \ref{prop:main},  the equivalence class of $x$ has a representative $\ff\in \cF$, and the canonical parahoric 
+it has the canonical parahoric subgroup as in \cite{gross:97a}, associated with a special point $x$ in the building. The equivalence class of $x$ has a representative $\ff\in \cF$, and by Proposition \ref{prop:main}, the canonical parahoric 
 $\bG_{z^\ast}(F)_{x, 0}=\bG_{z^\ast}(F)_\ff$ is definable.  Thus, we can define  a motivic function $c^\ast(z^\ast):=
 \vol_{\mu_{z^\ast}^\mot}({\cG_{\ff}}_{z^\ast})$. 
 By definition, we have 
@@ -458,13 +457,18 @@ The inner twisting is a definable map
 The pull-back of a motivic measure under a definable map is motivic.
 Thus we have, by definition, 
 % the canonical measure on $\bG_z(F)$ has the form 
-$$ c^\ast_F(z^\ast)d\mu_{\bG_{z}(F)}^\can  =  c^\ast_F(z^\ast) \psi_{\zeta}^\ast \left(d\mu_{\bG_{z^\ast}(F)}^\can \right).$$ 
-The measure $\psi_{\zeta}^\ast \left(d\mu_{\bG_{z^\ast}(F)}^\can \right)$ is motivic, as a pull-back of a motiivc measure under a definable map. 
+$$ %c^\ast_F(z^\ast)
+d\mu_{\bG_{z}(F)}^\can  =  
+%c^\ast_F(z^\ast) 
+\psi_{\zeta}^\ast \left(d\mu_{\bG_{z^\ast}(F)}^\can \right).$$ 
+The measure $c^\ast_F(z^\ast)\psi_{\zeta}^\ast \left(d\mu_{\bG_{z^\ast}(F)}^\can \right)$ is motivic, as a pull-back of a motivic measure under a definable map. 
 Thus, for $z=(z^\ast, \zeta)\in Z$, we can define $c(z):= c^\ast(z^\ast)$, i.e., 
 the function $c$ is simply the pull-back of the function $z^\ast$ on $Z^\ast$ under the projection map $Z\to Z^\ast$. 
 \end{proof}
 
-\begin{rem} The above theorem allows a number of improvements in \cite{cluckers-gordon-halupczok:14b} and 
+\begin{rem} The motivic measure $d\mu_{z, F}^\mot$ on $\bG(F)$ that we defined above differs (by a motivic constant) from the 
+motivic measure defined in \cite{gordon-hales:15a}*{\S 2.3} and  \cite{cluckers-gordon-halupczok:14b} in the case when $\bG_z$ is not quasi-split over $F$. 
+This definition allows a number of improvements in \cite{cluckers-gordon-halupczok:14b} and 
 \cite{shin-templier:15a}*{Appendix B}. 
 Namely,  parts (1) and (2) of \cite{cluckers-gordon-halupczok:14b}*{Lemma 3.4} become unnecessary, and the statement in Part (3)
 now includes $r=0$; instead of using the measures discussed in \S 3.5.2, one can use the canonical measure. 
