@@ -261,24 +261,24 @@ We first reduce to the case that $L = F$: if $\NerC{T}(\ri_L)$ is definable then
 $\NerC{T}(\ri_F) = \NerC{T}(\ri_L)^\Gamma$, where the equality holds since N\'eron models commute with unramified base change.
 So for the remainder of the proof we will assume that $E/F$ is totally ramified.
 
-Now, the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(L) \to X_I$ from
-$\Ner{T}(\ri_L)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan:11a}*{3.1}).
+Now, the identity component $\NerC{T}(\ri_F)$ is the kernel of the map $w_\bT : \bT(F) \to X_I$ from
+$\Ner{T}(\ri_F)$ to its component group  defined in \cite{kottwitz:isocrystals-2}*{\S 7} (see also \cite{bitan:11a}*{3.1}).
 
-Our fixed choice of resolution $Y \to X$ yields an induced torus $\bR$ over $L$ with cocharacter lattice $Y$, together with a diagram
+Our fixed choice of resolution $Y \to X$ yields an induced torus $\bR$ over $F$ with cocharacter lattice $Y$, together with a diagram
 \[
 \begin{tikzcd}
-\bR(L) \rar{\alpha} \dar{w_{\bR}} \drar{\beta} & \bT(L) \rar \dar{w_{\bT}} & 1 \\
+\bR(F) \rar{\alpha} \dar{w_{\bR}} \drar{\beta} & \bT(F) \rar \dar{w_{\bT}} & 1 \\
 Y_I \rar & X_I \rar & 0
 \end{tikzcd}
 \]
-as in \cite{kottwitz:isocrystals-2}*{(7.2.6)}.  The map $\bR(L) = (E^\times \times Y)^I \to (E^\times \times X)^I = \bT(L)$
+as in \cite{kottwitz:isocrystals-2}*{(7.2.6)}.  The map $\bR(F) = (E^\times \otimes Y)^I \to (E^\times \otimes X)^I = \bT(F)$
 is definable since it is induced by the fixed map $Y \to X$.  Since $\bR$ is induced,
-$Y_I$ is torsion free and $w_\bR : \bR(L) \to Y_I = \Hom(X^\ast(\bR), \Z)$ is given by
-$r \mapsto \left(\lambda \mapsto \ord_{L}(\lambda(r))\right)$ \cite{kottwitz:isocrystals-2}*{(7.2.3)}.
-Therefore $w_\bR$ is definable, and so is the composition $\beta : \bR(L) \to X_I$ with the fixed map $Y_I \to X_I$.
+$Y_I$ is torsion free and $w_\bR : \bR(F) \to Y_I = \Hom(X^\ast(\bR), \Z)$ is given by
+$r \mapsto \left(\lambda \mapsto \ord_{F}(\lambda(r))\right)$ \cite{kottwitz:isocrystals-2}*{(7.2.3)}.
+Therefore $w_\bR$ is definable, and so is the composition $\beta : \bR(F) \to X_I$ with the fixed map $Y_I \to X_I$.
 
-We can now show that $\NerC{T}(\ri_L)$ is a definable subset of $\bT(L)$: we have $t \in \NerC{T}(\ri_L)$
-if and only if $\exists r \in \bR(L)$ such that $\alpha(r) = t$ and $\beta(r) = 0$.
+We can now show that $\NerC{T}(\ri_F)$ is a definable subset of $\bT(F)$: we have $t \in \NerC{T}(\ri_F)$
+if and only if $\exists r \in \bR(F)$ such that $\alpha(r) = t$ and $\beta(r) = 0$.
 \end{proof}
 
 \section{General reductive groups}\label{sec:groups}
@@ -559,12 +559,9 @@ However, we observe that the motive $M$ associated with $\bG$ can be determined 
 since $\bG$ is quasi-split.
 By \cite{gross:97a}*{Proposition 4.7}, the volume of the canonical parahoric with respect to $|\omega_G|$
 is $L(M^\vee(1))$, which is a motivic constant.
-%\footnote{More precisely, the volume is a motivic function of the parameter $z$ defining the group.}  
-Thus, there is a natural question: does our motivic constant $c(z)$ equal the local $L$-factor defined by Gross? 
-When $z$ defines a split group this is so by observation: the `motivic' volume form we use to define the motivic measure coincides with $\omega_G$ in this case; this also happens if the group $\bG_z$ is unramified over $F$. 
-The remaining question is whether the motivic volume form coincides with the form $\omega_G$ when $\bG_z$ is a quasi-split group that splits over a ramified extension. Unfortunately, this paper does not answer this question.    
-%Thus, the measure $|\omega_G|$ is motivic as well, since it is a product of a motivic function
-%and a motivic measure that we have denoted by $\mu_{\bG(F)}^\can$ above. 
+In fact, $L(M^\vee(1))$ agrees with our motivic constant $c(z)$ when $z$ defines a split group, since
+the motivic volume form we use to define the motivic measure coincides with $\omega_G$ in this case.
+The question of whether $c(z) = L(M^\vee(1))$ in the case that $\bG_z$ is not split must wait for future work.
 
 
 \bibliography{roebib/Biblio}
